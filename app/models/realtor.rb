@@ -10,6 +10,7 @@ class Realtor < ActiveRecord::Base
   enumerize :related_license_type, in: [:sale, :brk, :bllc, :bcrp, :six, :reb, :prin, :rein, :apin, :illc, :icrp, :erwi, :erwo]
 
   # Relationships
+  has_many :addresses, dependent: :destroy
 
   # Scopes
 

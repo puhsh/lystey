@@ -50,3 +50,7 @@ en:
         icrp: "Professional Inspector Corporation"
         erwi: "Easementand Right-of-Way Individual"
         erwo: "Easementand Right-of-Way Business"
+    address:
+      address_type:
+        mailing: "Mailing Address"
+        physical: "Physical Address"
