@@ -21,5 +21,8 @@
     &.eight {
       @include span(8 of 12);
     }
+    &.twelve {
+      @include span(12 of 12);
+    }
   }
 }

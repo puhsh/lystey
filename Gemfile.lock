@@ -139,6 +139,16 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.1)
       sprockets-rails
+    rails-assets-breakpoint (4.6.4)
+      rails-assets-eventEmitter (~> 4.2.1)
+      rails-assets-imagesloaded (~> 3.0.4)
+      rails-assets-jquery (>= 1.7)
+    rails-assets-desandro--eventie (1.0.6)
+    rails-assets-eventEmitter (4.2.11)
+    rails-assets-imagesloaded (3.0.4)
+      rails-assets-desandro--eventie (>= 1.0.3)
+      rails-assets-eventEmitter (~> 4.0)
+    rails-assets-jquery (2.1.3)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.6)
@@ -224,6 +234,7 @@ DEPENDENCIES
   pg
   pry-rails
   rails (= 4.2.1)
+  rails-assets-breakpoint!
   rename
   sass-rails
   spring

@@ -26,6 +26,7 @@ gem 'capistrano3-unicorn'
 
 # Asset Packages via rails-assets.org
 source 'https://rails-assets.org' do
+  gem 'rails-assets-breakpoint'
 end
 
 # JS-runtime
