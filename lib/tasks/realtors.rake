@@ -2,7 +2,7 @@ namespace :realtors do
 
   desc 'Populates Texas Realtors'
   task populate_texas: :environment do
-    File.open("#{ENV['HOME']}/Dropbox/Realtors/Mailing Lists/Texas/trecfile.txt").each do |line|
+    File.open("#{ENV["HOME"]}/lists/texas/trecfile.txt").each do |line|
       data = line.split("\t")
       r = Realtor.new.tap do |r|
         r.license_type = data[0] == "6" ? :six : data[0].downcase
