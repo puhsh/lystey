@@ -1,23 +1,52 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  enumerize:
+    realtor:
+      license_type:
+        sale: "Salesperson"
+        brk: "Individual Broker"
+        bllc: "Limited Liability Corporation Broker"
+        bcrp: "Corporation Broker"
+        six: "Partnership Broker"
+        reb: "Broker Organization Branch"
+        prin: "Professional Inspector"
+        rein: "Real Estate Inspector"
+        apin: "Apprentice Inspector"
+        illc: "Professional Inspector LLC"
+        icrp: "Professional Inspector Corporation"
+        erwi: "Easementand Right-of-Way Individual"
+        erwo: "Easementand Right-of-Way Business"
+      license_status:
+        :20: "Current and active"
+        :21: "Current and inactive"
+        :30: "Probation and active"
+        :31: "Probation and inactive"
+        :45: "Expired"
+        :47: "Suspended"
+        :56: "Relinquished"
+        :57: "Revoked"
+        :80: "Deceased"
+      education_status:
+        :0: "No SAE Requirement"
+        :1: "SAE Requirements Outstanding"
+        :2: "SAE Requirements Met"
+      mce_status:
+        :0: "No MCE Requirement"
+        :1: "MCE Requirements Outstanding"
+        :2: "MCE Requirements Met"
+      designated_supervisor_flag:
+        :0: "Not Designated Supervisor"
+        :1: "Designated Supervisor"
+      related_license_type:
+        sale: "Salesperson"
+        brk: "Individual Broker"
+        bllc: "Limited Liability Corporation Broker"
+        bcrp: "Corporation Broker"
+        six: "Partnership Broker"
+        reb: "Broker Organization Branch"
+        prin: "Professional Inspector"
+        rein: "Real Estate Inspector"
+        apin: "Apprentice Inspector"
+        illc: "Professional Inspector LLC"
+        icrp: "Professional Inspector Corporation"
+        erwi: "Easementand Right-of-Way Individual"
+        erwo: "Easementand Right-of-Way Business"
