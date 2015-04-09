@@ -1,9 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, 'my_app_name'
 set :repo_url, 'git@github.com:puhsh/realtors.git'
-set :deploy_to, '/var/www/www.realtors.social'
 set :scm, :git
 set :format, :pretty
 set :log_level, :info
