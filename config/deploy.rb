@@ -13,5 +13,9 @@ set :keep_releases, 5
 set :rvm_type, :auto
 set :rvm_ruby_version, '2.2.1@realtors'
 
+after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
+  task :restart do
+    invoke 'unicorn:restart'
+  end
 end

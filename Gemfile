@@ -20,6 +20,7 @@ gem 'turbolinks'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
 gem 'capistrano-rvm'
+gem 'capistrano3-unicorn'
 
 # Asset Packages via rails-assets.org
 source 'https://rails-assets.org' do
