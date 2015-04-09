@@ -29,6 +29,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'pry-rails'
+  gem 'rename'
 end
 
 group :production do
@@ -36,3 +37,4 @@ group :production do
 end
 
 # Third Party
+gem 'enumerize'
