@@ -10,11 +10,13 @@ gem 'pg'
 gem 'haml'
 
 # Assets and Asset-related items
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'susy'
+gem 'compass-rails'
 
 # Capistrano and Capistrano-related items
 gem 'capistrano-rails'
