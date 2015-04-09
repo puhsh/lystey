@@ -12,6 +12,6 @@ production:
   <<: *default
   database: realtors_production
   username: realtors
-  password: <%= ENV['REALTOR_DATABASE_PASSWORD'] %>
+  password: <%= ENV['REALTORS_DATABASE_PASSWORD'] %>
   host: realtors-production.c0hit0u0x5jp.us-east-1.rds.amazonaws.com
   port: 5432

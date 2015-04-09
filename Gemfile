@@ -16,6 +16,11 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 
+# Capistrano and Capistrano-related items
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
+gem 'capistrano-rvm'
+
 # Asset Packages via rails-assets.org
 source 'https://rails-assets.org' do
 end
