@@ -47,3 +47,4 @@ end
 
 # Third Party
 gem 'enumerize'
+gem 'jbuilder'
