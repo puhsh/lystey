@@ -12,11 +12,11 @@ gem 'haml'
 # Assets and Asset-related items
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'susy'
 gem 'compass-rails'
+gem 'react-rails', '~> 1.0'
 
 # Capistrano and Capistrano-related items
 gem 'capistrano-rails'
@@ -27,6 +27,8 @@ gem 'capistrano3-unicorn'
 # Asset Packages via rails-assets.org
 source 'https://rails-assets.org' do
   gem 'rails-assets-breakpoint'
+  gem 'rails-assets-backbone'
+  gem 'rails-assets-flux'
 end
 
 # JS-runtime
