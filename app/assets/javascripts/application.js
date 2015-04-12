@@ -1,8 +1,8 @@
 // Third Party
 //= require jquery
+//= require lodash
+//= require immutable
 //= require turbolinks
-//= require backbone
-//= require underscore
 //= require flux
 //= require react
 //= require react_ujs
