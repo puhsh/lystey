@@ -1,2 +1,2 @@
 # realtor
-Realtors.social website. By Stone Syndicate
+Lystey.social website. By Stone Syndicate
