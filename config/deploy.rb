@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :repo_url, 'git@github.com:puhsh/realtors.git'
+set :repo_url, 'git@github.com:puhsh/lystey.git'
 set :scm, :git
 set :format, :pretty
 set :log_level, :info
