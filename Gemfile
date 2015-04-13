@@ -10,17 +10,13 @@ gem 'pg'
 gem 'haml'
 
 # Assets and Asset-related items
-gem 'sass-rails', '5.0.1'
+gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'susy'
 gem 'compass-rails'
 gem 'react-rails', '~> 1.0'
-
-# ES6 Support
-gem 'sprockets'
-gem 'sprockets-es6', require: 'sprockets/es6'
 
 # Capistrano and Capistrano-related items
 gem 'capistrano-rails'
