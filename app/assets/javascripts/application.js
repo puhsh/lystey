@@ -1,6 +1,6 @@
 // Third Party
 //= require jquery
-//= require lodash
+//= require lodash.js
 //= require immutable
 //= require turbolinks
 //= require flux
