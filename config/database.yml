@@ -10,8 +10,8 @@ test:
   database: realtors_test
 production:
   <<: *default
-  database: lystey-production
-  username: realtors
+  database: realtors_production
+  2username: realtors
   password: <%= ENV['REALTORS_DATABASE_PASSWORD'] %>
-  host: lystey-production.c0hit0u0x5jp.us-east-1.rds.amazonaws.com:5432
+  host: lystey-production.c0hit0u0x5jp.us-east-1.rds.amazonaws.com
   port: 5432
