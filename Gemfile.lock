@@ -85,7 +85,6 @@ GEM
       compass (~> 1.0.0)
       sass-rails (<= 5.0.1)
       sprockets (< 2.13)
-    connection_pool (2.2.0)
     debug_inspector (0.0.2)
     enumerize (0.11.0)
       activesupport (>= 3.2)
@@ -173,13 +172,6 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    react-rails (1.0.0)
-      coffee-script-source (~> 1.8)
-      connection_pool
-      execjs
-      rails (>= 3.1)
-      react-source (~> 0.13)
-    react-source (0.13.1)
     ref (1.0.5)
     rename (1.0.2)
       rails (>= 3.0.0)
@@ -250,7 +242,6 @@ DEPENDENCIES
   rails-assets-breakpoint (= 4.6.4)!
   rails-assets-immutable (= 3.7.2)!
   rails-assets-lodash (= 3.6.0)!
-  react-rails (~> 1.0)
   rename
   sass-rails
   spring

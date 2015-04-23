@@ -16,7 +16,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'susy'
 gem 'compass-rails'
-gem 'react-rails', '~> 1.0'
 
 # Capistrano and Capistrano-related items
 gem 'capistrano-rails'
