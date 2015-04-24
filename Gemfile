@@ -6,9 +6,6 @@ gem 'rails', '4.2.1'
 # Databases / Data-stores
 gem 'pg'
 
-# View Engine
-gem 'haml'
-
 # Assets and Asset-related items
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
