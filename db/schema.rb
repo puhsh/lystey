@@ -11,9 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425033825) do
+ActiveRecord::Schema.define(version: 20150426025606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.integer  "agent_id"
+    t.string   "address_type"
+    t.string   "line_1"
+    t.string   "line_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "addresses", ["address_type"], name: "index_addresses_on_address_type", using: :btree
+  add_index "addresses", ["agent_id"], name: "index_addresses_on_agent_id", using: :btree
+
+  create_table "agents", force: :cascade do |t|
+    t.boolean  "registered",     default: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "suffix"
+    t.string   "license_number"
+    t.string   "license_type"
+    t.string   "license_county"
+    t.string   "phone_number"
+    t.string   "fax_number"
+    t.string   "email"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
 
 end
