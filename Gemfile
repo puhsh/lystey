@@ -38,6 +38,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rename'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :test do
