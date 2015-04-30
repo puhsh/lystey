@@ -13,7 +13,7 @@ class Broker < ActiveRecord::Base
   # Returns the name. If the broker's agent is not registered, it will return placeholder text.
   def name
     if agent.registered?
-      read_attribute(:name)
+      self.read_attribute(:name)
     else
       "Unknown. Register to complete"
     end
