@@ -11,6 +11,22 @@ RSpec.describe Theme, type: :model do
     describe '.testimonial_page_main_copy' do
       it { is_expected.to validate_length_of(:testimonial_page_main_copy).is_at_most(10000) }
     end
+
+    describe '.buyers_guide_page_title' do
+      it { is_expected.to validate_length_of(:buyers_guide_page_title).is_at_most(100) }
+    end
+
+    describe '.buyers_guide_page_main_copy' do
+      it { is_expected.to validate_length_of(:buyers_guide_page_main_copy).is_at_most(10000) }
+    end
+
+    describe '.sellers_guide_page_title' do
+      it { is_expected.to validate_length_of(:sellers_guide_page_title).is_at_most(100) }
+    end
+
+    describe '.sellers_guide_page_main_copy' do
+      it { is_expected.to validate_length_of(:testimonial_page_main_copy).is_at_most(10000) }
+    end
   end
 
   context 'when updating' do
@@ -19,6 +35,22 @@ RSpec.describe Theme, type: :model do
     end
 
     describe '.testimonial_page_main_copy' do
+      it { is_expected.to validate_length_of(:testimonial_page_main_copy).is_at_most(10000) }
+    end
+
+    describe '.buyers_guide_page_title' do
+      it { is_expected.to validate_length_of(:buyers_guide_page_title).is_at_most(100) }
+    end
+
+    describe '.buyers_guide_page_main_copy' do
+      it { is_expected.to validate_length_of(:buyers_guide_page_main_copy).is_at_most(10000) }
+    end
+
+    describe '.sellers_guide_page_title' do
+      it { is_expected.to validate_length_of(:sellers_guide_page_title).is_at_most(100) }
+    end
+
+    describe '.sellers_guide_page_main_copy' do
       it { is_expected.to validate_length_of(:testimonial_page_main_copy).is_at_most(10000) }
     end
   end

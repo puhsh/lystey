@@ -10,6 +10,11 @@ class Theme < ActiveRecord::Base
   # Validations
   validates :testimonial_page_title, length: { maximum: 100 }
   validates :testimonial_page_main_copy, length: { maximum: 10000 }
+  validates :buyers_guide_page_title, length: { maximum: 100 }
+  validates :buyers_guide_page_main_copy, length: { maximum: 10000 }
+  validates :sellers_guide_page_title, length: { maximum: 100 }
+  validates :sellers_guide_page_main_copy, length: { maximum: 10000 }
+
   # Scopes
 
   # Methods
