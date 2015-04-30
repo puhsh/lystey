@@ -10,7 +10,7 @@ gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'less-rails'
+gem 'sass-rails'
 gem "bower-rails", "~> 0.9.2"
 
 # Capistrano and Capistrano-related items
