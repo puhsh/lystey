@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430015851) do
+ActiveRecord::Schema.define(version: 20150430025723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,16 @@ ActiveRecord::Schema.define(version: 20150430015851) do
   add_index "certifications", ["agent_id"], name: "index_certifications_on_agent_id", using: :btree
   add_index "certifications", ["certification_type"], name: "index_certifications_on_certification_type", using: :btree
 
+  create_table "job_openings", force: :cascade do |t|
+    t.integer  "team_id"
+    t.string   "job_title"
+    t.text     "job_description"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "job_openings", ["team_id"], name: "index_job_openings_on_team_id", using: :btree
+
   create_table "social_links", force: :cascade do |t|
     t.integer  "agent_id"
     t.string   "site"
@@ -95,5 +105,34 @@ ActiveRecord::Schema.define(version: 20150430015851) do
 
   add_index "social_links", ["agent_id"], name: "index_social_links_on_agent_id", using: :btree
 
+  create_table "team_members", force: :cascade do |t|
+    t.integer  "team_id"
+    t.string   "full_name"
+    t.text     "bio"
+    t.string   "phone_number"
+    t.string   "email"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "team_members", ["team_id"], name: "index_team_members_on_team_id", using: :btree
+
+  create_table "teams", force: :cascade do |t|
+    t.integer  "agent_id"
+    t.string   "title"
+    t.text     "about"
+    t.boolean  "primary_agent",  default: true
+    t.boolean  "hiring",         default: false
+    t.string   "hiring_title"
+    t.text     "hiring_details"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "teams", ["agent_id"], name: "index_teams_on_agent_id", using: :btree
+
   add_foreign_key "certifications", "agents"
+  add_foreign_key "job_openings", "teams"
+  add_foreign_key "team_members", "teams"
+  add_foreign_key "teams", "agents"
 end
