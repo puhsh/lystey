@@ -20,7 +20,6 @@ gem 'capistrano3-unicorn'
 
 # Asset Packages via rails-assets.org
 source 'https://rails-assets.org' do
-  gem 'rails-assets-breakpoint', '4.6.4'
   gem 'rails-assets-lodash', '3.6.0'
   gem 'rails-assets-immutable', '3.7.2'
 end
@@ -49,4 +48,3 @@ end
 
 # Third Party
 gem 'enumerize'
-gem 'jbuilder'
