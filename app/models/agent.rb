@@ -1,9 +1,10 @@
 class Agent < ActiveRecord::Base
-  # Atrributes
+  # Attributes
 
   # Relationships
-  has_many :addresses
+  has_many :addresses, dependent: :destroy
   has_many :social_links, dependent: :destroy
+  has_many :certifications, dependent: :destroy
 
   # Validations
 

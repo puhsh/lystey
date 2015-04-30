@@ -1,7 +1,7 @@
 class SocialLink < ActiveRecord::Base
   extend Enumerize
 
-  # Atrributes
+  # Attributes
   enumerize :site, in: [:personal, :facebook, :twitter, :pinterest, :google_plus, :instagram, :linkedin, :realtor, :zillow, :trulia], scopes: false, predicates: false
 
   # Relationships

@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Agent, :type => :model do
   it { is_expected.to have_many(:addresses) }
   it { is_expected.to have_many(:social_links) }
+  it { is_expected.to have_many(:certifications) }
 
   context 'when unregistered' do
     let(:agent) { FactoryGirl.create(:agent, first_name: 'John', last_name: 'Smith')}

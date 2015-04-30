@@ -1,7 +1,7 @@
 class Address < ActiveRecord::Base
   extend Enumerize
 
-  # Atrributes
+  # Attributes
   enumerize :address_type, in: [:office, :mailing], scopes: true, predicates: true
 
   # Relationships
