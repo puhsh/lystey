@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430025723) do
+ActiveRecord::Schema.define(version: 20150430030305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -131,8 +131,20 @@ ActiveRecord::Schema.define(version: 20150430025723) do
 
   add_index "teams", ["agent_id"], name: "index_teams_on_agent_id", using: :btree
 
+  create_table "testimonials", force: :cascade do |t|
+    t.integer  "agent_id"
+    t.string   "client_name"
+    t.text     "text"
+    t.string   "client_facebook_link"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "testimonials", ["agent_id"], name: "index_testimonials_on_agent_id", using: :btree
+
   add_foreign_key "certifications", "agents"
   add_foreign_key "job_openings", "teams"
   add_foreign_key "team_members", "teams"
   add_foreign_key "teams", "agents"
+  add_foreign_key "testimonials", "agents"
 end

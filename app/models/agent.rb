@@ -8,6 +8,7 @@ class Agent < ActiveRecord::Base
   has_one :broker, dependent: :destroy
   has_one :biography, dependent: :destroy
   has_one :team, dependent: :destroy
+  has_many :testimonials, dependent: :destroy
 
   # Validations
 
