@@ -6,6 +6,7 @@ class Agent < ActiveRecord::Base
   has_many :social_links, dependent: :destroy
   has_many :certifications, dependent: :destroy
   has_one :broker, dependent: :destroy
+  has_one :biography, dependent: :destroy
 
   # Validations
 
