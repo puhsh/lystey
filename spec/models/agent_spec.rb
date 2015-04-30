@@ -7,6 +7,7 @@ RSpec.describe Agent, :type => :model do
   it { is_expected.to have_one(:broker).dependent(:destroy) }
   it { is_expected.to have_one(:biography).dependent(:destroy) }
   it { is_expected.to have_one(:team).dependent(:destroy) }
+  it { is_expected.to have_one(:theme).dependent(:destroy) }
   it { is_expected.to have_many(:testimonials).dependent(:destroy) }
 
   context 'when unregistered' do
