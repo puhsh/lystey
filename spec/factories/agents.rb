@@ -2,5 +2,13 @@
 
 FactoryGirl.define do
   factory :agent do
+
+    trait :unregistered do
+      registered false
+    end
+    
+    trait :registered do
+      registered true
+    end
   end
 end

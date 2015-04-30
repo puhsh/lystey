@@ -13,7 +13,11 @@ class Agent < ActiveRecord::Base
 
   # Returns the full name (first + last + suffix) of an agent
   def full_name
-    "#{self.first_name} #{self.last_name}, #{self.suffix}"
+    if self.suffix.present?
+      "#{self.first_name} #{self.last_name}, #{self.suffix}"
+    else
+      "#{self.first_name} #{self.last_name}"
+    end
   end
 
   def phone_number
@@ -28,7 +32,7 @@ class Agent < ActiveRecord::Base
     if self.registered?
       self.read_attribute(:email)
     else
-      "#{self.first_name}@XXXXXX.XXX"
+      "#{self.first_name.try(&:downcase)}@XXXXXX.XXX"
     end
   end
 end
