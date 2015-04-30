@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'sass-rails'
 gem "bower-rails", "~> 0.9.2"
+gem 'bootstrap-sass', '~> 3.3.4'
 
 # Capistrano and Capistrano-related items
 gem 'capistrano-rails'
