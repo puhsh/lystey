@@ -126,7 +126,10 @@ GEM
       railties (= 4.2.1)
       sprockets-rails
     rails-assets-immutable (3.7.2)
+    rails-assets-jquery (2.1.4)
     rails-assets-lodash (3.6.0)
+    rails-assets-semantic (1.12.1)
+      rails-assets-jquery (>= 1.8)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.6)
@@ -226,6 +229,7 @@ DEPENDENCIES
   rails (= 4.2.1)
   rails-assets-immutable (= 3.7.2)!
   rails-assets-lodash (= 3.6.0)!
+  rails-assets-semantic (= 1.12.1)!
   rename
   rspec-rails
   sass-rails

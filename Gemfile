@@ -22,6 +22,7 @@ gem 'capistrano3-unicorn'
 source 'https://rails-assets.org' do
   gem 'rails-assets-lodash', '3.6.0'
   gem 'rails-assets-immutable', '3.7.2'
+  gem 'rails-assets-semantic', '1.12.1'
 end
 
 # JS-runtime

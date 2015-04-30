@@ -3,3 +3,4 @@
 //= require lodash
 //= require immutable
 //= require turbolinks
+//= require semantic
