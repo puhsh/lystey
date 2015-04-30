@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Agent, :type => :model do
-  it { is_expected.to have_many(:addresses) }
-  it { is_expected.to have_many(:social_links) }
-  it { is_expected.to have_many(:certifications) }
+  it { is_expected.to have_many(:addresses).dependent(:destroy) }
+  it { is_expected.to have_many(:social_links).dependent(:destroy) }
+  it { is_expected.to have_many(:certifications).dependent(:destroy) }
+  it { is_expected.to have_one(:broker).dependent(:destroy) }
 
   context 'when unregistered' do
     let(:agent) { FactoryGirl.create(:agent, first_name: 'John', last_name: 'Smith')}

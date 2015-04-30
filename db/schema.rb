@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430011140) do
+ActiveRecord::Schema.define(version: 20150430014106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,24 @@ ActiveRecord::Schema.define(version: 20150430011140) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end
+
+  create_table "brokers", force: :cascade do |t|
+    t.integer  "agent_id"
+    t.string   "name"
+    t.string   "address_line_1"
+    t.string   "address_line_2"
+    t.string   "address_line_3"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.string   "phone_number"
+    t.string   "fax_number"
+    t.string   "email"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "brokers", ["agent_id"], name: "index_brokers_on_agent_id", using: :btree
 
   create_table "certifications", force: :cascade do |t|
     t.integer  "agent_id"
