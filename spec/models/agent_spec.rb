@@ -25,6 +25,12 @@ RSpec.describe Agent, :type => :model do
       end
     end
 
+    describe '.first_and_last_name' do
+      it 'returns the first and last name' do
+        expect(agent.first_and_last_name).to eql("John Smith")
+      end
+    end
+
     describe '.phone_number' do
       it 'returns a placeholder number' do
         expect(agent.phone_number).to eql('(972) 555-XXXX')
@@ -48,6 +54,12 @@ RSpec.describe Agent, :type => :model do
         agent.save
         expect(agent.reload.read_attribute(:email)).to eql('john@gmail.com')
         expect(agent.reload.email).to eql('john@XXXXXX.XXX')
+      end
+    end
+
+    describe '.slug' do
+      it 'not null' do
+        expect(agent.slug).to_not be_nil
       end
     end
   end
@@ -92,6 +104,18 @@ RSpec.describe Agent, :type => :model do
         agent.email = 'john@gmail.com'
         agent.save
         expect(agent.reload.email).to_not eql('john@XXXXXX.XXX')
+      end
+    end
+
+    describe '.first_and_last_name' do
+      it 'returns the first and last name' do
+        expect(agent.first_and_last_name).to eql("John Smith")
+      end
+    end
+
+    describe '.slug' do
+      it 'not null' do
+        expect(agent.slug).to_not be_nil
       end
     end
   end

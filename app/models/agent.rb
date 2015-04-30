@@ -1,5 +1,8 @@
 class Agent < ActiveRecord::Base
+  extend FriendlyId
+
   # Attributes
+  friendly_id :first_and_last_name, use: :slugged
 
   # Relationships
   has_many :addresses, dependent: :destroy
@@ -24,6 +27,10 @@ class Agent < ActiveRecord::Base
     else
       "#{self.first_name} #{self.last_name}"
     end
+  end
+
+  def first_and_last_name
+    "#{self.first_name} #{self.last_name}"
   end
 
   def phone_number

@@ -44,3 +44,4 @@ end
 
 # Third Party
 gem 'enumerize'
+gem 'friendly_id', '~> 5.1.0'
