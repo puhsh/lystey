@@ -7,23 +7,17 @@ gem 'rails', '4.2.1'
 gem 'pg'
 
 # Assets and Asset-related items
-gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'less-rails'
+gem "bower-rails", "~> 0.9.2"
 
 # Capistrano and Capistrano-related items
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
 gem 'capistrano-rvm'
 gem 'capistrano3-unicorn'
-
-# Asset Packages via rails-assets.org
-source 'https://rails-assets.org' do
-  gem 'rails-assets-lodash', '3.6.0'
-  gem 'rails-assets-immutable', '3.7.2'
-  gem 'rails-assets-semantic', '1.12.1'
-end
 
 # JS-runtime
 gem 'therubyracer', platforms: :ruby
