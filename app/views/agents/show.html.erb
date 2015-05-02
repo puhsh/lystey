@@ -1,21 +1,18 @@
 <div class="row">
-  <div class="col-xs-8 pull-left">
-    <h1 class="ui header">
-      <%= @agent.full_name %>
-    </h1>
-    <p class="heading sub">
-      License #<%= @agent.license_number %>
-    </p>
-  </div>
-  <div class="col-xs-4 right">
-    <h1 class="ui header">
-      <%= @agent.phone_number %>
-    </h1>
-    <p class="heading sub">
-      <%= @agent.email %>
-    </p>
-  </div>
-</div>
+  <div class="col-xs-12 col-md-6 clearfix">
+    <div class="headline left">
+      <h1>
+        <%= @agent.full_name %>
+      </h1>
+    </div>
 
-<div class="row">
+  </div>
+  <div class="col-xs-12 col-md-6 pull-right">
+    <div class="headline right">
+      <h4>
+        <%= @agent.phone_number %>
+      </h4>
+    </div>
+
+  </div>
 </div>

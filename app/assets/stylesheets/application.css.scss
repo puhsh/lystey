@@ -1,3 +1,7 @@
 @import "bootstrap-sprockets";
+
+@import "modules/all";
+
 @import "partials/base";
+@import "partials/header";
 @import "partials/type";
