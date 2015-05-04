@@ -1,25 +1,7 @@
-.headline {
-  &.left {
-    float: left;
-    text-align: left;
-  }
-
-  &.right {
-    float: right;
-    text-align: right;
-  }
+.left {
+  text-align: left;
 }
 
-@media (max-width: $screen-xs-max) {
-  .headline {
-    &.left {
-      text-align: left;
-    }
-
-    &.right {
-      float: left;
-      text-align: left;
-    }
-  }
-
+.right {
+  text-align: right;
 }
