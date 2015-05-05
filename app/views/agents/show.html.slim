@@ -1,0 +1,14 @@
+.row
+  .small-6.columns
+    h1.ui.left.aligned.header
+      = @agent.full_name
+      .sub.header
+        | License #
+        = @agent.license_number
+  .small-6.columns
+    h1.ui.right.aligned.header
+      = @agent.phone_number
+      .sub.header
+        = @agent.email
+
+= render 'menu'

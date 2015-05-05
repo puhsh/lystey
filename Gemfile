@@ -6,6 +6,9 @@ gem 'rails', '4.2.1'
 # Databases / Data-stores
 gem 'pg'
 
+# View Engine
+gem 'slim'
+
 # Assets and Asset-related items
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
