@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
   resources :agents, only: [:show]
-  get '/:id', to: redirect('/agents/%{id}'), contraints: AgentsController.new
-
+  get '/', to: 'agents#show', constraints: { subdomain: /.+/ }, as: :agent_root
 end
