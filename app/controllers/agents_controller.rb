@@ -5,6 +5,7 @@ class AgentsController < ApplicationController
     respond_to do |format|
       if id_param? || friendly_id_param?
         format.html { redirect_to agent_root_url(subdomain: @agent.friendly_id) }
+        format.json { render json: @agent }
       else
         format.html
       end

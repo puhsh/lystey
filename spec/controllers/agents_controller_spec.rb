@@ -32,11 +32,32 @@ RSpec.describe AgentsController, :type => :controller do
         expect(assigns[:agent]).to eql(agent)
         expect(response).to redirect_to(agent_root_url(subdomain: assigns[:agent].slug))
       end
-      
+
       it 'renders the show template for a request with the agent slug in the subdomain' do
         @request.host = "#{agent.slug}.example.com"
         get :show
         expect(response).to render_template(:show)
+      end
+    end
+  end
+
+  context 'json' do
+    describe '#show' do
+      let(:agent) { FactoryGirl.create(:agent, :registered, first_name: 'John', last_name: 'Smith') }
+
+      it 'finds the agent from the slug' do
+        get :show, {id: agent.slug, format: :json }
+        expect(response.body).to eql(agent.to_json)
+      end
+
+      it 'finds the agent from the regular id' do
+        get :show, {id: agent.id, format: :json }
+        expect(response.body).to eql(agent.to_json)
+      end
+
+      it 'should not attempt any redirects' do
+        get :show, {id: agent.id, format: :json }
+        expect(response).to_not be_redirect
       end
     end
   end
