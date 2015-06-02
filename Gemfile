@@ -15,6 +15,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'sass-rails'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-skeleton'
+end
+
 # Capistrano and Capistrano-related items
 gem 'capistrano-rails'
 gem 'capistrano-bundler'

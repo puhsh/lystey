@@ -1,0 +1,21 @@
+// Colors
+$black: #000000;
+$black25: rgba(0,0, 0, .25);
+$black50: rgba(0,0, 0, .50);
+$black75: rgba(0,0, 0, .75);
+$black85: rgba(0,0, 0, .85);
+$white: #ffffff;
+$primaryRed: #930b12;
+
+// Font Colors
+$baseFontColor: $black85;
+$baseGrayBackground: rgba($baseFontColor, .10);
+
+// Font Sizes
+$h1FontSize: 30px;
+$h2FontSize: 20px;
+$h3FontSize: 16px;
+$placeholderFontSize: 30px;
+
+// Forms
+$placeholderFontSize: $h1FontSize;
