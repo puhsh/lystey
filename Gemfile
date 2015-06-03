@@ -18,6 +18,7 @@ gem 'sass-rails'
 source 'https://rails-assets.org' do
   gem 'rails-assets-skeleton'
   gem 'rails-assets-normalize-css'
+  gem 'rails-assets-reflux'
 end
 
 # Capistrano and Capistrano-related items
