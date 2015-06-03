@@ -15,6 +15,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'sass-rails'
 
+# ReactJS
+gem 'react-rails', '~> 1.0'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-skeleton'
   gem 'rails-assets-normalize-css'
