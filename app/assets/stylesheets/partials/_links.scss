@@ -1,0 +1,8 @@
+a,
+a:hover {
+  color: $baseFontColor;
+
+  &.hamburger {
+    display: block;
+  }
+}

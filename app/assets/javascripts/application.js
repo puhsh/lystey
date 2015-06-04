@@ -5,5 +5,3 @@
 //= require actions
 //= require stores
 //= require components
-
-//= require lystey

@@ -1,27 +1,19 @@
-.slideout-menu {
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 0;
-  width: 256px;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  display: none;
-}
+nav.navigation {
+  padding-top: 20px;
 
-.slideout-panel {
-  position: relative;
-  z-index: 1;
-}
+  a.nav-menu {
+    display: block;
+    padding-right: 20px;
+    float: left;
+    @media (min-width: 550px) {
+      display: none;
+    }
+  }
 
-.slideout-open,
-.slideout-open body,
-.slideout-open .slideout-panel {
-  overflow: hidden;
-}
-
-.slideout-open .slideout-menu {
-  display: block;
+  #nav-heading {
+    float: left;
+    .heading-text {
+      margin-bottom: 0px;
+    }
+  }
 }
