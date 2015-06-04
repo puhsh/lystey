@@ -7,7 +7,7 @@ gem 'rails', '4.2.1'
 gem 'pg'
 
 # View Engine
-gem 'slim'
+gem 'haml'
 
 # Assets and Asset-related items
 gem 'uglifier', '>= 1.3.0'

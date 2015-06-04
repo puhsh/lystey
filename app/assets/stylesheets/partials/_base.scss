@@ -10,3 +10,11 @@ body {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+
+.shaded-section {
+  background-color: $baseGrayBackground;
+  border: 1px solid $black25;
+  border-left: 0;
+
+}

@@ -1,7 +1,7 @@
-nav.navigation {
-  padding-top: 20px;
+.nav-bar {
+  padding: 20px 0px;
 
-  a.nav-menu {
+  a.nav-menu-toggle {
     display: block;
     padding-right: 20px;
     float: left;
@@ -16,4 +16,25 @@ nav.navigation {
       margin-bottom: 0px;
     }
   }
+
+  #nav-contact-items {
+    float: right;
+    a {
+      display: inline-block;
+      margin-top: 10px;
+      padding-right: 5px;
+      &:last-of-type {
+        padding-right: 0px;
+      }
+
+      i#phone {
+        font-size: 1.85em;
+      }
+    }
+  }
+}
+
+.nav-section {
+  padding: 20px 0px;
+  min-height: 125px;
 }

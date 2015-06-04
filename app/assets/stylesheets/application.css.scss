@@ -1,6 +1,7 @@
 /*
  *= require normalize-css
  *= require skeleton
+ *= require_tree ./components
  */
 
 @import "modules/all";
@@ -11,3 +12,4 @@
 @import "partials/header";
 @import "partials/type";
 @import "partials/nav";
+@import "partials/icons";
