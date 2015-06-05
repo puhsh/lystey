@@ -43,10 +43,20 @@ var AdminNav = React.createClass({
   render: function() {
     return (
       <div className="shaded-section">
-        <div className="container">
-          <div className="row nav-section">
+        <div className="container nav-section">
+          <div className="row">
             <div className="twelve columns">
               <h2> Admin Section: </h2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="twelve columns">
+              <select className="u-full-width nav-select">
+                <option value="1">
+                  About Section
+                </option>
+              </select>
+              <button className="button button-primary">Go</button>
             </div>
           </div>
         </div>

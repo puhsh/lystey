@@ -1,0 +1,14 @@
+.button {
+  border: 1px solid $primaryRed;
+  font-size: $h3FontSize;
+  text-transform: none;
+  border-radius: 10px;
+  padding: 0px 30px;
+  font-weight: normal;
+
+  &.button-primary,
+  &.button-primary:hover {
+    background-color: $primaryRed;
+    border: inherit;
+  }
+}
