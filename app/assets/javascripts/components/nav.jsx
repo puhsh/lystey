@@ -26,10 +26,10 @@ var MainNav = React.createClass({
             </div>
             <div id="nav-contact-items">
               <a href="#">
-                <i className="fa fa-envelope fa-2x fa-fw red"/>
+                <i className="fa fa-envelope fa-3x fa-fw icon-red" id="email"/>
               </a>
               <a href="#">
-                <i className="fa fa-phone-square fa-2x fa-fw red" id="phone"/>
+                <i className="fa fa-phone-square fa-3x icon-red" id="phone"/>
               </a>
             </div>
           </div>
