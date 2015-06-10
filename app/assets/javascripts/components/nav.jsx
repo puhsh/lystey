@@ -40,7 +40,7 @@ var AdminNav = React.createClass({
         <div className="container section">
           <div className="row">
             <div className="twelve columns">
-              <h2> Admin Section: </h2>
+              <h2 className="section-heading"> Admin Section: </h2>
             </div>
           </div>
           <div className="row">

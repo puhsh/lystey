@@ -1,3 +1,7 @@
 .section {
   margin: $sectionMarginSize auto;
+
+  .section-heading {
+    margin-bottom: 10px;
+  }
 }

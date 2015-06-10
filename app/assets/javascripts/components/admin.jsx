@@ -31,7 +31,7 @@ var AdminContent = React.createClass({
     return (
       <div className="row">
         <div className="twelve columns">
-          <h1>{this.props.sectionName}</h1>
+          <h1 className="section-heading">{this.props.sectionName}</h1>
         </div>
       </div>
     )
