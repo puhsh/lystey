@@ -4,4 +4,11 @@
   .section-heading {
     margin-bottom: 10px;
   }
+
+
+  &.shaded {
+    background-color: $baseGrayBackground;
+    border: 1px solid $black25;
+    border-left: 0;
+  }
 }

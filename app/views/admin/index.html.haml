@@ -1,7 +1,43 @@
 -# TODO Re-enable React when we are not trying to do a hackathon!
-// :javascript
-//   $(function() {
-//     React.render(React.createElement(LysteyAdmin, null), document.getElementById("admin"));
-//   });
+-# :javascript
+-#   $(function() {
+-#     React.render(React.createElement(LysteyAdmin, null), document.getElementById("admin"));
+-#  });
 
-#admin
+= render partial: 'nav'
+
+.container
+  .row
+    .twelve.columns
+      %h1.section-heading General Information
+      = form_for @agent, html: { class: 'form' } do |f|
+        .row
+          .twelve.columns
+            = f.text_field :first_name, class: 'u-full-width', placeholder: 'First Name'
+        .row
+          .twelve.columns
+            = f.text_field :last_name, class: 'u-full-width', placeholder: 'Last Name'
+        .row
+          .twelve.columns
+            = f.text_field :suffix, class: 'u-full-width', placeholder: 'Suffix'
+        .row
+          .twelve.columns
+            = f.text_field :license_number, class: 'u-full-width', placeholder: 'License Number'
+        .row
+          .twelve.columns
+            = f.text_field :license_type, class: 'u-full-width', placeholder: 'License Type'
+        .row
+          .twelve.columns
+            = f.text_field :license_county, class: 'u-full-width', placeholder: 'License County'
+
+        -# TODO Certification
+
+        .row
+          .twelve.columns
+            = f.text_field :phone_number, class: 'u-full-width', placeholder: 'Phone Number'
+        .row
+          .twelve.columns
+            = f.text_field :fax_number, class: 'u-full-width', placeholder: 'Fax Number'
+        .row
+          .twelve.columns
+            = f.text_field :email, class: 'u-full-width', placeholder: 'Email'
