@@ -33,7 +33,14 @@ var MainNav = React.createClass({
   }
 });
 
-var AdminNav = React.createClass({
+var AdminSectionNav = React.createClass({
+  getInitialState: function() {
+    return {
+      sections: [{id: 1, name: "General & Addresses"}],
+      selectedSection: 1
+    }
+  },
+
   render: function() {
     return (
       <section className="shaded-section">
