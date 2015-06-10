@@ -1,12 +1,10 @@
 .nav-bar {
-  margin: 20px 0px;
-
   a.nav-menu-toggle {
     display: block;
     margin-right: 20px;
     float: left;
     @media (min-width: 550px) {
-      display: none;
+      // display: none;
     }
   }
 
@@ -19,16 +17,11 @@
 
     }
 
-    h2.heading-text {
-      @media (max-width: 380px) {
-        width: 100px;
-        margin-right: 20px;
+    @media (max-width: 380px) {
+      h2.heading-text {
       }
-    }
+      h3.heading-text {
 
-    h3.heading-text {
-      @media (max-width: 380px) {
-        display: none;
       }
     }
   }
@@ -53,13 +46,9 @@
   }
 }
 
-.nav-section {
-  margin: 20px auto;
-  min-height: 105px;
-}
-
 .nav-select {
   margin-right: 20px;
+  margin-bottom: 0px;
 
   @media (max-width: 375px) {
     width: 62%;
@@ -88,4 +77,8 @@
   @media (min-width: 1150px) {
     width: 89%;
   }
+}
+
+.nav-button {
+  margin-bottom: 0px;
 }

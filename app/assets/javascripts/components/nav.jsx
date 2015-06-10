@@ -14,7 +14,7 @@ var MainNav = React.createClass({
 
   render: function() {
     return (
-      <div className="container">
+      <section className="container section">
         <div className="row nav-bar">
           <div className="twelve columns">
             <a href="#" className="nav-menu-toggle" onClick={this.toggleMenu}>
@@ -25,16 +25,10 @@ var MainNav = React.createClass({
               <h3 className="heading-text"> Real Estate </h3>
             </div>
             <div id="nav-contact-items">
-              <a href="#">
-                <i className="fa fa-envelope fa-3x fa-fw icon-red" id="email"/>
-              </a>
-              <a href="#">
-                <i className="fa fa-phone-square fa-3x icon-red" id="phone"/>
-              </a>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 });
@@ -42,8 +36,8 @@ var MainNav = React.createClass({
 var AdminNav = React.createClass({
   render: function() {
     return (
-      <div className="shaded-section">
-        <div className="container nav-section">
+      <section className="shaded-section">
+        <div className="container section">
           <div className="row">
             <div className="twelve columns">
               <h2> Admin Section: </h2>
@@ -56,11 +50,11 @@ var AdminNav = React.createClass({
                   About Section
                 </option>
               </select>
-              <button className="button button-primary">Go</button>
+              <button className="button button-primary nav-button">Go</button>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     )
   }
 });

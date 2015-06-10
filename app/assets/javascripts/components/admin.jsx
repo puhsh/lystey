@@ -16,9 +16,9 @@ var AdminSection = React.createClass({
         <div>
           <MainNav />
           <AdminNav />
-          <div className="container">
+          <section className="container section">
             <AdminContent sectionName="General Info" />
-          </div>
+          </section>
         </div>
       </div>
     )
