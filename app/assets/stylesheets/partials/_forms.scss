@@ -12,3 +12,14 @@
     border: inherit;
   }
 }
+
+
+.form {
+  input {
+    border-radius: 0;
+    font-size: $h1FontSize;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    height: 50px;
+  }
+}
