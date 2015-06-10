@@ -1,8 +1,10 @@
 class Agent < ActiveRecord::Base
   extend FriendlyId
+  extend Enumerize
 
   # Attributes
   friendly_id :first_and_last_name, use: :slugged
+  enumerize :license_type, in: [:sale, :brk, :bllc, :bcrp, :six, :reb, :prin, :rein, :apin, :illc, :icrp, :erwi, :erwo]
 
   # Relationships
   has_many :addresses, dependent: :destroy

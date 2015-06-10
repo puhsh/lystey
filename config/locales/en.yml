@@ -1,6 +1,6 @@
 en:
   enumerize:
-    realtor:
+    agent:
       license_type:
         sale: "Salesperson"
         brk: "Individual Broker"
