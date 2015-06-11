@@ -47,7 +47,7 @@
           .twelve.columns
             = f.text_field :email, class: 'u-full-width', placeholder: 'Email'
 
-        = f.fields_for :addresses, @agent.addresses.office_first do |oa|
+        = f.fields_for :addresses, [@office_address, @mailing_address] do |oa|
           - if oa.object.address_type == :office
             %h1.section-heading Office Address
           - else
