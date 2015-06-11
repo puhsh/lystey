@@ -30,6 +30,15 @@
 
 .form {
   margin-bottom: 0px;
+
+  .section-heading {
+    margin-bottom: 5px;
+    margin-top: 15px;
+    &:first-child {
+      margin-top: 5px;
+    }
+  }
+
   input {
     @include input-focus;
     border-radius: 0;
@@ -41,5 +50,10 @@
       @extend .button;
       margin: 20px 0;
     }
+  }
+
+  input,
+  select {
+    margin-bottom: 10px;
   }
 }
