@@ -29,6 +29,9 @@
 .select {
   @include input-focus;
   border: 1px solid $black25;
+  &:disabled {
+    opacity: 0.5;
+  }
 }
 
 

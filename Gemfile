@@ -22,6 +22,10 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-skeleton'
   gem 'rails-assets-normalize-css'
   gem 'rails-assets-reflux'
+  gem 'rails-assets-bacon'
+  gem 'rails-assets-bacon.jquery'
+  gem 'rails-assets-bacon.model'
+
 end
 
 # Capistrano and Capistrano-related items

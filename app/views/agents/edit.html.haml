@@ -1,8 +1,5 @@
--# TODO Re-enable React when we are not trying to do a hackathon!
--# :javascript
--#   $(function() {
--#     React.render(React.createElement(LysteyAdmin, null), document.getElementById("admin"));
--#  });
+:coffeescript
+
 
 = render partial: 'admin_nav'
 
@@ -52,7 +49,7 @@
             %h1.section-heading Office Address
           - else
             %h1.section-heading.u-pull-left Mailing Address
-            = oa.check_box :same_as_office, class: 'checkbox'
+            = oa.check_box :same_as_office, class: 'checkbox js-copy-form', data: { :'from-form' => 'office', :'to-form' => 'mailing' }
             = oa.label :same_as_office, 'Same as Office', class: 'u-pull-right label'
           .row(id="#{oa.object.address_type == :office ? 'office' : 'mailing'}")
             .twelve.columns
