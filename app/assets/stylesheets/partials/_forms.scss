@@ -19,6 +19,8 @@
   &.button-primary:hover {
     background-color: $primaryRed;
     border: inherit;
+    text-decoration: underline;
+
   }
 }
 
@@ -89,7 +91,9 @@
     content: "\f096";
     font-size: 34px;
     vertical-align: middle;
-    letter-spacing: 5px;
+    letter-spacing: 10px;
+    max-width: 30px;
+    margin-right: 5px;
   }
 
   input.checkbox[type=checkbox]:checked + label:before {
