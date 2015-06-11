@@ -12,6 +12,9 @@ class AgentsController < ApplicationController
     end
   end
 
+  def update
+  end
+
   private
 
   def find_agent

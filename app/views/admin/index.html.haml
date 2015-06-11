@@ -26,13 +26,15 @@
             = f.text_field :license_number, class: 'u-full-width', placeholder: 'License Number'
         .row
           .twelve.columns
-            = f.select :license_type, options_for_select(Agent.license_type.options), { include_blank: '-- License Type --' }, { class: 'u-full-width select' }
+            = f.select :license_type, options_for_select(Agent.license_type.options), { include_blank: '-- License Type --', default: nil }, { class: 'u-full-width select' }
         .row
           .twelve.columns
             = f.text_field :license_county, class: 'u-full-width', placeholder: 'License County'
 
-        -# TODO Certification
-
+        = f.fields_for @certifications do |c|
+          .row
+            .twelve.columns
+              = c.select :certification_type, options_for_select(Certification.certification_type.options), { include_blank: '-- Certification Type --', default: nil }, { class: 'u-full-width select' }
         .row
           .twelve.columns
             = f.text_field :phone_number, class: 'u-full-width', placeholder: 'Phone Number'
@@ -54,14 +56,14 @@
               = oa.text_field :zipcode, class: 'u-full-width', placeholder: 'Zip'
 
         %h1.section-heading Mailing Address
-        = f.fields_for @mailing_address do |oa|
+        = f.fields_for @mailing_address do |ma|
           .row
             .twelve.columns
-              = oa.text_field :line_1, class: 'u-full-width', placeholder: 'Address'
-              = oa.text_field :line_2, class: 'u-full-width', placeholder: 'Address (Line 2)'
-              = oa.text_field :city, class: 'u-full-width', placeholder: 'City'
-              = oa.select :state, options_for_select(us_states), {}, { class: 'u-full-width select' }
-              = oa.text_field :zipcode, class: 'u-full-width', placeholder: 'Zip'
+              = ma.text_field :line_1, class: 'u-full-width', placeholder: 'Address'
+              = ma.text_field :line_2, class: 'u-full-width', placeholder: 'Address (Line 2)'
+              = ma.text_field :city, class: 'u-full-width', placeholder: 'City'
+              = ma.select :state, options_for_select(us_states), {}, { class: 'u-full-width select' }
+              = ma.text_field :zipcode, class: 'u-full-width', placeholder: 'Zip'
 
   .section.shaded
     .container
