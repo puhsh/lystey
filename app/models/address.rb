@@ -10,6 +10,7 @@ class Address < ActiveRecord::Base
   # Validations
 
   # Scopes
+  scope :office_first, -> { order(address_type: :desc) }
 
   # Methods
 end

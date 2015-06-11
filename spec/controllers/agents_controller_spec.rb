@@ -70,6 +70,27 @@ RSpec.describe AgentsController, :type => :controller do
         expect(assigns[:mailing_address]).to be_new_record
       end
     end
+
+    describe '#update' do
+      let(:agent) { FactoryGirl.create(:agent, :registered, first_name: 'John', last_name: 'Smith') }
+
+      it 'updates basic information' do
+        put :update, id: agent.id, agent: { first_name: 'Bill', last_name: 'Jones' }
+        expect(agent.reload.first_name).to eql('Bill')
+        expect(agent.reload.last_name).to eql('Jones')
+      end
+
+      it 'redirects to the edit page after a successful update' do
+        put :update, id: agent.id, agent: { first_name: 'Bill', last_name: 'Jones' }
+        expect(response).to redirect_to(edit_agent_path(agent))
+      end
+
+      it 'redirects to the edit path with an error if there is not a successful update' do
+        put :update, id: agent.id, agent: { first_name: nil, last_name: 'Jones' }
+        expect(response).to redirect_to(edit_agent_path(agent))
+        expect(flash[:alert]).to be_present
+      end
+    end
   end
 
   context 'json' do

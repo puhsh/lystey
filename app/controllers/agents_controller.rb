@@ -24,12 +24,22 @@ class AgentsController < ApplicationController
 
         format.html
       else
-        format.html { redirect_to agent_path(@agent) }
+        format.html { redirect_to edit_agent_path(@agent) }
       end
     end
   end
 
   def update
+    respond_to do |format|
+      if @agent.update_attributes(agent_params)
+        format.html { redirect_to edit_agent_path(@agent) }
+      else
+        format.html {
+          flash[:alert] = 'Error'
+          redirect_to edit_agent_path(@agent)
+        }
+      end
+    end
   end
 
   private
@@ -46,4 +56,7 @@ class AgentsController < ApplicationController
     params[:id] && params[:id] == @agent.friendly_id
   end
 
+  def agent_params
+    params.require(:agent).permit!
+  end
 end
