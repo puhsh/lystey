@@ -12,17 +12,30 @@ class AgentsController < ApplicationController
     end
   end
 
+  def edit
+    respond_to do |format|
+      if @agent
+        @office_address = @agent.addresses.where(address_type: :office).first || @agent.addresses.build(address_type: :office)
+        @mailing_address = @agent.addresses.where(address_type: :mailing).first || @agent.addresses.build(address_type: :mailing)
+
+        if @agent.certifications.blank?
+          @agent.certifications.build
+        end
+
+        format.html
+      else
+        format.html { redirect_to agent_path(@agent) }
+      end
+    end
+  end
+
   def update
   end
 
   private
 
   def find_agent
-    if request.subdomain.present?
-      @agent = Agent.friendly.find(request.subdomain)
-    else
-      @agent = Agent.friendly.find(params[:id])
-    end
+    @agent = Agent.friendly.find(params[:id])
   end
 
   def id_param?
