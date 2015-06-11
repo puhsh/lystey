@@ -6,11 +6,12 @@
 
 = render partial: 'nav'
 
-.container
-  .row
-    .twelve.columns
-      %h1.section-heading General Information
-      = form_for @agent, html: { class: 'form' } do |f|
+= form_for @agent, html: { class: 'form' } do |f|
+  .container
+    .row
+      .twelve.columns
+        %h1.section-heading General Information
+
         .row
           .twelve.columns
             = f.text_field :first_name, class: 'u-full-width', placeholder: 'First Name'
@@ -61,3 +62,9 @@
               = oa.text_field :city, class: 'u-full-width', placeholder: 'City'
               = oa.select :state, options_for_select(us_states), {}, { class: 'u-full-width select' }
               = oa.text_field :zipcode, class: 'u-full-width', placeholder: 'Zip'
+
+  .section.shaded
+    .container
+      .row
+        .twelve.columns
+          = f.submit 'Save Changes', class: 'button button-primary button-submit u-full-width'

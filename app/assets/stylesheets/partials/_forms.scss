@@ -8,7 +8,7 @@
 
 
 .button {
-  border: 1px solid $primaryRed;
+  border: 1px solid $primaryRed !important;
   font-size: $h3FontSize;
   text-transform: none;
   border-radius: 10px;
@@ -29,11 +29,17 @@
 
 
 .form {
+  margin-bottom: 0px;
   input {
     @include input-focus;
     border-radius: 0;
     font-size: $h1FontSize;
     font-weight: 300;
     height: 50px;
+
+    &.button {
+      @extend .button;
+      margin: 20px 0;
+    }
   }
 }
