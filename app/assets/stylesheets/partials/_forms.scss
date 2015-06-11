@@ -50,6 +50,10 @@
       @extend .button;
       margin: 20px 0;
     }
+
+    &:disabled {
+      color: $black25;
+    }
   }
 
   input,
@@ -66,5 +70,29 @@
 
   .submit-section {
     margin-bottom: 0;
+  }
+
+  .label {
+    font-size: $labelFontSize;
+    color: $baseFontColor;
+    font-weight: 300;
+    margin-bottom: 0;
+    height: inherit;
+  }
+
+  input.checkbox[type=checkbox] {
+    display: none;
+  }
+  input.checkbox[type=checkbox] + label:before {
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f096";
+    font-size: 34px;
+    vertical-align: middle;
+    letter-spacing: 5px;
+  }
+
+  input.checkbox[type=checkbox]:checked + label:before {
+    content: "\f046";
   }
 }

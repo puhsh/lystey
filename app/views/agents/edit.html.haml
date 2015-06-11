@@ -51,8 +51,10 @@
           - if oa.object.address_type == :office
             %h1.section-heading Office Address
           - else
-            %h1.section-heading Mailing Address
-          .row
+            %h1.section-heading.u-pull-left Mailing Address
+            = check_box_tag :valid, nil, false, class: 'checkbox'
+            = label_tag :valid, 'Same as Office', class: 'u-pull-right label'
+          .row(id="#{oa.object.address_type == :office ? 'office' : 'mailing'}")
             .twelve.columns
               = oa.text_field :line_1, class: 'u-full-width', placeholder: 'Address'
               = oa.text_field :line_2, class: 'u-full-width', placeholder: 'Address (Line 2)'
