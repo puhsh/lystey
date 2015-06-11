@@ -6,7 +6,7 @@
 
 = render partial: 'nav'
 
-= form_for @agent, html: { class: 'form' } do |f|
+= nested_form_for @agent, html: { class: 'form' } do |f|
   .container
     .row
       .twelve.columns
@@ -31,10 +31,12 @@
           .twelve.columns
             = f.text_field :license_county, class: 'u-full-width', placeholder: 'License County'
 
-        = f.fields_for @certifications do |c|
+        = f.fields_for :certifications do |c|
           .row
             .twelve.columns
               = c.select :certification_type, options_for_select(Certification.certification_type.options), { include_blank: '-- Certification Type --', default: nil }, { class: 'u-full-width select' }
+        = f.link_to_add "+ Add Another Certification", :certifications, class: 'add-field'
+
         .row
           .twelve.columns
             = f.text_field :phone_number, class: 'u-full-width', placeholder: 'Phone Number'
@@ -65,7 +67,7 @@
               = ma.select :state, options_for_select(us_states), {}, { class: 'u-full-width select' }
               = ma.text_field :zipcode, class: 'u-full-width', placeholder: 'Zip'
 
-  .section.shaded
+  .section.shaded.submit-section
     .container
       .row
         .twelve.columns

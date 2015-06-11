@@ -1,8 +1,13 @@
 a,
-a:hover {
-  color: $baseFontColor;
+a.primary-link {
+  color: $black25;
 
   &.hamburger {
     display: block;
+    color: $black85;
+  }
+
+  &:hover {
+    text-decoration: underline;
   }
 }

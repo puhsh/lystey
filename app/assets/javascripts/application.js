@@ -5,3 +5,4 @@
 //= require actions
 //= require stores
 //= require components
+//= require jquery_nested_form

@@ -56,4 +56,15 @@
   select {
     margin-bottom: 10px;
   }
+
+  .add-field {
+    @extend .primary-link;
+    margin: 5px 15px 15px 15px;
+    display: block;
+    text-decoration: none;
+  }
+
+  .submit-section {
+    margin-bottom: 0;
+  }
 }
