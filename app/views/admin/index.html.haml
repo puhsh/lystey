@@ -53,6 +53,7 @@
             .twelve.columns
               = oa.text_field :line_1, class: 'u-full-width', placeholder: 'Address'
               = oa.text_field :line_2, class: 'u-full-width', placeholder: 'Address (Line 2)'
+              = oa.text_field :line_3, class: 'u-full-width', placeholder: 'Address (Line 3)'
               = oa.text_field :city, class: 'u-full-width', placeholder: 'City'
               = oa.select :state, options_for_select(us_states), {}, { class: 'u-full-width select' }
               = oa.text_field :zipcode, class: 'u-full-width', placeholder: 'Zip'
@@ -63,6 +64,7 @@
             .twelve.columns
               = ma.text_field :line_1, class: 'u-full-width', placeholder: 'Address'
               = ma.text_field :line_2, class: 'u-full-width', placeholder: 'Address (Line 2)'
+              = ma.text_field :line_3, class: 'u-full-width', placeholder: 'Address (Line 3)'
               = ma.text_field :city, class: 'u-full-width', placeholder: 'City'
               = ma.select :state, options_for_select(us_states), {}, { class: 'u-full-width select' }
               = ma.text_field :zipcode, class: 'u-full-width', placeholder: 'Zip'
