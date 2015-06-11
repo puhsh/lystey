@@ -19,8 +19,10 @@
   &.button-primary:hover {
     background-color: $primaryRed;
     border: inherit;
-    text-decoration: underline;
+  }
 
+  &:hover {
+    text-decoration: underline;
   }
 }
 

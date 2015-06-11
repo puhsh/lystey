@@ -52,8 +52,8 @@
             %h1.section-heading Office Address
           - else
             %h1.section-heading.u-pull-left Mailing Address
-            = check_box_tag :valid, nil, false, class: 'checkbox'
-            = label_tag :valid, 'Same as Office', class: 'u-pull-right label'
+            = oa.check_box :same_as_office, class: 'checkbox'
+            = oa.label :same_as_office, 'Same as Office', class: 'u-pull-right label'
           .row(id="#{oa.object.address_type == :office ? 'office' : 'mailing'}")
             .twelve.columns
               = oa.text_field :line_1, class: 'u-full-width', placeholder: 'Address'

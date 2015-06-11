@@ -15,8 +15,8 @@ class AgentsController < ApplicationController
   def edit
     respond_to do |format|
       if @agent
-        @office_address = @agent.addresses.where(address_type: :office).first || @agent.addresses.build(address_type: :office)
-        @mailing_address = @agent.addresses.where(address_type: :mailing).first || @agent.addresses.build(address_type: :mailing)
+        @office_address = @agent.addresses.where(address_type: :office).first || @agent.addresses.build(address_type: :office, same_as_office: true)
+        @mailing_address = @agent.addresses.where(address_type: :mailing).first || @agent.addresses.build(address_type: :mailing, same_as_office: false)
 
         if @agent.certifications.blank?
           @agent.certifications.build
