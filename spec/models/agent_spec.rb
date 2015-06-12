@@ -9,6 +9,8 @@ RSpec.describe Agent, :type => :model do
   it { is_expected.to have_one(:team).dependent(:destroy) }
   it { is_expected.to have_one(:theme).dependent(:destroy) }
   it { is_expected.to have_many(:testimonials).dependent(:destroy) }
+  it { is_expected.to have_many(:guides).dependent(:destroy) }
+
 
   context 'when unregistered' do
     let(:agent) { FactoryGirl.create(:agent, first_name: 'John', last_name: 'Smith')}
