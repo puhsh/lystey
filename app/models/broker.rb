@@ -5,12 +5,14 @@ class Broker < ActiveRecord::Base
   belongs_to :agent
 
   # Validations
+  validates :name, presence: true
 
   # Scopes
 
   # Methods
 
   # Returns the name. If the broker's agent is not registered, it will return placeholder text.
+
   def name
     if agent.registered?
       self.read_attribute(:name)

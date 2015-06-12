@@ -1,0 +1,40 @@
+= form_for [@agent, @broker], html: { class: 'form' } do |f|
+  .container
+    .row
+      .twelve.columns
+        %h1.section-heading Broker Information
+        .row
+          .twelve.columns
+            = f.text_field :name, class: 'u-full-width', placeholder: 'Broker Name'
+        .row
+          .twelve.columns
+            = f.text_field :address_line_1, class: 'u-full-width', placeholder: 'Broker Address'
+        .row
+          .twelve.columns
+            = f.text_field :address_line_2, class: 'u-full-width', placeholder: 'Broker Address Line 2'
+        .row
+          .twelve.columns
+            = f.text_field :address_line_3, class: 'u-full-width', placeholder: 'Broker Address Line 3'
+        .row
+          .twelve.columns
+            = f.text_field :city, class: 'u-full-width', placeholder: 'City'
+        .row
+          .twelve.columns
+            = f.select :state, us_states, { include_blank: '-- Broker State --', default: nil }, { class: 'u-full-width select' }
+        .row
+          .twelve.columns
+            = f.text_field :zipcode, class: 'u-full-width', placeholder: 'Zip Code'
+        .row
+          .twelve.columns
+            = f.text_field :phone_number, class: 'u-full-width', placeholder: 'Broker Phone Number'
+        .row
+          .twelve.columns
+            = f.text_field :fax_number, class: 'u-full-width', placeholder: 'Broker Fax Number'
+        .row
+          .twelve.columns
+            = f.text_field :email, class: 'u-full-width', placeholder: 'Broker Email'
+  .section.shaded.submit-section
+    .container
+      .row
+        .twelve.columns
+          = f.submit 'Save Changes', class: 'button button-primary button-submit u-full-width'
