@@ -45,13 +45,14 @@
             = f.text_field :email, class: 'u-full-width', placeholder: 'Email'
 
         = f.fields_for :addresses, [@office_address, @mailing_address] do |oa|
+          = oa.hidden_field :address_type
           - if oa.object.address_type == :office
             %h1.section-heading Office Address
           - else
             %h1.section-heading.u-pull-left Mailing Address
-            = oa.check_box :same_as_office, class: 'checkbox js-copy-form', data: { :'from-form' => 'office', :'to-form' => 'mailing' }
+            = oa.check_box :same_as_office, class: 'checkbox js-duplicate-form', data: { :'from-form' => 'office', :'form-duplicate' => 'form-mailing-address' }
             = oa.label :same_as_office, 'Same as Office', class: 'u-pull-right label'
-          .row(id="#{oa.object.address_type == :office ? 'office' : 'mailing'}")
+          .row(id="form-#{oa.object.address_type == :office ? 'office' : 'mailing'}-address")
             .twelve.columns
               = oa.text_field :line_1, class: 'u-full-width', placeholder: 'Address'
               = oa.text_field :line_2, class: 'u-full-width', placeholder: 'Address (Line 2)'
@@ -59,7 +60,7 @@
               = oa.text_field :city, class: 'u-full-width', placeholder: 'City'
               = oa.select :state, us_states, {}, { class: 'u-full-width select' }
               = oa.text_field :zipcode, class: 'u-full-width', placeholder: 'Zip'
-              = oa.hidden_field :address_type
+
 
   .section.shaded.submit-section
     .container

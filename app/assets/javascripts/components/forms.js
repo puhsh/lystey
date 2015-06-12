@@ -2,19 +2,17 @@ var App = window.App;
 
 (function(window, $){
 
-  function setupCopyForms() {
-    var checkBoxChecked = Bacon.$.checkBoxValue($(".js-copy-form"));
-    var toForm = ".row#" + $(".js-copy-form").data("to-form");
-    var toFormInputs = $(toForm + " input");
-    var toFormSelects = $(toForm + " select");
+  function setupDuplicateForms() {
+    var checkBoxChecked = Bacon.$.checkBoxValue($(".js-duplicate-form"));
+    var duplicateForm = ".row#" + $(".js-duplicate-form").data("form-duplicate");
 
-    checkBoxChecked.assign($(toFormInputs), "attr", "disabled");
-    checkBoxChecked.assign($(toFormSelects), "attr", "disabled");
-    
+    checkBoxChecked.assign($(duplicateForm + " input"), "attr", "disabled");
+    checkBoxChecked.assign($(duplicateForm + " select"), "attr", "disabled");
+
   }
 
   $(function() {
-    setupCopyForms();
+    setupDuplicateForms();
   });
 
 })(window, window.jQuery);

@@ -8,9 +8,12 @@ class Address < ActiveRecord::Base
   belongs_to :agent, touch: true
 
   # Validations
+  validates :line_1, presence: true, unless: :same_as_office?
+  validates :city, presence: true, unless: :same_as_office?
+  validates :state, presence: true, unless: :same_as_office?
+  validates :zipcode, presence: true, unless: :same_as_office?
 
   # Scopes
-  scope :office_first, -> { order(address_type: :desc) }
 
   # Methods
 end

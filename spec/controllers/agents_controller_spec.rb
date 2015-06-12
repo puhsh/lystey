@@ -59,11 +59,6 @@ RSpec.describe AgentsController, :type => :controller do
         expect(assigns[:office_address]).to be_new_record
       end
 
-      it 'will set the same as office flag to true when it is a new office address record' do
-        get :edit, {id: agent.id }
-        expect(assigns[:office_address]).to be_same_as_office
-      end
-
       it 'will find the mailing address' do
         FactoryGirl.create(:address, address_type: :mailing, agent: agent)
         get :edit, {id: agent.id }
@@ -73,11 +68,6 @@ RSpec.describe AgentsController, :type => :controller do
       it 'will create a new record if it can\'t find a mailing address' do
         get :edit, {id: agent.id }
         expect(assigns[:mailing_address]).to be_new_record
-      end
-
-      it 'will not set the same as office flag to true when it is a new mailing address record' do
-        get :edit, {id: agent.id }
-        expect(assigns[:mailing_address]).to_not be_same_as_office
       end
     end
 
