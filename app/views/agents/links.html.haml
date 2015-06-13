@@ -1,6 +1,7 @@
 = render partial: 'shared/admin_nav'
 
 = nested_form_for @agent, html: { class: 'form' } do |f|
+  = hidden_field_tag :from_section, 'links'
   .container
     .row
       .twelve.columns
