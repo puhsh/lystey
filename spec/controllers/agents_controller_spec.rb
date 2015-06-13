@@ -90,6 +90,11 @@ RSpec.describe AgentsController, :type => :controller do
         expect(response).to redirect_to(edit_agent_path(agent))
         expect(flash[:alert]).to be_present
       end
+
+      it 'redirects to the edit guides path if the from section param is sent with the value of guides' do
+        put :update, id: agent.id, agent: { first_name: 'Bill', last_name: 'Jones' }, from_section: 'guides'
+        expect(response).to redirect_to(agent_edit_guides_path(agent))
+      end
     end
   end
 

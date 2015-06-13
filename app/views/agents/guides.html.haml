@@ -1,0 +1,20 @@
+= render partial: 'shared/admin_nav'
+
+= form_for @agent, html: { class: 'form' } do |f|
+  = hidden_field_tag :from_section, 'guides'
+  = f.fields_for :guides, [@buyers_guide, @sellers_guide] do |g|
+    = g.hidden_field :guide_type
+    .container
+      .row
+        .twelve.columns
+          - if g.object.guide_type == :buyers
+            %h1.section-heading Buyers Information
+          - else
+            %h1.section-heading Sellers Information
+          = g.text_field :guide_title,  placeholder: "Home #{g.object.guide_type.to_s.capitalize} Guide Title...", class: 'u-full-width'
+          = g.text_area :content, rows: 20, placeholder: "Home #{g.object.guide_type.to_s.capitalize} Guide Copy...", class: 'u-full-width'
+  .section.shaded.submit-section
+    .container
+      .row
+        .twelve.columns
+          = f.submit 'Save Changes', class: 'button button-primary button-submit u-full-width'

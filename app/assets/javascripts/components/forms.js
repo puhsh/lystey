@@ -6,9 +6,8 @@ var App = window.App;
     var checkBoxChecked = Bacon.$.checkBoxValue($(".js-duplicate-form"));
     var duplicateForm = ".row#" + $(".js-duplicate-form").data("form-duplicate");
 
-    checkBoxChecked.assign($(duplicateForm + " input"), "attr", "disabled");
+    checkBoxChecked.assign($(duplicateForm), "css", "display: none");
     checkBoxChecked.assign($(duplicateForm + " select"), "attr", "disabled");
-
   }
 
   $(function() {

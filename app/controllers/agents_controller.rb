@@ -30,22 +30,39 @@ class AgentsController < ApplicationController
   end
 
   def update
+    case params[:from_section]
+    when 'guides'
+      return_path = agent_edit_guides_path(@agent)
+    else
+      return_path = edit_agent_path(@agent)
+    end
+
     respond_to do |format|
       if @agent.update_attributes(agent_params)
-        format.html { redirect_to edit_agent_path(@agent) }
+        format.html { redirect_to return_path }
       else
         format.html {
           flash[:alert] = 'Error'
-          redirect_to edit_agent_path(@agent)
+          redirect_to return_path
         }
       end
+    end
+  end
+
+  def guides
+    @buyers_guide = @agent.guides.where(guide_type: :buyers).first || @agent.guides.build(guide_type: :buyers)
+    @sellers_guide = @agent.guides.where(guide_type: :sellers).first || @agent.guides.build(guide_type: :sellers)
+
+    respond_to do |format|
+      format.html
     end
   end
 
   private
 
   def find_agent
-    @agent = Agent.friendly.find(params[:id])
+    id = params[:id] || params[:agent_id]
+    @agent = Agent.friendly.find(id)
   end
 
   def id_param?

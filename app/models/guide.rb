@@ -2,10 +2,10 @@ class Guide < ActiveRecord::Base
   extend Enumerize
 
   # Attributes
-  enumerize :guide_type, in: [:buyers, :seller]
+  enumerize :guide_type, in: [:buyers, :sellers]
 
   # Relationships
-  belongs_to :agent
+  belongs_to :agent, touch: true
 
   # Validations
 
