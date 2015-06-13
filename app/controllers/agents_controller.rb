@@ -54,9 +54,9 @@ class AgentsController < ApplicationController
 
   def links
     @theme = @agent.theme
-    @links = @agent.links
+    @links = @agent.social_links
 
-    respond_To do |format|
+    respond_to do |format|
       format.html
     end
   end
