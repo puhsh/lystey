@@ -30,13 +30,7 @@ class AgentsController < ApplicationController
   end
 
   def update
-    case params[:from_section]
-    when 'guides'
-      return_path = agent_edit_guides_path(@agent)
-    else
-      return_path = edit_agent_path(@agent)
-    end
-
+    return_path = determine_return_path
     respond_to do |format|
       if @agent.update_attributes(agent_params)
         format.html { redirect_to return_path }
@@ -69,11 +63,16 @@ class AgentsController < ApplicationController
     params[:id] && params[:id] != @agent.friendly_id
   end
 
-  def friendly_id_param?
-    params[:id] && params[:id] == @agent.friendly_id
-  end
-
   def agent_params
     params.require(:agent).permit!
+  end
+
+  def determine_return_path
+    case params[:from_section]
+    when 'guides'
+      return_path = agent_edit_guides_path(@agent)
+    else
+      return_path = edit_agent_path(@agent)
+    end
   end
 end

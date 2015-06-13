@@ -91,9 +91,36 @@ RSpec.describe AgentsController, :type => :controller do
         expect(flash[:alert]).to be_present
       end
 
-      it 'redirects to the edit guides path if the from section param is sent with the value of guides' do
+      it 'redirects to the edit guides path if the from_section param is sent with the value of guides' do
         put :update, id: agent.id, agent: { first_name: 'Bill', last_name: 'Jones' }, from_section: 'guides'
         expect(response).to redirect_to(agent_edit_guides_path(agent))
+      end
+    end
+
+    describe '#guides' do
+      let(:agent) { FactoryGirl.create(:agent, :registered, first_name: 'John', last_name: 'Smith') }
+
+      it 'finds an existing buyer guide' do
+        buyers_guide = FactoryGirl.create(:guide, guide_type: :buyers, agent: agent)
+        get :guides, agent_id: agent.id
+
+        expect(assigns[:buyers_guide]).to eq(buyers_guide)
+      end
+
+      it 'builds a new buyer guide if one does not exist' do
+        get :guides, agent_id: agent.id
+        expect(assigns[:buyers_guide]).to be_new_record
+      end
+
+      it 'finds an existing seller guide' do
+        sellers_guide = FactoryGirl.create(:guide, guide_type: :sellers, agent: agent)
+        get :guides, agent_id: agent.id
+        expect(assigns[:sellers_guide]).to eq(sellers_guide)
+      end
+
+      it 'builds a new seller guide if one does not exist' do
+        get :guides, agent_id: agent.id
+        expect(assigns[:sellers_guide]).to be_new_record
       end
     end
   end
