@@ -2,7 +2,7 @@ class SocialLink < ActiveRecord::Base
   extend Enumerize
 
   # Attributes
-  enumerize :site, in: [:personal, :facebook, :twitter, :pinterest, :google_plus, :instagram, :linkedin, :realtor, :zillow, :trulia], scopes: false, predicates: false
+  enumerize :site, in: [:facebook, :twitter, :pinterest, :google_plus, :instagram, :linkedin, :realtor, :zillow, :trulia, :personal], scopes: false, predicates: false
 
   # Relationships
   belongs_to :agent, touch: true

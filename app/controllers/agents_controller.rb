@@ -52,6 +52,15 @@ class AgentsController < ApplicationController
     end
   end
 
+  def links
+    @theme = @agent.theme
+    @links = @agent.links
+
+    respond_To do |format|
+      format.html
+    end
+  end
+
   private
 
   def find_agent
@@ -70,9 +79,11 @@ class AgentsController < ApplicationController
   def determine_return_path
     case params[:from_section]
     when 'guides'
-      return_path = agent_edit_guides_path(@agent)
+      agent_edit_guides_path(@agent)
+    when 'links'
+      agent_edit_links_path(@agent)
     else
-      return_path = edit_agent_path(@agent)
+      edit_agent_path(@agent)
     end
   end
 end
