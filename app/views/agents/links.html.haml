@@ -2,20 +2,46 @@
 
 = nested_form_for @agent, html: { class: 'form' } do |f|
   = hidden_field_tag :from_section, 'links'
-  .container
-    .row
-      .twelve.columns
-        %h1.section-heading Website URLs
-
-    = fields_for :theme do |t|
+  .section.bordered-bottom
+    .container
       .row
         .twelve.columns
-          %h1.section-heading Links Page
-          = t.text_field :link_page_title,  placeholder: "Link Page Title", class: 'u-full-width'
-          = t.text_area :link_page_main_copy, rows: 20, placeholder: "Link Page Title", class: 'u-full-width'
-    .row
-      .twelve.columns
-        %h1.section-heading Social Links
+          %h1.section-heading Website URLs
+  .section.bordered-bottom
+    = f.fields_for :theme do |t|
+      .container
+        .row
+          .twelve.columns
+            %h1.section-heading Links Page
+            = t.text_field :link_page_title,  placeholder: "Link Page Title", class: 'u-full-width'
+            = t.text_area :link_page_main_copy, rows: 20, placeholder: "Link Page Title", class: 'u-full-width'
+
+  .section.bordered-bottom
+    .container
+      .row
+        .twelve.columns
+          %h1.section-heading Social Links
+          = f.fields_for :social_links, [@facebook_link, @twitter_link, @pinterest_link, @instagram_link, @google_plus_link, @linkedin_link] do |sl|
+            .row
+              .twelve.columns
+                = sl.hidden_field :site
+                = sl.text_field :url, placeholder: "#{sl.object.site.text.to_s.downcase}.com/", class: 'u-full-width'
+
+          = f.fields_for :social_links, [@realtor, @zillow, @trulia] do |sl|
+            .row
+              .twelve.columns
+                = sl.hidden_field :site
+                = sl.text_field :url, placeholder: "username", class: 'u-full-width'
+
+  = f.fields_for :social_links, [@other_links] do |other_link_form|
+    .container
+      .row
+        .twelve.columns
+          = other_link_form.hidden_field :site
+          = other_link_form.text_field :url, placeholder: "Additional Link URL", class: 'u-full-width'
+          = other_link_form.text_field :description, placeholder: "Additional Link Description", class: 'u-full-width'
+
+
   .section.shaded.submit-section
     .container
       .row

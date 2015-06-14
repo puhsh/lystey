@@ -80,3 +80,6 @@ en:
         sior: "Society of Industrial and Office REALTORS®"
         sres: "Seniors Real Estate Specialist"
         srs: "Seller Representative Specialist"
+    social_link:
+      site:
+        google_plus: 'plus.google'

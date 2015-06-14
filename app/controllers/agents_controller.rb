@@ -56,6 +56,22 @@ class AgentsController < ApplicationController
     @theme = @agent.theme
     @links = @agent.social_links
 
+    # Social Links
+    @facebook_link = @links.where(site: :facebook).first || @agent.social_links.build(site: :facebook)
+    @twitter_link = @links.where(site: :twitter).first || @agent.social_links.build(site: :twitter)
+    @pinterest_link = @links.where(site: :pinterest).first || @agent.social_links.build(site: :pinterest)
+    @instagram_link = @links.where(site: :instagram).first || @agent.social_links.build(site: :instagram)
+    @google_plus_link = @links.where(site: :google_plus).first || @agent.social_links.build(site: :google_plus)
+    @linkedin_link = @links.where(site: :linkedin).first || @agent.social_links.build(site: :linkedin)
+
+    # Realtor Sites
+    @realtor = @links.where(site: :realtor).first || @agent.social_links.build(site: :realtor)
+    @zillow = @links.where(site: :zillow).first || @agent.social_links.build(site: :zillow)
+    @trulia = @links.where(site: :trulia).first || @agent.social_links.build(site: :trulia)
+
+    # Other links
+    @other_links = @links.where(site: :personal).first || @agent.social_links.build(site: :personal)
+
     respond_to do |format|
       format.html
     end

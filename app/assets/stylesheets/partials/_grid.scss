@@ -14,4 +14,8 @@
       margin-bottom: 0px;
     }
   }
+
+  &.bordered-bottom {
+    border-bottom: 1px solid $black25;
+  }
 }
