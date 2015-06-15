@@ -8,6 +8,8 @@ class Guide < ActiveRecord::Base
   belongs_to :agent, touch: true
 
   # Validations
+  validates :guide_title, length: { maximum: 100 }
+  validates :content, length: { maximum: 10000 }
 
   # Scopes
 
