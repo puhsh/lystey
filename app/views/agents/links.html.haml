@@ -2,11 +2,11 @@
 
 = nested_form_for @agent, html: { class: 'form' } do |f|
   = hidden_field_tag :from_section, 'links'
-  .section.bordered-bottom
-    .container
-      .row
-        .twelve.columns
-          %h1.section-heading Website URLs
+  -# .section.bordered-bottom
+  -#   .container
+  -#     .row
+  -#       .twelve.columns
+  -#         %h1.section-heading Website URLs
 
   .section.bordered-bottom
     = f.fields_for :theme do |t|
@@ -37,13 +37,18 @@
             = sl.label :url, "#{sl.object.site.text.downcase}.com/", class: 'label text-label'
             = sl.text_field :url, placeholder: "username", class: 'u-full-width'
 
-  = f.fields_for :social_links, [@other_links] do |other_link_form|
+  = f.fields_for :social_links, @other_links do |other_link_form|
     .container
       .row
         .twelve.columns
-          = other_link_form.hidden_field :site
+          = other_link_form.hidden_field :site, value: 'personal'
           = other_link_form.text_field :url, placeholder: "Additional Link URL", class: 'u-full-width'
           = other_link_form.text_field :description, placeholder: "Additional Link Description", class: 'u-full-width'
+
+  .container
+    .row
+      .twelve.columns
+        = f.link_to_add "+ Add Another Link", :social_links, class: 'add-field left'
 
 
   .section.shaded.submit-section

@@ -70,7 +70,11 @@ class AgentsController < ApplicationController
     @trulia = @links.where(site: :trulia).first || @agent.social_links.build(site: :trulia)
 
     # Other links
-    @other_links = @links.where(site: :personal).first || @agent.social_links.build(site: :personal)
+    @other_links = @links.where(site: :personal)
+    
+    if @other_links.empty?
+      @other_links = @agent.social_links.build(site: :personal)
+    end
 
     respond_to do |format|
       format.html
