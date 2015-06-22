@@ -21,17 +21,20 @@
       .row
         .twelve.columns
           %h1.section-heading Social Links
-          = f.fields_for :social_links, [@facebook_link, @twitter_link, @pinterest_link, @instagram_link, @google_plus_link, @linkedin_link] do |sl|
-            .row
-              .twelve.columns
-                = sl.hidden_field :site
-                = sl.text_field :url, placeholder: "#{sl.object.site.text.to_s.downcase}.com/", class: 'u-full-width'
+      = f.fields_for :social_links, [@facebook_link, @twitter_link, @pinterest_link, @instagram_link, @google_plus_link, @linkedin_link] do |sl|
+        = sl.hidden_field :site
+        .row
+          .twelve.columns.inline-section
+            = sl.label :url  do
+              %i.fa.fa-3x(class="#{font_awesome_icon_for_social_site(sl.object.site.text.downcase)}")
+            = sl.text_field :url, placeholder: "#{sl.object.site.text.to_s.downcase}.com/", class: 'u-full-width'
 
-          = f.fields_for :social_links, [@realtor, @zillow, @trulia] do |sl|
-            .row
-              .twelve.columns
-                = sl.hidden_field :site
-                = sl.text_field :url, placeholder: "username", class: 'u-full-width'
+      = f.fields_for :social_links, [@realtor, @zillow, @trulia] do |sl|
+        .row
+          .twelve.columns.inline-section.centered
+            = sl.hidden_field :site
+            = sl.label :url, "#{sl.object.site.text.downcase}.com/", class: 'label text-label'
+            = sl.text_field :url, placeholder: "username", class: 'u-full-width'
 
   = f.fields_for :social_links, [@other_links] do |other_link_form|
     .container

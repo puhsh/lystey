@@ -74,24 +74,6 @@
     margin-bottom: 10px;
   }
 
-  .add-field {
-    @extend .primary-link;
-    margin: 5px 15px 15px 15px;
-    display: block;
-    text-decoration: none;
-  }
-
-  .submit-section {
-    margin-bottom: 0;
-  }
-
-  .label {
-    font-size: $labelFontSize;
-    color: $baseFontColor;
-    font-weight: 300;
-    margin-bottom: 0;
-    height: inherit;
-  }
 
   input.checkbox[type=checkbox] {
     display: none;
@@ -109,5 +91,49 @@
 
   input.checkbox[type=checkbox]:checked + label:before {
     content: "\f046";
+  }
+
+  .add-field {
+    @extend .primary-link;
+    margin: 5px 15px 15px 15px;
+    display: block;
+    text-decoration: none;
+  }
+
+  .submit-section {
+    margin-bottom: 0;
+  }
+
+  .label {
+    font-size: $labelFontSize !important;
+    color: $baseFontColor;
+    font-weight: 300;
+    margin-bottom: 0;
+    height: inherit;
+  }
+
+  .inline-section {
+    display: flex;
+    flex-flow: row no-wrap;
+    &.centered {
+      align-items: center;
+    }
+    label {
+      order: 1;
+      float: left;
+      margin-right: 15px;
+      width: 45px;
+      &.text-label {
+        width: 175px;
+        margin-right: 0px;
+        @media (min-width: 550px) {
+          width: 27%;
+          font-size: $h1FontSize !important;
+        }
+      }
+    }
+    input {
+      order: 2;
+    }
   }
 }

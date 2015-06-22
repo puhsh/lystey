@@ -55,4 +55,15 @@ module ApplicationHelper
       ['Wyoming', 'WY']
     ]
   end
+
+  def font_awesome_icon_for_social_site(social_site)
+    case social_site
+    when 'plus.google'
+      'fa-google-plus-square'
+    when 'instagram'
+      'fa-instagram'
+    else
+       "fa-#{social_site}-square"
+     end
+  end
 end
