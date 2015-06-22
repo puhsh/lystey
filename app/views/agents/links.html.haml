@@ -7,6 +7,7 @@
       .row
         .twelve.columns
           %h1.section-heading Website URLs
+
   .section.bordered-bottom
     = f.fields_for :theme do |t|
       .container
@@ -14,7 +15,7 @@
           .twelve.columns
             %h1.section-heading Links Page
             = t.text_field :link_page_title,  placeholder: "Link Page Title", class: 'u-full-width'
-            = t.text_area :link_page_main_copy, rows: 20, placeholder: "Link Page Title", class: 'u-full-width'
+            = t.text_area :link_page_main_copy, rows: 20, placeholder: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt ultricies ex, sed accumsan nisl porttitor non. Integer iaculis ut orci at condimentum. Donec at odio sed magna malesuada porta.", class: 'u-full-width'
 
   .section.bordered-bottom
     .container

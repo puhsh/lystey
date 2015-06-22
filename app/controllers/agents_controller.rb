@@ -53,7 +53,7 @@ class AgentsController < ApplicationController
   end
 
   def links
-    @theme = @agent.theme
+    @theme = @agent.theme || @agent.build_theme
     @links = @agent.social_links
 
     # Social Links
