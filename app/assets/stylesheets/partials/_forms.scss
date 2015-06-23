@@ -6,7 +6,6 @@
   }
 }
 
-
 .button {
   border: 1px solid $primaryRed !important;
   font-size: $h3FontSize;
@@ -34,7 +33,6 @@
   }
 }
 
-
 .form {
   margin-bottom: 0px;
 
@@ -45,6 +43,38 @@
       margin-top: 5px;
     }
   }
+
+  label.label {
+    font-size: $labelFontSize !important;
+    color: $baseFontColor;
+    font-weight: 300;
+    margin-bottom: 0;
+    height: inherit;
+  }
+
+  input,
+  select {
+    margin-bottom: 10px;
+  }
+
+  input.checkbox[type=checkbox] {
+    display: none;
+  }
+  input.checkbox[type=checkbox] + label:before {
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f096";
+    font-size: 34px;
+    vertical-align: middle;
+    letter-spacing: 10px;
+    max-width: 30px;
+    margin-right: 5px;
+  }
+
+  input.checkbox[type=checkbox]:checked + label:before {
+    content: "\f046";
+  }
+
 
   input,
   textarea {
@@ -67,30 +97,7 @@
   textarea {
     height: 160px;
     resize: none;
-  }
-
-  input,
-  select {
-    margin-bottom: 10px;
-  }
-
-
-  input.checkbox[type=checkbox] {
-    display: none;
-  }
-  input.checkbox[type=checkbox] + label:before {
-    font-family: FontAwesome;
-    display: inline-block;
-    content: "\f096";
-    font-size: 34px;
-    vertical-align: middle;
-    letter-spacing: 10px;
-    max-width: 30px;
-    margin-right: 5px;
-  }
-
-  input.checkbox[type=checkbox]:checked + label:before {
-    content: "\f046";
+    line-height: 1;
   }
 
   .add-field {
@@ -106,14 +113,6 @@
 
   .submit-section {
     margin-bottom: 0;
-  }
-
-  .label {
-    font-size: $labelFontSize !important;
-    color: $baseFontColor;
-    font-weight: 300;
-    margin-bottom: 0;
-    height: inherit;
   }
 
   .inline-section {
