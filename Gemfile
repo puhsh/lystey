@@ -10,6 +10,7 @@ gem 'pg'
 gem 'haml'
 
 # Assets and Asset-related items
+gem "autoprefixer-rails"
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -25,7 +26,6 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bacon'
   gem 'rails-assets-bacon.jquery'
   gem 'rails-assets-bacon.model'
-
 end
 
 # Capistrano and Capistrano-related items
