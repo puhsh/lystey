@@ -116,7 +116,7 @@
   }
 
   .inline-section {
-    display: flex;
+    display: inline-flex;
     flex-flow: row nowrap;
     justify-content: space-around ;
 
@@ -127,7 +127,7 @@
     label {
       order: 1;
       margin-right: 15px;
-      flex: 2 1 auto;
+      flex: auto 0 1 175px;
 
       &.icon-label {
         width: 45px !important;
@@ -135,9 +135,6 @@
 
       &.text-label {
         @extend .label;
-        width: 25%;
-
-
         &.centered-label {
           padding-top: 10px;
         }
@@ -146,7 +143,7 @@
 
     input {
       order: 2;
-      flex: 0 1 auto;
+      flex: auto 1 1 auto;
     }
 
     &.with-loading-area {
@@ -155,7 +152,7 @@
       }
       .loading-area {
         order: 3;
-        flex: 0 1 auto;
+        flex: auto 0 1 auto;
         width: 15%;
         text-align: right;
       }
