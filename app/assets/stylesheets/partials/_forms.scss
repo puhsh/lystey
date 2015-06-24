@@ -44,8 +44,8 @@
     }
   }
 
-  label.label {
-    font-size: $labelFontSize !important;
+  .label {
+    font-size: $labelFontSize;
     color: $baseFontColor;
     font-weight: 300;
     margin-bottom: 0;
@@ -117,26 +117,48 @@
 
   .inline-section {
     display: flex;
-    flex-flow: row no-wrap;
+    flex-flow: row nowrap;
+    justify-content: space-around ;
+
     &.centered {
       align-items: center;
     }
+
     label {
       order: 1;
-      float: left;
       margin-right: 15px;
-      width: 45px;
+      flex: 2 1 auto;
+
+      &.icon-label {
+        width: 45px !important;
+      }
+
       &.text-label {
-        width: 175px;
-        margin-right: 0px;
-        @media (min-width: 550px) {
-          width: 27%;
-          font-size: $h1FontSize !important;
+        @extend .label;
+        width: 25%;
+
+
+        &.centered-label {
+          padding-top: 10px;
         }
       }
     }
+
     input {
       order: 2;
+      flex: 0 1 auto;
+    }
+
+    &.with-loading-area {
+      input {
+        width: 60%;
+      }
+      .loading-area {
+        order: 3;
+        flex: 0 1 auto;
+        width: 15%;
+        text-align: right;
+      }
     }
   }
 }

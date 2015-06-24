@@ -2,11 +2,17 @@
 
 = nested_form_for @agent, html: { class: 'form' } do |f|
   = hidden_field_tag :from_section, 'links'
-  -# .section.bordered-bottom
-  -#   .container
-  -#     .row
-  -#       .twelve.columns
-  -#         %h1.section-heading Website URLs
+  .section.bordered-bottom
+    .container
+      .row
+        .twelve.columns
+          %h1.section-heading Website URLs
+      .row
+        .twelve.columns.inline-section.with-loading-area
+          = f.label :slug, "lystey.com/", class: 'text-label centered-label'
+          = f.text_field :slug
+          .loading-area
+            %i.fa.fa-3x.fa-check.icon-red
 
   .section.bordered-bottom
     = f.fields_for :theme do |t|
@@ -26,15 +32,15 @@
         = sl.hidden_field :site
         .row
           .twelve.columns.inline-section
-            = sl.label :url  do
+            = sl.label :url, class: 'icon-label'  do
               %i.fa.fa-3x(class="#{font_awesome_icon_for_social_site(sl.object.site.text.downcase)}")
             = sl.text_field :url, placeholder: "#{sl.object.site.text.to_s.downcase}.com/", class: 'u-full-width'
 
       = f.fields_for :social_links, [@realtor, @zillow, @trulia] do |sl|
         .row
-          .twelve.columns.inline-section.centered
+          .twelve.columns.inline-section
             = sl.hidden_field :site
-            = sl.label :url, "#{sl.object.site.text.downcase}.com/", class: 'label text-label'
+            = sl.label :url, "#{sl.object.site.text.downcase}.com/", class: 'text-label centered-label'
             = sl.text_field :url, placeholder: "username", class: 'u-full-width'
 
   = f.fields_for :social_links, @other_links do |other_link_form|
