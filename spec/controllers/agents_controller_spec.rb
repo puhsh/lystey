@@ -95,6 +95,16 @@ RSpec.describe AgentsController, :type => :controller do
         put :update, id: agent.id, agent: { first_name: 'Bill', last_name: 'Jones' }, from_section: 'guides'
         expect(response).to redirect_to(agent_edit_guides_path(agent))
       end
+
+      it 'redirects to the edit links path if the from_section param is sent with the value of links' do
+        put :update, id: agent.id, agent: { first_name: 'Bill', last_name: 'Jones' }, from_section: 'links'
+        expect(response).to redirect_to(agent_edit_links_path(agent))
+      end
+
+      it 'redirects to the edit testimonials path if the from_section param is sent with the value of testimonials' do
+        put :update, id: agent.id, agent: { first_name: 'Bill', last_name: 'Jones' }, from_section: 'testimonials'
+        expect(response).to redirect_to(agent_edit_testimonials_path(agent))
+      end
     end
 
     describe '#guides' do

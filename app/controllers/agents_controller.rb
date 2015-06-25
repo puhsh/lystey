@@ -71,11 +71,19 @@ class AgentsController < ApplicationController
 
     # Other links
     @other_links = @links.where(site: :personal)
-    
+
     if @other_links.empty?
       @other_links = @agent.social_links.build(site: :personal)
     end
 
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def testimonials
+    @testimonials = @agent.testimonials
+    
     respond_to do |format|
       format.html
     end
@@ -100,6 +108,8 @@ class AgentsController < ApplicationController
     case params[:from_section]
     when 'guides'
       agent_edit_guides_path(@agent)
+    when 'testimonials'
+      agent_edit_testimonials_path(@agent)
     when 'links'
       agent_edit_links_path(@agent)
     else
