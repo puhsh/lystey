@@ -66,4 +66,18 @@ module ApplicationHelper
        "fa-#{social_site}-square"
      end
   end
+
+  def admin_nav_links(agent)
+    [
+      ['Basic Information', edit_agent_path(agent)],
+      ['About Section', nil],
+      ['Membership', nil],
+      ['Brokers', agent_edit_brokers_path(agent)],
+      ['Buyers & Sellers Info', agent_edit_guides_path(agent)],
+      ['Graphics', nil],
+      ['Links', agent_edit_links_path(agent)],
+      ['Team Section', nil],
+      ['Testimonials', agent_edit_testimonials_path(agent)]
+    ]
+  end
 end

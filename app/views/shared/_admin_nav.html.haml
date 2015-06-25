@@ -2,7 +2,5 @@
   .container.section
     .row
       .twelve.columns
-        %select.u-full-width.nav-select
-          %option{:value => "1"}
-            About Section
-        %button.button.button-primary.nav-button Go
+        = select_tag 'admin_nav', options_for_select(admin_nav_links(@agent), request.fullpath), class: 'u-full-width nav-select js-select-navigation'
+        %button.button.button-primary.nav-button.js-navigation-button Go

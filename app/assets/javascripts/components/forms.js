@@ -1,6 +1,6 @@
-var App = window.App;
+var App = window.App || {};
 
-(function(window, $){
+(function(window, $) {
 
   function setupDuplicateForms() {
     var checkBoxChecked = Bacon.$.checkBoxValue($(".js-duplicate-form"));
