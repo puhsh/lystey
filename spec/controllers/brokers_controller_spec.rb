@@ -21,7 +21,7 @@ RSpec.describe BrokersController, type: :controller do
         broker = FactoryGirl.create(:broker, agent: agent)
 
         get :new, agent_id: agent.id
-        expect(response).to redirect_to(edit_agent_broker_path(agent, broker))
+        expect(response).to redirect_to(agent_edit_brokers_path)
       end
 
       it 'does not create a new broker record if one exists' do
@@ -41,7 +41,7 @@ RSpec.describe BrokersController, type: :controller do
 
       it 'redirects to the edit page for the broker after creating' do
         post :create, agent_id: agent.id, broker: { name: 'Test' }
-        expect(response).to redirect_to(edit_agent_broker_path(agent, assigns[:broker]))
+        expect(response).to redirect_to(agent_edit_brokers_path)
       end
 
       it 'redirects to the new page if it is not created' do
@@ -70,7 +70,7 @@ RSpec.describe BrokersController, type: :controller do
 
       it 'redirects to the edit page for the broker after update' do
         put :update, agent_id: agent.id, id: broker.id, broker: { name: 'Test Update' }
-        expect(response).to redirect_to(edit_agent_broker_path(agent, assigns[:broker]))
+        expect(response).to redirect_to(agent_edit_brokers_path)
       end
 
       it 'redirects to the edit page if it is not update' do

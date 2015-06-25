@@ -11,7 +11,7 @@ class BrokersController < ApplicationController
       if @broker.new_record?
         format.html
       else
-        format.html { redirect_to edit_agent_broker_path(@agent, @broker) }
+        format.html { redirect_to agent_edit_brokers_path }
       end
     end
   end
@@ -20,7 +20,7 @@ class BrokersController < ApplicationController
     @broker = @agent.build_broker(broker_params)
     respond_to do |format|
       if @broker.save
-        format.html { redirect_to edit_agent_broker_path(@agent, @broker) }
+        format.html { redirect_to agent_edit_brokers_path }
       else
         format.html {
           flash[:alert] = 'Error'
@@ -42,7 +42,7 @@ class BrokersController < ApplicationController
 
     respond_to do |format|
       if @broker.update_attributes(broker_params)
-        format.html { redirect_to edit_agent_broker_path(@agent, @broker) }
+        format.html { redirect_to agent_edit_brokers_path }
       else
         format.html {
           flash[:alert] = 'Error'
