@@ -8,11 +8,19 @@
         .twelve.columns
           %h1.section-heading Website URLs
       .row
-        .twelve.columns.inline-section.with-loading-area
-          = f.label :slug, "lystey.com/", class: 'text-label centered-label'
-          = f.text_field :slug
-          .loading-area
-            %i.fa.fa-3x.fa-check.icon-red
+        .twelve.columns.inline-section.centered
+          = f.label :slug, 'lystey.com/', class: 'text-label'
+          = f.text_field :slug, class: 'u-full-width'
+      = f.fields_for :theme do |t|
+        .row
+          .twelve.columns
+            = t.text_field :domain_name, placeholder: 'yourwebsiterurl.com', class: 'u-full-width'
+        .row
+          .twelve.columns.inline-section.centered
+            %span.text-label.label Foward/Mask URL
+            .switch
+              = t.check_box :forward_url, class: 'switch-toggle'
+              = t.label :forward_url, nil
 
   .section.bordered-bottom
     = f.fields_for :theme do |t|
@@ -38,9 +46,9 @@
 
       = f.fields_for :social_links, [@realtor, @zillow, @trulia] do |sl|
         .row
-          .twelve.columns.inline-section
+          .twelve.columns.inline-section.centered
             = sl.hidden_field :site
-            = sl.label :url, "#{sl.object.site.text.downcase}.com/", class: 'text-label centered-label'
+            = sl.label :url, "#{sl.object.site.text.downcase}.com/", class: 'text-label'
             = sl.text_field :url, placeholder: "username", class: 'u-full-width'
 
   = f.fields_for :social_links, @other_links do |other_link_form|

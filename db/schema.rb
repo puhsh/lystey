@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150613220016) do
+ActiveRecord::Schema.define(version: 20150624224850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -168,10 +168,12 @@ ActiveRecord::Schema.define(version: 20150613220016) do
     t.string   "font"
     t.string   "testimonial_page_title"
     t.text     "testimonial_page_main_copy"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.string   "link_page_title"
     t.text     "link_page_main_copy"
+    t.string   "domain_name"
+    t.boolean  "forward_url",                default: false
   end
 
   add_index "themes", ["agent_id"], name: "index_themes_on_agent_id", using: :btree
