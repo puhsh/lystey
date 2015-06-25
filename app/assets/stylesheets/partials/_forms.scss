@@ -56,7 +56,6 @@
   select,
   textarea {
     margin-bottom: 10px;
-    border-radius: $defaultInputBorderRadius !important;
   }
 
   input.checkbox[type=checkbox] {
@@ -81,7 +80,7 @@
   input,
   textarea {
     @include input-focus;
-    border-radius: 0;
+    border-radius: $defaultInputBorderRadius;
     font-size: $h1FontSize;
     font-weight: 300;
     height: $inputHeight;
