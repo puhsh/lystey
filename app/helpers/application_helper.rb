@@ -72,9 +72,9 @@ module ApplicationHelper
       ['Basic Information', edit_agent_path(agent)],
       ['About Section', nil],
       ['Membership', nil],
-      ['Brokers', agent_edit_brokers_path(agent)],
+      ['Brokers', new_agent_broker_path(agent)],
       ['Buyers & Sellers Info', agent_edit_guides_path(agent)],
-      ['Graphics', nil],
+      ['Graphics', agent_edit_themes_path(agent)],
       ['Links', agent_edit_links_path(agent)],
       ['Team Section', nil],
       ['Testimonials', agent_edit_testimonials_path(agent)]
