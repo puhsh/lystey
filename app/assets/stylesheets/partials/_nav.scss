@@ -11,10 +11,8 @@
   #nav-heading {
     float: left;
 
-    h2.heading-text,
-    h3.heading-text {
+    .heading-text {
       margin-bottom: 0px;
-
     }
 
     @media (max-width: 380px) {
