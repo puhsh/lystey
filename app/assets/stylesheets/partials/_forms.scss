@@ -177,6 +177,7 @@
     padding: 4px;
     content: "";
     border: 1px solid $black25;
+    border-radius: $defaultInputBorderRadius !important;
   }
 
   .switch-toggle + label:before,
