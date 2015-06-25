@@ -83,7 +83,11 @@ class AgentsController < ApplicationController
 
   def testimonials
     @testimonials = @agent.testimonials
-    
+
+    if @testimonials.empty?
+      @agent.testimonials.build
+    end
+
     respond_to do |format|
       format.html
     end
