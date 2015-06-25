@@ -2,6 +2,11 @@ class ThemesController < ApplicationController
   before_filter :find_agent
 
   def edit
+    @theme = @agent.theme
+
+    respond_to do |format|
+      format.html
+    end
   end
 
   private

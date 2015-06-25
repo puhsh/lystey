@@ -33,6 +33,67 @@
   }
 }
 
+
+.switch {
+  label {
+    color: $white;
+  }
+
+  .switch-toggle {
+    position: absolute;
+    margin-left: -9999px;
+    visibility: hidden;
+  }
+
+  .switch-toggle + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+
+    width: 160px;
+    height: $inputHeight;
+    padding: 4px;
+    content: "";
+    border: 1px solid $black25;
+    border-radius: $defaultInputBorderRadius !important;
+  }
+
+  .switch-toggle + label:before,
+  .switch-toggle + label:after {
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    content: "";
+  }
+
+  .switch-toggle + label:before {
+    transition: background 0.4s;
+  }
+
+  .switch-toggle + label:after {
+    width: 70px;
+    background-color: $primaryRed;
+    border-radius: $defaultBorderRadius;
+    transition: margin 0.4s;
+    margin-left: 80px;
+    content: "No";
+    font-size: $h2FontSize;
+    text-align: center;
+    font-weight: 500;
+    padding-top: 4px;
+  }
+
+  .switch-toggle:checked + label:after {
+    margin-left: 5px;
+    transition: margin 0.4s;
+    content: "Yes";
+  }
+}
+
 .form {
   margin-bottom: 0px;
 
@@ -141,7 +202,8 @@
       }
     }
 
-    input {
+    input,
+    select {
       order: 2;
       flex: 1 1 auto;
     }
@@ -150,65 +212,5 @@
       order: 2;
       flex: 0 1 auto;
     }
-  }
-}
-
-.switch {
-  label {
-    color: $white;
-  }
-
-  .switch-toggle {
-    position: absolute;
-    margin-left: -9999px;
-    visibility: hidden;
-  }
-
-  .switch-toggle + label {
-    display: block;
-    position: relative;
-    cursor: pointer;
-    outline: none;
-    user-select: none;
-
-    width: 160px;
-    height: $inputHeight;
-    padding: 4px;
-    content: "";
-    border: 1px solid $black25;
-    border-radius: $defaultInputBorderRadius !important;
-  }
-
-  .switch-toggle + label:before,
-  .switch-toggle + label:after {
-    display: block;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    bottom: 2px;
-    content: "";
-  }
-
-  .switch-toggle + label:before {
-    transition: background 0.4s;
-  }
-
-  .switch-toggle + label:after {
-    width: 70px;
-    background-color: $primaryRed;
-    border-radius: $defaultBorderRadius;
-    transition: margin 0.4s;
-    margin-left: 80px;
-    content: "No";
-    font-size: $h2FontSize;
-    text-align: center;
-    font-weight: 500;
-    padding-top: 4px;
-  }
-
-  .switch-toggle:checked + label:after {
-    margin-left: 5px;
-    transition: margin 0.4s;
-    content: "Yes";
   }
 }

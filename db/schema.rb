@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150624224850) do
+ActiveRecord::Schema.define(version: 20150625180621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -162,18 +162,21 @@ ActiveRecord::Schema.define(version: 20150624224850) do
   create_table "themes", force: :cascade do |t|
     t.integer  "agent_id"
     t.string   "tagline"
-    t.string   "background_color"
-    t.string   "font_color"
-    t.string   "button_color"
-    t.string   "font"
+    t.string   "background_color",           default: "#ffffff"
+    t.string   "font_color",                 default: "#000000"
+    t.string   "button_color",               default: "#930b12"
+    t.string   "font",                       default: "helvetica"
     t.string   "testimonial_page_title"
     t.text     "testimonial_page_main_copy"
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
     t.string   "link_page_title"
     t.text     "link_page_main_copy"
     t.string   "domain_name"
     t.boolean  "forward_url",                default: false
+    t.string   "site_title"
+    t.string   "site_subtitle"
+    t.string   "button_text_color",          default: "#ffffff"
   end
 
   add_index "themes", ["agent_id"], name: "index_themes_on_agent_id", using: :btree

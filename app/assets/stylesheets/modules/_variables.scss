@@ -24,7 +24,8 @@ $baseFontWeight: normal;
 $h1FontSize: 20px;
 $h2FontSize: 15px;
 $h3FontSize: 12px;
-$placeholderFontSize: 30px;
+$baseFontSize: $h3FontSize;
+$placeholderFontSize: $h1FontSize;
 
 // Forms
 $placeholderFontSize: $h1FontSize;
