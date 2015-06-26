@@ -178,6 +178,16 @@
     }
   }
 
+  .color-preview {
+    order: 3;
+    flex: 1 1 40px;
+    border: 1px solid $black25;
+    height: $inputHeight;
+    min-width: $inputHeight;
+    border-radius: $defaultInputBorderRadius + 2px;
+    margin-left: 10px;
+  }
+
   .submit-section {
     margin-bottom: 0;
   }
@@ -198,11 +208,10 @@
       &.text-label {
         @extend .label;
         flex: 2 1 130px;
-        margin-right: 5px;
+        margin-right: 10px;
 
         &.switch-label {
           flex: 2 1 175px;
-
         }
       }
     }
@@ -211,6 +220,16 @@
     select {
       order: 2;
       flex: 1 2 auto;
+
+      &.color-picker {
+        flex: 1 5 auto;
+      }
+
+      &.font-select {
+        flex: 0 3 auto;
+        align-self: flex-start;
+      }
+
       @media all and (min-width: 750px) {
         flex: 1 1 auto;
       }

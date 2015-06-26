@@ -28,24 +28,31 @@
       .row
         .twelve.columns.inline-section
           = f.label :background_color, 'Background', class: 'text-label'
-          = f.text_field :background_color, class: 'u-full-width'
+          = f.text_field :background_color, class: 'u-full-width color-picker'
+          .color-preview(style="background-color: #{f.object.background_color}")
       .row
-        .twelve.columns
+        .twelve.columns.inline-section
           = f.label :font_color, 'Font Color', class: 'text-label'
-          = f.text_field :font_color, class: 'u-full-width'
-      .row
-        .twelve.columns
-          = f.label :button_color, 'Button Color', class: 'text-label'
-          = f.text_field :button_color, class: 'u-full-width'
-      .row
-        .twelve.columns
-          = f.label :button_text_color, 'Button Text', class: 'text-label'
-          = f.text_field :button_text_color, class: 'u-full-width'
+          = f.text_field :font_color, class: 'u-full-width color-picker'
+          .color-preview(style="background-color: #{f.object.font_color}")
 
       .row
-        .twelve.columns
+        .twelve.columns.inline-section
+          = f.label :button_color, 'Button Color', class: 'text-label'
+          = f.text_field :button_color, class: 'u-full-width color-picker'
+          .color-preview(style="background-color: #{f.object.button_color}")
+
+      .row
+        .twelve.columns.inline-section
+          = f.label :button_text_color, 'Button Text', class: 'text-label'
+          = f.text_field :button_text_color, class: 'u-full-width color-picker'
+          .color-preview(style="background-color: #{f.object.button_text_color}")
+
+
+      .row
+        .twelve.columns.inline-section
           = f.label :font, 'Font', class: 'text-label'
-          = f.select :font, Theme.font.options, class: 'u-full-width'
+          = f.select :font, Theme.font.options, {}, class: 'u-full-width font-select select'
       .row
         .twelve.columns#admin-preview-theme-section
 
