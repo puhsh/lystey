@@ -17,7 +17,7 @@
             = t.text_field :domain_name, placeholder: 'yourwebsiterurl.com', class: 'u-full-width'
         .row
           .twelve.columns.inline-section.centered
-            %span.text-label.label Foward/Mask URL
+            %span.text-label.label.switch-label Foward/Mask URL
             .switch
               = t.check_box :forward_url, class: 'switch-toggle'
               = t.label :forward_url, nil

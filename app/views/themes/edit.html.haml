@@ -7,22 +7,22 @@
         .twelve.columns
           %h1.section-heading Website Title & Logo
       .row
-        .twelve.columns.inline-section.centered
+        .twelve.columns
           = f.text_field :site_title, placeholder: 'Firstname Lastname', class: 'u-full-width'
       .row
-        .twelve.columns.inline-section.centered
+        .twelve.columns
           = f.text_field :site_subtitle, placeholder: 'Real Estate', class: 'u-full-width'
       .row
-        .twelve.columns.inline-section.centered
+        .twelve.columns
           = f.text_field :tagline, placeholder: 'Tagline', class: 'u-full-width'
       .row
-        .twelve.columns.inline-section.centered
-          = label_tag nil, '- or -', class: 'text-label'
+        .twelve.columns
+          = label_tag nil, '- or -', class: 'label'
       .row
-        .twelve.columns#upload-logo-section
+        .twelve.columns#admin-upload-logo-section
   .section
     .container
-      .row
+      .row(style="font-family: #{css_font_family_for_font_name(:helvetica)}")
         .twelve.columns
           %h1.section-heading Website Colors
       .row
@@ -30,19 +30,27 @@
           = f.label :background_color, 'Background', class: 'text-label'
           = f.text_field :background_color, class: 'u-full-width'
       .row
-        .twelve.columns.inline-section
+        .twelve.columns
           = f.label :font_color, 'Font Color', class: 'text-label'
           = f.text_field :font_color, class: 'u-full-width'
       .row
-        .twelve.columns.inline-section
+        .twelve.columns
           = f.label :button_color, 'Button Color', class: 'text-label'
           = f.text_field :button_color, class: 'u-full-width'
       .row
-        .twelve.columns.inline-section
+        .twelve.columns
           = f.label :button_text_color, 'Button Text', class: 'text-label'
           = f.text_field :button_text_color, class: 'u-full-width'
 
       .row
-        .twelve.columns.inline-section
+        .twelve.columns
           = f.label :font, 'Font', class: 'text-label'
           = f.select :font, Theme.font.options, class: 'u-full-width'
+      .row
+        .twelve.columns#admin-preview-theme-section
+
+  .section.shaded.submit-section
+    .container
+      .row
+        .twelve.columns
+          = f.submit 'Save Changes', class: 'button button-primary button-submit u-full-width'
