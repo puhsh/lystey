@@ -3,6 +3,7 @@
 //= require bacon
 //= require bacon.model
 //= require bacon.jquery
+//= require spectrum/spectrum.js
 //= require_tree ./components
 
 var App = window.App || {};

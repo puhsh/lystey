@@ -1,5 +1,16 @@
 = render partial: 'shared/admin_nav'
 
+:javascript
+  $(function() {
+    $(".js-color-picker").spectrum({
+      replacerClassName: 'color-preview',
+      showButtons: false,
+      preferredFormat: 'hex'
+    });
+    $(".js-color-picker").show();
+
+  });
+
 = form_for [@agent, @theme], html: { class: 'form' } do |f|
   .section.bordered-bottom
     .container
@@ -28,25 +39,21 @@
       .row
         .twelve.columns.inline-section
           = f.label :background_color, 'Background', class: 'text-label'
-          = f.text_field :background_color, class: 'u-full-width color-picker'
-          .color-preview(style="background-color: #{f.object.background_color}")
+          = f.text_field :background_color, class: 'u-full-width color-picker js-color-picker'
       .row
         .twelve.columns.inline-section
           = f.label :font_color, 'Font Color', class: 'text-label'
-          = f.text_field :font_color, class: 'u-full-width color-picker'
-          .color-preview(style="background-color: #{f.object.font_color}")
+          = f.text_field :font_color, class: 'u-full-width color-picker js-color-picker'
 
       .row
         .twelve.columns.inline-section
           = f.label :button_color, 'Button Color', class: 'text-label'
-          = f.text_field :button_color, class: 'u-full-width color-picker'
-          .color-preview(style="background-color: #{f.object.button_color}")
+          = f.text_field :button_color, class: 'u-full-width color-picker js-color-picker'
 
       .row
         .twelve.columns.inline-section
           = f.label :button_text_color, 'Button Text', class: 'text-label'
-          = f.text_field :button_text_color, class: 'u-full-width color-picker'
-          .color-preview(style="background-color: #{f.object.button_text_color}")
+          = f.text_field :button_text_color, class: 'u-full-width color-picker js-color-picker'
 
 
       .row

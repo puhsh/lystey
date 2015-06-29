@@ -198,6 +198,12 @@
     min-width: $inputHeight;
     border-radius: $defaultInputBorderRadius + 2px;
     margin-left: 10px;
+    padding: 0;
+    .sp-preview {
+      height: 100%;
+      width: 100%;
+      border: 0;
+    }
   }
 
   .submit-section {

@@ -163,9 +163,12 @@ GEM
     rails-assets-bacon (0.7.65)
     rails-assets-bacon.jquery (0.4.12)
     rails-assets-bacon.model (0.1.12)
+    rails-assets-jquery (2.1.4)
     rails-assets-normalize-css (3.0.3)
     rails-assets-reflux (0.2.7)
     rails-assets-skeleton (2.0.4)
+    rails-assets-spectrum (1.7.0)
+      rails-assets-jquery (>= 1.7.2)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.6)
@@ -289,6 +292,7 @@ DEPENDENCIES
   rails-assets-normalize-css!
   rails-assets-reflux!
   rails-assets-skeleton!
+  rails-assets-spectrum!
   react-rails (~> 1.0)
   rename
   rspec-rails
