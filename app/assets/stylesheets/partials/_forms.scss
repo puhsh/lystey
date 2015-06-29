@@ -7,8 +7,8 @@
 }
 
 .button {
-  border: 1px solid $primaryRed !important;
-  font-size: $h2FontSize;
+  border: 0;
+  font-size: $h1FontSize;
   text-transform: none;
   border-radius: $defaultBorderRadius;
   padding: 0px 30px;
@@ -17,12 +17,24 @@
   &.button-primary,
   &.button-primary:hover {
     background-color: $primaryRed;
-    border: inherit;
+  }
+
+  &:disabled {
+    text-decoration: none !important;
+  }
+
+  &.button-reset-theme {
+    border: 2px solid $black25 !important;
+    background-color: $black25 !important;
+    color: $black !important;
+    line-height: 34px !important;
+    font-weight: normal;
   }
 
   &:hover {
     text-decoration: underline;
   }
+
 }
 
 .select {

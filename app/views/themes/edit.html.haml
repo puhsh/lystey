@@ -53,8 +53,19 @@
         .twelve.columns.inline-section
           = f.label :font, 'Font', class: 'text-label'
           = f.select :font, Theme.font.options, {}, class: 'u-full-width font-select select'
+
+  .section.text-centered
+    .container
+      .row.bordered.padded
+        .twelve.columns
+          %h1 This is a text preview
+          %button.button.button-primary.u-full-width(disabled="disabled") Button Preview
+  .section.text-centered.centered
+    .container
       .row
-        .twelve.columns#admin-preview-theme-section
+        .twelve.columns
+          %button.button.button-reset-theme.u-full-width(href="#") Restore Defaults
+
 
   .section.shaded.submit-section
     .container

@@ -18,8 +18,28 @@
   &.bordered-bottom {
     border-bottom: 1px solid $black25;
   }
+
+  &.centered {
+    @media (min-width: 400px) {
+      max-width: 300px;
+    }
+  }
+
+  &.text-centered {
+    text-align: center;
+  }
 }
 
 .center {
   text-align: center;
+}
+
+
+.bordered {
+  border: 1px solid $black25;
+  border-radius: $defaultBorderRadius;
+}
+
+.padded {
+  padding: 20px;
 }
