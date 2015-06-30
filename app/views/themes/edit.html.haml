@@ -28,21 +28,21 @@
       .row
         .twelve.columns.inline-section
           = f.label :background_color, 'Background', class: 'text-label'
-          = f.text_field :background_color, class: 'u-full-width color-picker js-color-picker'
+          = f.text_field :background_color, class: 'u-full-width color-picker js-color-picker', data: { target: 'admin-background' }
       .row
         .twelve.columns.inline-section
           = f.label :font_color, 'Font Color', class: 'text-label'
-          = f.text_field :font_color, class: 'u-full-width color-picker js-color-picker'
+          = f.text_field :font_color, class: 'u-full-width color-picker js-color-picker', data: { target: 'admin-font-color' }
 
       .row
         .twelve.columns.inline-section
           = f.label :button_color, 'Button Color', class: 'text-label'
-          = f.text_field :button_color, class: 'u-full-width color-picker js-color-picker'
+          = f.text_field :button_color, class: 'u-full-width color-picker js-color-picker', data: { target: 'admin-button-color' }
 
       .row
         .twelve.columns.inline-section
           = f.label :button_text_color, 'Button Text', class: 'text-label'
-          = f.text_field :button_text_color, class: 'u-full-width color-picker js-color-picker'
+          = f.text_field :button_text_color, class: 'u-full-width color-picker js-color-picker', data: { target: 'admin-button-text-color' }
 
 
       .row
@@ -52,7 +52,7 @@
 
   .section.text-centered
     .container
-      .row.bordered.padded
+      .row.bordered.padded.js-preview-update#admin-theme-preview
         .twelve.columns
           %h1 This is a text preview
           %button.button.button-primary.u-full-width(disabled="disabled") Button Preview
