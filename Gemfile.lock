@@ -164,6 +164,7 @@ GEM
     rails-assets-bacon.jquery (0.4.12)
     rails-assets-bacon.model (0.1.12)
     rails-assets-jquery (2.1.4)
+    rails-assets-lodash (3.10.0)
     rails-assets-normalize-css (3.0.3)
     rails-assets-reflux (0.2.7)
     rails-assets-skeleton (2.0.4)
@@ -289,6 +290,7 @@ DEPENDENCIES
   rails-assets-bacon!
   rails-assets-bacon.jquery!
   rails-assets-bacon.model!
+  rails-assets-lodash!
   rails-assets-normalize-css!
   rails-assets-reflux!
   rails-assets-skeleton!

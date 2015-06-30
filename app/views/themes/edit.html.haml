@@ -1,16 +1,5 @@
 = render partial: 'shared/admin_nav'
 
-:javascript
-  $(function() {
-    $(".js-color-picker").spectrum({
-      replacerClassName: 'color-preview',
-      showButtons: false,
-      preferredFormat: 'hex'
-    });
-    $(".js-color-picker").show();
-
-  });
-
 = form_for [@agent, @theme], html: { class: 'form' } do |f|
   .section.bordered-bottom
     .container

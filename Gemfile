@@ -27,6 +27,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bacon.jquery'
   gem 'rails-assets-bacon.model'
   gem 'rails-assets-spectrum'
+  gem 'rails-assets-lodash'
 end
 
 # Capistrano and Capistrano-related items
