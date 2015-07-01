@@ -183,6 +183,11 @@
         color: $black85;
       }
     }
+
+    &.half-width {
+      width: 50%;
+      margin-right: 10px;
+    }
   }
 
   textarea {

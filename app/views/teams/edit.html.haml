@@ -37,9 +37,8 @@
           %h1.section-heading Add Team Members
       = f.fields_for :team_members, @team_members do |tm|
         .row
-          .eleven.columns
-            = tm.text_field :full_name, placeholder: 'Team Member Name', class: 'u-full-width'
-          .one.columns
+          .twelve.columns
+            = tm.text_field :full_name, placeholder: 'Team Member Name', class: 'half-width'
             = tm.link_to_remove class: 'primary-link' do
               %i.fa.fa-trash-o.fa-2x
         .row
