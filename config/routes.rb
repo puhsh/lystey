@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get '/testimonials/edit', to: 'agents#testimonials', as: 'edit_testimonials'
     get '/graphics/edit', to: 'themes#edit', as: 'edit_themes'
     get '/about/edit', to: 'biographies#edit', as: 'edit_biography'
+    get '/team/edit', to: 'teams#edit', as: 'edit_team'
 
     resources :brokers, except: [:edit]
     resources :guides, only: [:index]
@@ -15,5 +16,6 @@ Rails.application.routes.draw do
     resources :links, only: [:index]
     resources :themes, except: [:edit]
     resources :biographies, only: [:index, :show, :edit, :update]
+    resources :teams, only: [:index, :show, :edit, :update]
   end
 end

@@ -18,7 +18,7 @@ class Agent < ActiveRecord::Base
   has_many :guides, dependent: :destroy
 
   # Validations
-  accepts_nested_attributes_for :certifications, :addresses, :guides, :theme, :social_links, :testimonials, reject_if: :new_record?
+  accepts_nested_attributes_for :certifications, :addresses, :guides, :theme, :social_links, :testimonials, :team, reject_if: :new_record?
   validates :first_name, presence: true
 
   # Scopes

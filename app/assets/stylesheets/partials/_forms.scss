@@ -110,6 +110,10 @@
   font-weight: 300;
   margin-bottom: 0;
   height: inherit;
+  &.small {
+    font-size: $h2FontSize;
+    line-height: 1;
+  }
 }
 
 .form {
@@ -148,6 +152,11 @@
     letter-spacing: 10px;
     max-width: 30px;
     margin-right: 5px;
+
+  }
+  input.checkbox[type=checkbox] + label.left:before {
+    float: left;
+    margin-right: 10px;
   }
 
   input.checkbox[type=checkbox]:checked + label:before {
@@ -170,6 +179,9 @@
 
     &:disabled {
       color: $black25;
+      &.original-text-color {
+        color: $black85;
+      }
     }
   }
 

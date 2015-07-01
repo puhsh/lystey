@@ -70,39 +70,14 @@ module ApplicationHelper
   def admin_nav_links(agent)
     [
       ['Basic Information', edit_agent_path(agent)],
-      ['About Section', agent_edit_biography_path],
+      ['About Section', agent_edit_biography_path(agent)],
       ['Membership', nil],
       ['Brokers', new_agent_broker_path(agent)],
       ['Buyers & Sellers Info', agent_edit_guides_path(agent)],
       ['Graphics', agent_edit_themes_path(agent)],
       ['Links', agent_edit_links_path(agent)],
-      ['Team Section', nil],
+      ['Team Section', agent_edit_team_path(agent)],
       ['Testimonials', agent_edit_testimonials_path(agent)]
     ]
-  end
-
-  def css_font_family_for_font_name(font_name)
-    case font_name
-    when :impact
-      "Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';"
-    when :tahoma
-      "Tahoma, Verdana, Segoe, sans-serif;"
-    when :verdana
-      "Verdana, Geneva, sans-serif;"
-    when :georgia
-      "Georgia, Times, 'Times New Roman', serif;"
-    when :palatino
-      "Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;"
-    when :times
-      "Times;"
-    when :courier
-      "Courier;"
-    when :lucida
-      "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;"
-    when :helvetica
-      "'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;"
-    else
-      "'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;"
-    end
   end
 end

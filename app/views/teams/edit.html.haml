@@ -1,0 +1,54 @@
+= render partial: 'shared/admin_nav'
+
+= nested_form_for @agent, html: { class: 'form' } do |f|
+  .section
+    .container
+      .row
+        .twelve.columns
+          %h1.section-heading Team Page Content
+
+      = f.fields_for :theme do |t|
+        .row
+          .twelve.columns
+            = t.text_field :team_page_title, placeholder: 'Team Page Title', class: 'u-full-width'
+        .row
+          .twelve.columns
+            = t.text_area :team_page_description, rows: 20, placeholder: "Team Page Copy...", class: 'u-full-width'
+
+
+  = f.fields_for :team do |te|
+    .section
+      .container
+        .row
+          .twelve.columns
+            %h1.section-heading Primary Agent
+        .row
+          .twelve.columns
+            = text_field_tag 'full_name', @agent.full_name, class: 'u-full-width original-text-color', disabled: true
+
+          .row
+            .twelve.columns
+              = te.check_box :primary_agent, class: 'checkbox'
+              = te.label :primary_agent, 'Use the agent name listed above as the primary agent. (If unchecked, the first member listed below will be used.)', class: 'label small left'
+    .section
+      .container
+        .row
+          .twelve.columns
+            %h1.section-heading Add Team Members
+
+    .section
+      .container
+        .row
+          .twelve.columns
+            %h1.section-heading Hiring Information
+        .row
+          .twelve.columns
+            = te.check_box :hiring, class: 'checkbox js-hidden-form-toggle', data: { 'form-id': '#hiring-fields' }
+            = te.label :hiring, 'Yes, we are currently hiring.', class: 'label small'
+        #hiring-fields.hidden
+          .row
+            .twelve.columns
+              = te.text_field :hiring_title, placeholder: 'Hiring Section Copy...', class: 'u-full-width'
+          .row
+            .twelve.columns
+              = te.text_area :hiring_details, rows: 20, placeholder: "Hiring Page Copy...", class: 'u-full-width'

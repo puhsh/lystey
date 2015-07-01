@@ -10,6 +10,12 @@ var App = window.App || {};
     checkBoxChecked.assign($(duplicateForm + " select"), "attr", "disabled");
   }
 
+  function setupHiddenForms() {
+    var checkBoxChecked = Bacon.$.checkBoxValue($(".js-hidden-form-toggle")).log();
+    var duplicateForm = $(".js-hidden-form-toggle").data("form-id");
+    checkBoxChecked.assign($(duplicateForm), "toggle");
+  }
+
   function setupColorPicker() {
     $(".js-color-picker").spectrum({
       replacerClassName: 'color-preview',
@@ -108,6 +114,7 @@ var App = window.App || {};
 
   $(function() {
     setupDuplicateForms();
+    setupHiddenForms();
     setupColorPicker();
     setupSelectFontChanger();
   });

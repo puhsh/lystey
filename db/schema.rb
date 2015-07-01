@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150625180621) do
+ActiveRecord::Schema.define(version: 20150701184452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -136,8 +136,6 @@ ActiveRecord::Schema.define(version: 20150625180621) do
 
   create_table "teams", force: :cascade do |t|
     t.integer  "agent_id"
-    t.string   "title"
-    t.text     "about"
     t.boolean  "primary_agent",  default: true
     t.boolean  "hiring",         default: false
     t.string   "hiring_title"
@@ -177,6 +175,8 @@ ActiveRecord::Schema.define(version: 20150625180621) do
     t.string   "site_title"
     t.string   "site_subtitle"
     t.string   "button_text_color",          default: "#ffffff"
+    t.string   "team_page_title"
+    t.text     "team_page_description"
   end
 
   add_index "themes", ["agent_id"], name: "index_themes_on_agent_id", using: :btree
