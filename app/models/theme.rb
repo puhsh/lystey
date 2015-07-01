@@ -12,4 +12,11 @@ class Theme < ActiveRecord::Base
   # Scopes
 
   # Methods
+
+  # Resets the theme for the agent
+  def reset!
+    agent = self.agent
+    self.destroy
+    agent.build_theme.save
+  end
 end

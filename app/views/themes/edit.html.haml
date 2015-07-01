@@ -58,8 +58,7 @@
     .container
       .row
         .twelve.columns
-          %button.button.button-reset-theme.u-full-width(href="#") Restore Defaults
-
+          = link_to 'Restore Defaults', agent_theme_path(@agent, @theme), method: :delete, class: 'button button-reset-theme u-full-width'
 
   .section.shaded.submit-section
     .container
