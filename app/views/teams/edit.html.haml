@@ -35,6 +35,11 @@
         .row
           .twelve.columns
             %h1.section-heading Add Team Members
+        = te.fields_for :team_members, @team_members do |tm|
+          .row
+            .twelve.columns
+              = tm.text_field :full_name, placeholder: 'Team Member Name', class: 'u-full-width'
+
 
     .section
       .container

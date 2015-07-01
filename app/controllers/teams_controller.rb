@@ -7,6 +7,7 @@ class TeamsController < ApplicationController
   def edit
     @theme = @agent.theme
     @team = @agent.team || @agent.build_team
+    @team_members = @team.team_members || @team.team_members.build
     respond_to do |format|
       format.html
     end
