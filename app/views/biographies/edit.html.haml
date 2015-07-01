@@ -1,0 +1,30 @@
+= render partial: 'shared/admin_nav'
+
+= form_for [@agent, @biography], html: { class: 'form' } do |f|
+  .section
+    .container
+      .row
+        .twelve.columns
+          %h1.section-heading About Page Content
+      .row
+        .twelve.columns
+          = f.text_field :title, placeholder: 'About Page Title', class: 'u-full-width'
+      .row
+        .twelve.columns
+          = f.text_area :short_bio, rows: 20, placeholder: "Enter a short bio...", class: 'u-full-width'
+      .row
+        .twelve.columns
+          = f.text_area :long_bio, rows: 20, placeholder: "Enter an extended bio...", class: 'u-full-width'
+
+  .section
+    .container
+      .row
+        .twelve.columns
+          %h1.section-heading About Page Photo
+          -# TODO
+
+  .section.shaded.submit-section
+    .container
+      .row
+        .twelve.columns
+          = f.submit 'Save Changes', class: 'button button-primary button-submit u-full-width'

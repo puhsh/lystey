@@ -70,7 +70,7 @@ module ApplicationHelper
   def admin_nav_links(agent)
     [
       ['Basic Information', edit_agent_path(agent)],
-      ['About Section', nil],
+      ['About Section', agent_edit_biography_path],
       ['Membership', nil],
       ['Brokers', new_agent_broker_path(agent)],
       ['Buyers & Sellers Info', agent_edit_guides_path(agent)],
