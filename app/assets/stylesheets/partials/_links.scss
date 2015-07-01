@@ -10,4 +10,9 @@ a.primary-link {
   &:hover {
     text-decoration: underline;
   }
+
+  &.icon-link {
+    margin-left: 10px;
+    vertical-align: text-top;
+  }
 }

@@ -7,8 +7,7 @@ class Team < ActiveRecord::Base
   has_many :team_members, dependent: :destroy
 
   # Validations
-  validates :title, presence: true, length: { maximum: 100 }
-  validates :about, presence: true, length: { maximum: 10000 }
+  accepts_nested_attributes_for :team_members, reject_if: :new_record?
 
   # Scopes
 

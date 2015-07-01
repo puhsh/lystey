@@ -116,6 +116,8 @@ class AgentsController < ApplicationController
       agent_edit_testimonials_path(@agent)
     when 'links'
       agent_edit_links_path(@agent)
+    when 'team'
+      agent_edit_team_path(@agent)
     else
       edit_agent_path(@agent)
     end

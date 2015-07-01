@@ -1,6 +1,8 @@
 = render partial: 'shared/admin_nav'
 
 = nested_form_for @agent, html: { class: 'form' } do |f|
+  = hidden_field_tag :from_section, 'team'
+
   .section
     .container
       .row
@@ -30,29 +32,31 @@
             .twelve.columns
               = te.check_box :primary_agent, class: 'checkbox'
               = te.label :primary_agent, 'Use the agent name listed above as the primary agent. (If unchecked, the first member listed below will be used.)', class: 'label small left'
-  .section
-    .container
-      .row
-        .twelve.columns
-          %h1.section-heading Add Team Members
-      = f.fields_for :team_members, @team_members do |tm|
-        .row
-          .twelve.columns
-            = tm.text_field :full_name, placeholder: 'Team Member Name'
-            = tm.link_to_remove class: 'primary-link' do
-              %i.fa.fa-trash-o.fa-2x
-        .row
-          .twelve.columns
-            = tm.text_area :bio, rows: 20, placeholder: "Team Member Bio...", class: 'u-full-width'
-        .row
-          .twelve.columns
-            = tm.text_field :phone_number, placeholder: 'Team Member Phone...', class: 'u-full-width'
-        .row
-          .twelve.columns
-            = tm.text_field :email, placeholder: 'Team Member Email...', class: 'u-full-width'
-      .row
-        .twelve.columns.center
-          = f.link_to_add "+ Add Another Team Member", :team_members, class: 'add-field'
+
+      .section
+        .container
+          .row
+            .twelve.columns
+              %h1.section-heading Add Team Members
+          = te.fields_for :team_members, @team_members do |tm|
+            .row
+              .twelve.columns
+                = tm.text_field :full_name, placeholder: 'Team Member Name'
+                = tm.link_to_remove class: 'primary-link icon-link' do
+                  %i.fa.fa-trash-o.fa-2x
+            .row
+              .twelve.columns
+                = tm.text_area :bio, rows: 20, placeholder: "Team Member Bio...", class: 'u-full-width'
+            .row
+              .twelve.columns
+                = tm.text_field :phone_number, placeholder: 'Team Member Phone...', class: 'u-full-width'
+            .row
+              .twelve.columns
+                = tm.text_field :email, placeholder: 'Team Member Email...', class: 'u-full-width'
+
+          .row
+            .twelve.columns.center
+              = te.link_to_add "+ Add Another Team Member", :team_members, class: 'add-field', data: { associaton: 'team' }
 
   = f.fields_for :team do |te|
     .section
@@ -71,3 +75,8 @@
           .row
             .twelve.columns
               = te.text_area :hiring_details, rows: 20, placeholder: "Hiring Page Copy...", class: 'u-full-width'
+  .section.shaded.submit-section
+    .container
+      .row
+        .twelve.columns
+          = f.submit 'Save Changes', class: 'button button-primary button-submit u-full-width'
