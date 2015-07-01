@@ -11,7 +11,7 @@ var App = window.App || {};
   }
 
   function setupHiddenForms() {
-    var checkBoxChecked = Bacon.$.checkBoxValue($(".js-hidden-form-toggle")).log();
+    var checkBoxChecked = Bacon.$.checkBoxValue($(".js-hidden-form-toggle"));
     var duplicateForm = $(".js-hidden-form-toggle").data("form-id");
     checkBoxChecked.assign($(duplicateForm), "toggle");
   }

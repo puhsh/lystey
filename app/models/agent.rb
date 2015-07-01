@@ -13,12 +13,13 @@ class Agent < ActiveRecord::Base
   has_one :broker, dependent: :destroy
   has_one :biography, dependent: :destroy
   has_one :team, dependent: :destroy
+  has_many :team_members, through: :team
   has_many :testimonials, dependent: :destroy
   has_one :theme, dependent: :destroy
   has_many :guides, dependent: :destroy
 
   # Validations
-  accepts_nested_attributes_for :certifications, :addresses, :guides, :theme, :social_links, :testimonials, :team, reject_if: :new_record?
+  accepts_nested_attributes_for :certifications, :addresses, :guides, :theme, :social_links, :testimonials, :team, :team_members, reject_if: :new_record?
   validates :first_name, presence: true
 
   # Scopes

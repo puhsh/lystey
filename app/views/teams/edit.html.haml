@@ -30,17 +30,32 @@
             .twelve.columns
               = te.check_box :primary_agent, class: 'checkbox'
               = te.label :primary_agent, 'Use the agent name listed above as the primary agent. (If unchecked, the first member listed below will be used.)', class: 'label small left'
-    .section
-      .container
+  .section
+    .container
+      .row
+        .twelve.columns
+          %h1.section-heading Add Team Members
+      = f.fields_for :team_members, @team_members do |tm|
+        .row
+          .eleven.columns
+            = tm.text_field :full_name, placeholder: 'Team Member Name', class: 'u-full-width'
+          .one.columns
+            = tm.link_to_remove class: 'primary-link' do
+              %i.fa.fa-trash-o.fa-2x
         .row
           .twelve.columns
-            %h1.section-heading Add Team Members
-        = te.fields_for :team_members, @team_members do |tm|
-          .row
-            .twelve.columns
-              = tm.text_field :full_name, placeholder: 'Team Member Name', class: 'u-full-width'
+            = tm.text_area :bio, rows: 20, placeholder: "Team Member Bio...", class: 'u-full-width'
+        .row
+          .twelve.columns
+            = tm.text_field :phone_number, placeholder: 'Team Member Phone...', class: 'u-full-width'
+        .row
+          .twelve.columns
+            = tm.text_field :email, placeholder: 'Team Member Email...', class: 'u-full-width'
+      .row
+        .twelve.columns.center
+          = f.link_to_add "+ Add Another Team Member", :team_members, class: 'add-field'
 
-
+  = f.fields_for :team do |te|
     .section
       .container
         .row

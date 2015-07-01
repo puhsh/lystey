@@ -7,7 +7,12 @@ class TeamsController < ApplicationController
   def edit
     @theme = @agent.theme
     @team = @agent.team || @agent.build_team
-    @team_members = @team.team_members || @team.team_members.build
+    @team_members = @agent.team_members
+
+    if @team_members.empty?
+      @agent.team_members.build(team: @team)
+    end
+
     respond_to do |format|
       format.html
     end
