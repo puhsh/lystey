@@ -58,9 +58,58 @@ var App = window.App || {};
     $(attr).css(cssProp);
   }
 
+  function updateAdminThemePreviewFont(target) {
+    var cssProp = {};
+    var val;
+    var attr = "#admin-theme-preview";
+    var targetValue = $(target).val();
+
+    switch (targetValue) {
+      case 'impact':
+        val = "Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif'";
+        break;
+      case 'tahoma':
+        val = "Tahoma, Verdana, Segoe, sans-serif";
+        break;
+      case 'verdana':
+        val = "Verdana, Geneva, sans-serif";
+        break;
+      case 'georgia':
+        val = "Georgia, Times, 'Times New Roman', serif";
+        break;
+      case 'palatino':
+        val = "Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif";
+        break;
+      case 'times':
+        val = "Times";
+        break;
+      case 'courier':
+        val = "Courier";
+        break;
+      case 'lucida':
+        val = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif";
+        break;
+      case 'helvetica':
+        val = "'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif";
+        break;
+      default:
+        return;
+    }
+
+    cssProp["font-family"] = val;
+    $(attr).css(cssProp);
+  }
+
+  function setupSelectFontChanger() {
+    $(".js-font-changer").on('change', function(e) {
+      updateAdminThemePreviewFont($(e.target));
+    });
+  }
+
   $(function() {
     setupDuplicateForms();
     setupColorPicker();
+    setupSelectFontChanger();
   });
 
 })(window, window.jQuery);

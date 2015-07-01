@@ -43,12 +43,10 @@
         .twelve.columns.inline-section
           = f.label :button_text_color, 'Button Text', class: 'text-label'
           = f.text_field :button_text_color, class: 'u-full-width color-picker js-color-picker', data: { target: 'admin-button-text-color' }
-
-
       .row
         .twelve.columns.inline-section
           = f.label :font, 'Font', class: 'text-label'
-          = f.select :font, Theme.font.options, {}, class: 'u-full-width font-select select'
+          = f.select :font, Theme.font.options, {}, class: 'u-full-width font-select select js-font-changer', data: { target: 'admin-font' }
 
   .section.text-centered
     .container
