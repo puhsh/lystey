@@ -77,10 +77,11 @@ module ApplicationHelper
       ['Graphics', agent_edit_themes_path(agent)],
       ['Links', agent_edit_links_path(agent)],
       ['Team Section', agent_edit_team_path(agent)],
-      ['Testimonials', agent_edit_testimonials_path(agent)]
+      ['Testimonials', agent_edit_testimonials_path(agent)],
+      ['Listings', nil]
     ]
   end
-  
+
   def css_font_family_for_font_name(font_name)
     case font_name
     when :impact
