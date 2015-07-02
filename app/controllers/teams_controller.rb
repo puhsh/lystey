@@ -8,9 +8,14 @@ class TeamsController < ApplicationController
     @theme = @agent.theme
     @team = @agent.team || @agent.build_team
     @team_members = @team.team_members
+    @team_openings = @team.team_openings
 
     if @team_members.empty?
       @team.team_members.build
+    end
+
+    if @team_openings.empty?
+      @team.team_openings.build
     end
 
     respond_to do |format|

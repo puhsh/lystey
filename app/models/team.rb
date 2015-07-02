@@ -5,9 +5,10 @@ class Team < ActiveRecord::Base
   belongs_to :agent
   has_many :job_openings, dependent: :destroy
   has_many :team_members, dependent: :destroy
+  has_many :team_openings, dependent: :destroy
 
   # Validations
-  accepts_nested_attributes_for :team_members, reject_if: :new_record?
+  accepts_nested_attributes_for :team_members, :team_openings, reject_if: :new_record?
 
   # Scopes
 

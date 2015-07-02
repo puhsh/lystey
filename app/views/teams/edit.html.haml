@@ -57,24 +57,40 @@
           .row
             .twelve.columns.center
               = te.link_to_add "+ Add Another Team Member", :team_members, class: 'add-field', data: { associaton: 'team' }
+      .section
+        .container
+          .row
+            .twelve.columns
+              %h1.section-heading Hiring Information
+          .row
+            .twelve.columns
+              = te.check_box :hiring, class: 'checkbox js-hidden-form-toggle', data: { 'form-id': '#hiring-fields' }
+              = te.label :hiring, 'Yes, we are currently hiring.', class: 'label small'
+          #hiring-fields.hidden
+            .row
+              .twelve.columns
+                = te.text_field :hiring_title, placeholder: 'Hiring Section Copy...', class: 'u-full-width'
+            .row
+              .twelve.columns
+                = te.text_area :hiring_details, rows: 20, placeholder: "Hiring Page Copy...", class: 'u-full-width'
+        .container
+          #hiring-fields
+            .row
+              .twelve.columns
+                %h1.section-heading Open Positions
+            = te.fields_for :team_openings do |to|
+              .row
+                .twelve.columns
+                  = to.text_field :position_title, placeholder: 'Position Title...'
+                  = to.link_to_remove class: 'primary-link icon-link' do
+                    %i.fa.fa-trash-o.fa-2x
+              .row
+                .twelve.columns
+                  = to.text_area :position_description, rows: 20, placeholder:'Position Description...', class: 'u-full-width'
+            .row
+              .twelve.columns.center
+                = te.link_to_add "+ Add Another Open Position", :team_openings, class: 'add-field'
 
-  = f.fields_for :team do |te|
-    .section
-      .container
-        .row
-          .twelve.columns
-            %h1.section-heading Hiring Information
-        .row
-          .twelve.columns
-            = te.check_box :hiring, class: 'checkbox js-hidden-form-toggle', data: { 'form-id': '#hiring-fields' }
-            = te.label :hiring, 'Yes, we are currently hiring.', class: 'label small'
-        #hiring-fields.hidden
-          .row
-            .twelve.columns
-              = te.text_field :hiring_title, placeholder: 'Hiring Section Copy...', class: 'u-full-width'
-          .row
-            .twelve.columns
-              = te.text_area :hiring_details, rows: 20, placeholder: "Hiring Page Copy...", class: 'u-full-width'
   .section.shaded.submit-section
     .container
       .row

@@ -163,6 +163,9 @@
     content: "\f046";
   }
 
+  input.checkbox[type=checkbox] + label {
+    margin-bottom: 10px;
+  }
 
   input,
   textarea {
