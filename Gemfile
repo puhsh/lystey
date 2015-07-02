@@ -9,6 +9,9 @@ gem 'pg'
 # View Engine
 gem 'haml'
 
+# Paperclip
+gem 'paperclip'
+
 # Assets and Asset-related items
 gem "autoprefixer-rails"
 gem 'uglifier', '>= 1.3.0'
