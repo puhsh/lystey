@@ -9,7 +9,8 @@ gem 'pg'
 # View Engine
 gem 'haml'
 
-# Paperclip
+# AWS / Paperclip
+gem 'aws-sdk'
 gem 'paperclip'
 
 # Assets and Asset-related items

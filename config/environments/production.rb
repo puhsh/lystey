@@ -76,4 +76,15 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Paperclip
+  config.paperclip_defaults = {
+    storage: :s3,
+    url: ':s3_alias_url',
+    s3_host_alias: 'assets.lystey.com',
+    s3_permissions: :public,
+    s3_credentials: {
+      bucket: 'lystey'
+    }
+  }
 end

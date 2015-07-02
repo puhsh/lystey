@@ -1,0 +1,6 @@
+development:
+  access_key_id: 'AKIAJDYX4XQ4LK4ZKRQA'
+  secret_access_key: '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'
+production:
+  access_key_id: 'AKIAI67QLOFPDWKZJNKQ'
+  secret_access_key: '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'
