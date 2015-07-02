@@ -5,8 +5,8 @@
         %i.fa.fa-bars.fa-3x
       #nav-heading
         - if @agent && @agent.theme
-          %h1.heading-text= @agent.theme.site_title || @agent.full_name
-          %h2.heading-text= @agent.theme.site_subtitle || 'Real Estate'
+          %h1.heading-text= @agent.theme.site_title.present? ? @agent.theme.site_title : @agent.full_name
+          %h2.heading-text= @agent.theme.site_subtitle.present? ? @agent.theme.site_subtitle : 'Real Estate'
         - else
           %h1.heading-text Firstname Lastname
           %h2.heading-text Real Estate
