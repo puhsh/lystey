@@ -14,7 +14,7 @@
       = f.fields_for :theme do |t|
         .row
           .twelve.columns
-            = t.text_field :domain_name, placeholder: 'yourwebsiterurl.com', class: 'u-full-width'
+            = t.url_field :domain_name, placeholder: 'yourwebsiterurl.com', class: 'u-full-width'
         .row
           .twelve.columns.inline-section.centered
             %span.text-label.label.switch-label Foward/Mask URL
@@ -42,21 +42,21 @@
           .twelve.columns.inline-section
             = sl.label :url, class: 'icon-label'  do
               %i.fa.fa-3x(class="#{font_awesome_icon_for_social_site(sl.object.site.text.downcase)}")
-            = sl.text_field :url, placeholder: "#{sl.object.site.text.to_s.downcase}.com/", class: 'u-full-width'
+            = sl.url_field :url, placeholder: "#{sl.object.site.text.to_s.downcase}.com/", class: 'u-full-width'
 
       = f.fields_for :social_links, [@realtor, @zillow, @trulia] do |sl|
         .row
           .twelve.columns.inline-section.centered
             = sl.hidden_field :site
             = sl.label :url, "#{sl.object.site.text.downcase}.com/", class: 'text-label'
-            = sl.text_field :url, placeholder: "username", class: 'u-full-width'
+            = sl.url_field :url, placeholder: "username", class: 'u-full-width'
 
   = f.fields_for :social_links, @other_links do |other_link_form|
     .container
       .row
         .twelve.columns
           = other_link_form.hidden_field :site, value: 'personal'
-          = other_link_form.text_field :url, placeholder: "Additional Link URL", class: 'u-full-width'
+          = other_link_form.url_field :url, placeholder: "Additional Link URL", class: 'u-full-width'
           = other_link_form.text_field :description, placeholder: "Additional Link Description", class: 'u-full-width'
 
   .container

@@ -33,13 +33,13 @@
 
         .row
           .twelve.columns
-            = f.text_field :phone_number, class: 'u-full-width', placeholder: 'Phone Number'
+            = f.phone_field :phone_number, class: 'u-full-width', placeholder: 'Phone Number'
         .row
           .twelve.columns
-            = f.text_field :fax_number, class: 'u-full-width', placeholder: 'Fax Number'
+            = f.phone_field :fax_number, class: 'u-full-width', placeholder: 'Fax Number'
         .row
           .twelve.columns
-            = f.text_field :email, class: 'u-full-width', placeholder: 'Email'
+            = f.email_field :email, class: 'u-full-width', placeholder: 'Email'
 
         = f.fields_for :addresses, [@office_address, @mailing_address] do |oa|
           = oa.hidden_field :address_type
