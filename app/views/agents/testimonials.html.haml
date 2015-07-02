@@ -14,17 +14,17 @@
         .twelve.columns
           %h1.section-heading Client Testimonials
           = f.fields_for :testimonials do |t|
-            .row.
-              .twelve.columns.inline-section
+            .row
+              .twelve.columns
                 = t.text_field :client_name, placeholder: 'Client Name'
                 = t.link_to_remove class: 'primary-link icon-link' do
                   %i.fa.fa-trash-o.fa-2x
-            .row.
+            .row
               .twelve.column
-                  = t.text_area :text, rows: 20, placeholder: 'Testimonial Text...', class: 'u-full-width'
-            .row.
+                = t.text_area :text, rows: 20, placeholder: 'Testimonial Text...', class: 'u-full-width'
+            .row
               .twelve.column
-                  = t.text_field :client_facebook_link, placeholder: 'Client Facebook Link (Optional)', class: 'u-full-width'
+                = t.text_field :client_facebook_link, placeholder: 'Client Facebook Link (Optional)', class: 'u-full-width'
 
       .row
         .twelve.columns.center
