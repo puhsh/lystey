@@ -197,12 +197,31 @@
     display: flex;
     margin-bottom: 10px;
 
-    img.preview-image {
-      order: 1;
-      background-color: $black25;
+    .preview-image-section {
       height: 150px;
-      width: 150px;
-      margin-right: 10px;
+      img.preview-image {
+        order: 1;
+        background-color: $black25;
+        height: 150px;
+        width: 150px;
+        margin-right: 10px;
+      }
+
+      span.text {
+        position: absolute;
+        width: 50px;
+        left: 50px;
+        text-align: center;
+        line-height: 1;
+        margin-top: 50px;
+        font-size: $h2FontSize;
+      }
+
+      i.reset {
+        position: absolute;
+        left: 120px;
+        bottom: 60px;
+      }
     }
 
     .file-fields {

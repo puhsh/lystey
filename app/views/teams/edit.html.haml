@@ -55,7 +55,12 @@
                 = tm.email_field :email, placeholder: 'Team Member Email...', class: 'u-full-width'
             .row
               .twelve.columns.file-upload-container
-                %img.preview-image
+                .preview-image-section
+                  %img.preview-image
+                  %span.text Team Member Photo
+                  %a.primary-link(href="#")
+                    %i.fa.fa-trash-o.fa-2x.reset
+
                 .file-fields
                   = tm.file_field :photo, class: 'file'
                   = tm.label :photo, 'Upload'
