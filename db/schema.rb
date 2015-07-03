@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702182351) do
+ActiveRecord::Schema.define(version: 20150703155413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -191,6 +191,10 @@ ActiveRecord::Schema.define(version: 20150702182351) do
     t.string   "button_text_color",          default: "#ffffff"
     t.string   "team_page_title"
     t.text     "team_page_description"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   add_index "themes", ["agent_id"], name: "index_themes_on_agent_id", using: :btree

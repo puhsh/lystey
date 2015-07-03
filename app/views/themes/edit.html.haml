@@ -19,7 +19,17 @@
         .twelve.columns
           = label_tag nil, '- or -', class: 'label'
       .row
-        .twelve.columns#admin-upload-logo-section
+        .twelve.column.file-upload-container
+          .preview-image-section
+            %img.preview-image
+            %a.primary-link(href="#")
+              %i.fa.fa-trash-o.fa-2x.reset
+
+          .file-fields
+            = f.file_field :logo, class: 'file'
+            = f.label :logo, 'Upload Logo  '
+            %p JPG, PNG, GIF
+
   .section
     .container
       .row(style="font-family: #{css_font_family_for_font_name(:helvetica)}")
