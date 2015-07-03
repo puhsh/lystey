@@ -193,6 +193,42 @@
     }
   }
 
+  .file-upload-container {
+    display: flex;
+
+    img.preview-image {
+      order: 1;
+      background-color: $black25;
+      height: 150px;
+      width: 150px;
+      margin-right: 10px;
+    }
+
+    .file-fields {
+      order: 2;
+      align-self: center;
+
+      input.file[type="file"] {
+        display: none;
+      }
+
+      input.file[type="file"] + label {
+        @extend .button;
+        @extend .button-primary;
+
+        margin-top: 35px;
+        cursor: pointer;
+        color: $white;
+        height: 35px;
+        padding-top: 2px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+  }
+
+
   textarea {
     height: 160px;
     resize: none;

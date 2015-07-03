@@ -53,6 +53,14 @@
             .row
               .twelve.columns
                 = tm.email_field :email, placeholder: 'Team Member Email...', class: 'u-full-width'
+            .row
+              .twelve.columns.file-upload-container
+                %img.preview-image
+                .file-fields
+                  = tm.file_field :photo, class: 'file'
+                  = tm.label :photo, 'Upload'
+                  %p JPG, PNG, GIF
+
           .row
             .twelve.columns.center
               = te.link_to_add "+ Add Another Team Member", :team_members, class: 'add-field', data: { associaton: 'team' }
