@@ -62,8 +62,8 @@
                   %p JPG, PNG, GIF
 
           .row
-            .twelve.columns.center
-              = te.link_to_add "+ Add Another Team Member", :team_members, class: 'add-field', data: { associaton: 'team' }
+            .twelve.columns
+              = te.link_to_add "+ Add Another Team Member", :team_members, class: 'add-field center', data: { associaton: 'team' }
       .section
         .container
           .row
@@ -95,7 +95,7 @@
                 .twelve.columns
                   = to.text_area :position_description, rows: 20, placeholder:'Position Description...', class: 'u-full-width'
             .row
-              .twelve.columns.center
+              .twelve.columns
                 = te.link_to_add "+ Add Another Open Position", :team_openings, class: 'add-field'
 
   .section.shaded.submit-section
