@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150704163928) do
+ActiveRecord::Schema.define(version: 20150705152409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -115,6 +115,17 @@ ActiveRecord::Schema.define(version: 20150704163928) do
 
   add_index "job_openings", ["team_id"], name: "index_job_openings_on_team_id", using: :btree
 
+  create_table "listings", force: :cascade do |t|
+    t.integer  "agent_id"
+    t.string   "mls_number"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "listings", ["agent_id"], name: "index_listings_on_agent_id", using: :btree
+  add_index "listings", ["mls_number"], name: "index_listings_on_mls_number", using: :btree
+
   create_table "social_links", force: :cascade do |t|
     t.integer  "agent_id"
     t.string   "site"
@@ -199,6 +210,8 @@ ActiveRecord::Schema.define(version: 20150704163928) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.string   "listing_page_title"
+    t.text     "list_page_main_copy"
   end
 
   add_index "themes", ["agent_id"], name: "index_themes_on_agent_id", using: :btree
