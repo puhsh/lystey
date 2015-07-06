@@ -5,7 +5,6 @@ class Listing < ActiveRecord::Base
   belongs_to :agent
 
   # Validations
-  validates :mls_number
 
   # Scopes
 
