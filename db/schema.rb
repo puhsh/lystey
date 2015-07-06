@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150705152409) do
+ActiveRecord::Schema.define(version: 20150706214841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -211,7 +211,7 @@ ActiveRecord::Schema.define(version: 20150705152409) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
     t.string   "listing_page_title"
-    t.text     "list_page_main_copy"
+    t.text     "listing_page_main_copy"
   end
 
   add_index "themes", ["agent_id"], name: "index_themes_on_agent_id", using: :btree

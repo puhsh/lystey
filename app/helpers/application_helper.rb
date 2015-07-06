@@ -78,7 +78,7 @@ module ApplicationHelper
       ['Links', agent_edit_links_path(agent)],
       ['Team Section', agent_edit_team_path(agent)],
       ['Testimonials', agent_edit_testimonials_path(agent)],
-      ['Listings', nil]
+      ['Listings', agent_edit_listings_path(agent)]
     ]
   end
 

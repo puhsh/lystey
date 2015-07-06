@@ -53,7 +53,7 @@ class AgentsController < ApplicationController
   end
 
   def links
-    @theme = @agent.theme || @agent.build_theme
+    @theme = @agent.theme
     @links = @agent.social_links
 
     # Social Links
@@ -93,6 +93,19 @@ class AgentsController < ApplicationController
     end
   end
 
+  def listings
+    @listings = @agent.listings
+    @theme = @agent.theme
+
+    if @listings.empty?
+      @agent.listings.build
+    end
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
   private
 
   def find_agent
@@ -118,6 +131,8 @@ class AgentsController < ApplicationController
       agent_edit_links_path(@agent)
     when 'team'
       agent_edit_team_path(@agent)
+    when 'listings'
+      agent_edit_listings_path(@agent)
     else
       edit_agent_path(@agent)
     end

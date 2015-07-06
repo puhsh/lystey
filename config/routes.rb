@@ -9,9 +9,10 @@ Rails.application.routes.draw do
     get '/graphics/edit', to: 'themes#edit', as: 'edit_themes'
     get '/about/edit', to: 'biographies#edit', as: 'edit_biography'
     get '/team/edit', to: 'teams#edit', as: 'edit_team'
+    get '/listings/edit', to: 'agents#listings', as: 'edit_listings'
 
     resources :brokers, except: [:edit]
-    resources :guides, only: [:index]
+    resources :guides, only: [:index], except: [:edit, :update]
     resources :testimonials, only: [:index]
     resources :links, only: [:index]
     resources :themes, except: [:edit]

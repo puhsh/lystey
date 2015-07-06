@@ -1,0 +1,40 @@
+= render partial: 'shared/admin_nav'
+
+= nested_form_for @agent, html: { class: 'form' } do |f|
+  = hidden_field_tag :from_section, 'listings'
+  .section.bordered-bottom
+    .container
+      .row
+        .twelve.columns
+          %h1.section-heading Listing Page Content
+
+      = f.fields_for :theme do |t|
+        .row
+          .twelve.columns
+            = t.url_field :listing_page_title, placeholder: 'Listing Page Title...', class: 'u-full-width'
+        .row
+          .twelve.columns
+            = t.text_area :listing_page_main_copy, rows: 20, placeholder: 'Listing Page Copy...', class: 'u-full-width'
+  .section
+    .container
+      .row
+        .twelve.columns
+          %h1.section-heading Real Estate Listings
+      = f.fields_for :listings do |l|
+        .row
+          .twelve.columns
+            = l.text_field :mls_number, placeholder: 'MLS Listing #'
+            = l.link_to_remove class: 'primary-link icon-link' do
+              %i.fa.fa-trash-o.fa-2x
+        .row
+          .twelve.columns
+            = l.url_field :url, placeholder: 'Enter a Realtor.com URL', class: 'u-full-width'
+      .row
+        .twelve.columns.center
+          = f.link_to_add "+ Add Another Property", :listings, class: 'add-field'
+
+  .section.shaded.submit-section
+    .container
+      .row
+        .twelve.columns
+          = f.submit 'Save Changes', class: 'button button-primary button-submit u-full-width'
