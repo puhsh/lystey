@@ -5,19 +5,16 @@ class BrokersController < ApplicationController
   end
 
   def new
-    @broker = @agent.broker || @agent.build_broker
+    @broker = @agent.build_broker
 
     respond_to do |format|
-      if @broker.new_record?
-        format.html
-      else
-        format.html { redirect_to agent_edit_brokers_path }
-      end
+      format.html
     end
   end
 
   def create
     @broker = @agent.build_broker(broker_params)
+    
     respond_to do |format|
       if @broker.save
         format.html { redirect_to agent_edit_brokers_path }
@@ -55,7 +52,8 @@ class BrokersController < ApplicationController
   private
 
   def find_agent
-    @agent = Agent.friendly.find(params[:agent_id])
+    id = params[:agent_id] || params[:id]
+    @agent = Agent.friendly.find(id)
   end
 
   def broker_params
