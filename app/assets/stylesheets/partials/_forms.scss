@@ -251,6 +251,7 @@ form.form .section-heading {
     .switch {
       order: 2;
       flex: 1 2 110px;
+      max-width: 150px;
       label {
         color: $white;
       }
@@ -302,8 +303,9 @@ form.form .section-heading {
       }
 
       .switch-toggle:checked + label:after {
-        margin-left: 5px;
+        margin-left: 50%;
         transition: margin 0.4s;
+        transition: content 0.4s;
         content: "Yes";
       }
     }
