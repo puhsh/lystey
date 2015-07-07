@@ -16,21 +16,6 @@ RSpec.describe BrokersController, type: :controller do
         expect(assigns[:broker]).to be_new_record
         expect(assigns[:broker].agent).to eq(agent)
       end
-
-      it 'redirects to the edit page if there is a broker that exists' do
-        broker = FactoryGirl.create(:broker, agent: agent)
-
-        get :new, agent_id: agent.id
-        expect(response).to redirect_to(agent_edit_brokers_path)
-      end
-
-      it 'does not create a new broker record if one exists' do
-        broker = FactoryGirl.create(:broker, agent: agent)
-
-        get :new, agent_id: agent.id
-        expect(assigns[:broker]).to_not be_new_record
-        expect(assigns[:broker]).to eql(broker)
-      end
     end
 
     describe '#create' do
