@@ -16,9 +16,10 @@ Rails.application.routes.draw do
     resources :biographies, except: [:edit]
     resources :brokers, except: [:edit]
     resources :guides, only: [:index]
+    resources :themes, except: [:edit]
+    
     resources :testimonials, only: [:index]
     resources :links, only: [:index]
-    resources :themes, except: [:edit]
     resources :teams, only: [:index, :show, :edit, :update]
   end
 end
