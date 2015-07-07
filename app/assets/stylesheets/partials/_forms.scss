@@ -244,6 +244,8 @@ form.form .section-heading {
 
         &.switch-label {
           flex: 2 1 175px;
+          font-size: $h1FontSize;
+          font-weight: 300;
         }
       }
     }

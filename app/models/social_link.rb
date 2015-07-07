@@ -8,7 +8,6 @@ class SocialLink < ActiveRecord::Base
   belongs_to :agent, touch: true
 
   # Validations
-  validates :url, presence: true
 
   # Scopes
 
