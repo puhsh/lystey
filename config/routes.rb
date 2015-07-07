@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :themes, except: [:edit]
     resources :links, only: [:index]
     resources :teams, except: [:edit]
-
     resources :testimonials, only: [:index]
+    resources :listings, only: [:index]
   end
 end
