@@ -37,6 +37,7 @@ form.form .section-heading {
   input.checkbox[type=checkbox] {
     display: none;
   }
+
   input.checkbox[type=checkbox] + label:before {
     font-family: FontAwesome;
     display: inline-block;
@@ -313,6 +314,20 @@ form.form .section-heading {
 
     &.centered {
       align-items: baseline;
+    }
+  }
+
+  &.flex-form {
+    display: flex;
+    flex-direction: column;
+
+    .fields-section {
+      flex: 1;
+      min-height: 85vh;
+    }
+
+    .submit-section {
+      flex: 1;
     }
   }
 }
