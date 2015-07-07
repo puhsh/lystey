@@ -1,0 +1,38 @@
+= form_for [@agent, @biography], html: { class: 'form' } do |f|
+  .section
+    .container
+      .row
+        .twelve.columns
+          %h1.section-heading About Page Content
+      .row
+        .twelve.columns
+          = f.text_field :title, placeholder: 'About Page Title', class: 'u-full-width'
+      .row
+        .twelve.columns
+          = f.text_area :short_bio, rows: 20, placeholder: "Enter a short bio...", class: 'u-full-width'
+      .row
+        .twelve.columns
+          = f.text_area :long_bio, rows: 20, placeholder: "Enter an extended bio...", class: 'u-full-width'
+
+  .section
+    .container
+      .row
+        .twelve.columns
+          %h1.section-heading About Page Photo
+      .row
+        .twelve.columns.file-upload-container
+          .preview-image-section
+            %img.preview-image.jumbo
+            %a.primary-link(href="#")
+              %i.fa.fa-trash-o.fa-2x.reset
+
+          .file-fields
+            = f.file_field :photo, class: 'file'
+            = f.label :photo, 'Upload'
+            %p JPG, PNG, GIF
+
+  .section.shaded.submit-section
+    .container
+      .row
+        .twelve.columns
+          = f.submit 'Save Changes', class: 'button button-primary button-submit u-full-width'

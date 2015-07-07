@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :agents, only: [:show, :edit, :update] do
+
+    # Custom Edit Routes. Exclude the default edit routes after...
     get '/guides/edit', to: 'agents#guides', as: 'edit_guides'
     get '/brokers/edit', to: 'brokers#edit', as: 'edit_brokers'
     get '/links/edit', to: 'agents#links', as: 'edit_links'
@@ -11,12 +13,12 @@ Rails.application.routes.draw do
     get '/team/edit', to: 'teams#edit', as: 'edit_team'
     get '/listings/edit', to: 'agents#listings', as: 'edit_listings'
 
+    resources :biographies, except: [:edit]
     resources :brokers, except: [:edit]
     resources :guides, only: [:index], except: [:edit, :update]
     resources :testimonials, only: [:index]
     resources :links, only: [:index]
     resources :themes, except: [:edit]
-    resources :biographies, only: [:index, :show, :edit, :update]
     resources :teams, only: [:index, :show, :edit, :update]
   end
 end
