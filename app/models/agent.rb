@@ -20,7 +20,7 @@ class Agent < ActiveRecord::Base
 
   # Validations
   accepts_nested_attributes_for :addresses, reject_if: :reject_addresses
-  accepts_nested_attributes_for :certifications, :guides, :theme, :social_links, :testimonials, :team, :listings, reject_if: :all_blank
+  accepts_nested_attributes_for :certifications, :guides, :theme, :social_links, :testimonials, :team, :listings, reject_if: :all_blank, allow_destroy: true
   validates :first_name, presence: true
 
   # Scopes
