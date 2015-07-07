@@ -18,8 +18,8 @@ Rails.application.routes.draw do
     resources :guides, only: [:index]
     resources :themes, except: [:edit]
     resources :links, only: [:index]
-    
+    resources :teams, except: [:edit]
+
     resources :testimonials, only: [:index]
-    resources :teams, only: [:index, :show, :edit, :update]
   end
 end
