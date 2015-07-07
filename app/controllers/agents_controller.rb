@@ -43,67 +43,71 @@ class AgentsController < ApplicationController
     end
   end
 
-  def guides
-    @buyers_guide = @agent.guides.where(guide_type: :buyers).first || @agent.guides.build(guide_type: :buyers)
-    @sellers_guide = @agent.guides.where(guide_type: :sellers).first || @agent.guides.build(guide_type: :sellers)
+  concerning :NestedMultipleResources do
 
-    respond_to do |format|
-      format.html
-    end
-  end
+    def guides
+      @buyers_guide = @agent.guides.where(guide_type: :buyers).first || @agent.guides.build(guide_type: :buyers)
+      @sellers_guide = @agent.guides.where(guide_type: :sellers).first || @agent.guides.build(guide_type: :sellers)
 
-  def links
-    @theme = @agent.theme
-    @links = @agent.social_links
-
-    # Social Links
-    @facebook_link = @links.where(site: :facebook).first || @agent.social_links.build(site: :facebook)
-    @twitter_link = @links.where(site: :twitter).first || @agent.social_links.build(site: :twitter)
-    @pinterest_link = @links.where(site: :pinterest).first || @agent.social_links.build(site: :pinterest)
-    @instagram_link = @links.where(site: :instagram).first || @agent.social_links.build(site: :instagram)
-    @google_plus_link = @links.where(site: :google_plus).first || @agent.social_links.build(site: :google_plus)
-    @linkedin_link = @links.where(site: :linkedin).first || @agent.social_links.build(site: :linkedin)
-
-    # Realtor Sites
-    @realtor = @links.where(site: :realtor).first || @agent.social_links.build(site: :realtor)
-    @zillow = @links.where(site: :zillow).first || @agent.social_links.build(site: :zillow)
-    @trulia = @links.where(site: :trulia).first || @agent.social_links.build(site: :trulia)
-
-    # Other links
-    @other_links = @links.where(site: :personal)
-
-    if @other_links.empty?
-      @other_links = @agent.social_links.build(site: :personal)
+      respond_to do |format|
+        format.html
+      end
     end
 
-    respond_to do |format|
-      format.html
+    def links
+      @theme = @agent.theme
+      @links = @agent.social_links
+
+      # Social Links - These Always Show up
+      @facebook_link = @links.where(site: :facebook).first || @agent.social_links.build(site: :facebook)
+      @twitter_link = @links.where(site: :twitter).first || @agent.social_links.build(site: :twitter)
+      @pinterest_link = @links.where(site: :pinterest).first || @agent.social_links.build(site: :pinterest)
+      @instagram_link = @links.where(site: :instagram).first || @agent.social_links.build(site: :instagram)
+      @google_plus_link = @links.where(site: :google_plus).first || @agent.social_links.build(site: :google_plus)
+      @linkedin_link = @links.where(site: :linkedin).first || @agent.social_links.build(site: :linkedin)
+
+      # Realtor Sites - These Always Show up
+      @realtor = @links.where(site: :realtor).first || @agent.social_links.build(site: :realtor)
+      @zillow = @links.where(site: :zillow).first || @agent.social_links.build(site: :zillow)
+      @trulia = @links.where(site: :trulia).first || @agent.social_links.build(site: :trulia)
+
+      # Other links
+      @other_links = @links.where(site: :personal)
+
+      if @other_links.empty?
+        @other_links = @agent.social_links.build(site: :personal)
+      end
+
+      respond_to do |format|
+        format.html
+      end
     end
-  end
 
-  def testimonials
-    @testimonials = @agent.testimonials
+    def testimonials
+      @testimonials = @agent.testimonials
 
-    if @testimonials.empty?
-      @agent.testimonials.build
+      if @testimonials.empty?
+        @agent.testimonials.build
+      end
+
+      respond_to do |format|
+        format.html
+      end
     end
 
-    respond_to do |format|
-      format.html
-    end
-  end
+    def listings
+      @listings = @agent.listings
+      @theme = @agent.theme
 
-  def listings
-    @listings = @agent.listings
-    @theme = @agent.theme
+      if @listings.empty?
+        @agent.listings.build
+      end
 
-    if @listings.empty?
-      @agent.listings.build
+      respond_to do |format|
+        format.html
+      end
     end
 
-    respond_to do |format|
-      format.html
-    end
   end
 
   private
