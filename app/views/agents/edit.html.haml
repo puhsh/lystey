@@ -48,14 +48,14 @@
           - else
             %h1.section-heading.u-pull-left Mailing Address
             = oa.check_box :same_as_office, class: 'checkbox js-duplicate-form', data: { :'from-form' => 'office', :'form-duplicate' => 'form-mailing-address' }
-            = oa.label :same_as_office, 'Same as Office', class: 'u-pull-right label'
+            = oa.label :same_as_office, 'Same as Office', class: 'u-pull-right label right-label'
           .row(id="form-#{oa.object.address_type == :office ? 'office' : 'mailing'}-address")
             .twelve.columns
               = oa.text_field :line_1, class: 'u-full-width', placeholder: 'Address'
               = oa.text_field :line_2, class: 'u-full-width', placeholder: 'Address (Line 2)'
               = oa.text_field :line_3, class: 'u-full-width', placeholder: 'Address (Line 3)'
               = oa.text_field :city, class: 'u-full-width', placeholder: 'City'
-              = oa.select :state, us_states, {}, { class: 'u-full-width select' }
+              = oa.select :state, us_states, { include_blank: '-- Select State --' }, { class: 'u-full-width select' }
               = oa.text_field :zipcode, class: 'u-full-width', placeholder: 'Zip'
 
   .section.shaded.submit-section

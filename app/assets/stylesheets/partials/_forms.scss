@@ -6,36 +6,6 @@
   }
 }
 
-.button {
-  border: 0;
-  font-size: $h1FontSize;
-  text-transform: none;
-  border-radius: $defaultBorderRadius;
-  padding: 0px 30px;
-  font-weight: normal;
-
-  &.button-primary,
-  &.button-primary:hover {
-    background-color: $primaryRed;
-  }
-
-  &:disabled {
-    text-decoration: none !important;
-  }
-
-  &.button-reset-theme {
-    border: 2px solid $black25 !important;
-    background-color: $black25 !important;
-    color: $black !important;
-    line-height: 34px !important;
-    font-weight: normal;
-  }
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-}
 
 .select {
   @include input-focus;
@@ -45,94 +15,18 @@
   }
 }
 
-
-.switch {
-  label {
-    color: $white;
-  }
-
-  .switch-toggle {
-    position: absolute;
-    margin-left: -9999px;
-    visibility: hidden;
-  }
-
-  .switch-toggle + label {
-    display: block;
-    position: relative;
-    cursor: pointer;
-    outline: none;
-    height: $inputHeight;
-    padding: 4px;
-    content: "";
-    border: 1px solid $black25;
-    border-radius: $defaultInputBorderRadius !important;
-    flex: 1 0 auto;
-  }
-
-  .switch-toggle + label:before,
-  .switch-toggle + label:after {
-    display: block;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    bottom: 2px;
-    content: "";
-  }
-
-  .switch-toggle + label:before {
-    transition: background 0.4s;
-  }
-
-  .switch-toggle + label:after {
-    width: 70px;
-    background-color: $primaryRed;
-    border-radius: $defaultBorderRadius;
-    transition: margin 0.4s;
-    margin-right: -5px;
-    content: "No";
-    font-size: $h2FontSize;
-    text-align: center;
-    font-weight: 500;
-    padding-top: 4px;
-  }
-
-  .switch-toggle:checked + label:after {
-    margin-left: 5px;
-    transition: margin 0.4s;
-    content: "Yes";
+form.form .container {
+  @media all and (min-width: 750px) {
+    max-width: 720px;
   }
 }
 
-.label {
-  font-size: $h1FontSize;
-  color: $baseFontColor;
-  font-weight: 300;
-  margin-bottom: 0;
-  height: inherit;
-  &.small {
-    font-size: $h2FontSize;
-    line-height: 1;
-  }
+form.form .section-heading {
+  @extend .section-heading;
 }
 
 .form {
   margin-bottom: 0px;
-
-  .container {
-    @media all and (min-width: 750px) {
-      max-width: 720px;
-    }
-  }
-
-
-  .section-heading {
-    margin-bottom: 5px;
-    margin-top: 15px;
-    &:first-child {
-      margin-top: 5px;
-    }
-  }
 
   input,
   select,
@@ -193,9 +87,53 @@
     }
   }
 
+
+  textarea {
+    height: 160px;
+    resize: none;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+
+
+  label.label {
+    font-size: $h1FontSize;
+    color: $baseFontColor;
+    font-weight: 300;
+    margin-bottom: 0;
+    height: inherit;
+    &.small {
+      font-size: $h2FontSize;
+      line-height: 1;
+    }
+
+    &.right-label {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  input,
+  select {
+    order: 2;
+    flex: 1 2 auto;
+
+    &.color-picker {
+      flex: 1 5 auto;
+    }
+
+    &.font-select {
+      flex: 0 3 auto;
+      align-self: flex-start;
+    }
+
+    @media (min-width: 750px) {
+      flex: 1 1 auto;
+    }
+  }
+
   .file-upload-container {
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: $formSectionMarginBottom;
 
     .preview-image-section {
       min-height: 150px;
@@ -254,14 +192,6 @@
 
   }
 
-
-  textarea {
-    height: 160px;
-    resize: none;
-    line-height: 1;
-    margin-bottom: 0;
-  }
-
   .add-field {
     @extend .primary-link;
     margin: 5px 15px 15px 15px;
@@ -317,28 +247,64 @@
       }
     }
 
-    input,
-    select {
-      order: 2;
-      flex: 1 2 auto;
-
-      &.color-picker {
-        flex: 1 5 auto;
-      }
-
-      &.font-select {
-        flex: 0 3 auto;
-        align-self: flex-start;
-      }
-
-      @media all and (min-width: 750px) {
-        flex: 1 1 auto;
-      }
-    }
-
     .switch {
       order: 2;
       flex: 1 2 110px;
+      label {
+        color: $white;
+      }
+
+      .switch-toggle {
+        position: absolute;
+        margin-left: -9999px;
+        visibility: hidden;
+      }
+
+      .switch-toggle + label {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        height: $inputHeight;
+        padding: 4px;
+        content: "";
+        border: 1px solid $black25;
+        border-radius: $defaultInputBorderRadius !important;
+        flex: 1 0 auto;
+      }
+
+      .switch-toggle + label:before,
+      .switch-toggle + label:after {
+        display: block;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        bottom: 2px;
+        content: "";
+      }
+
+      .switch-toggle + label:before {
+        transition: background 0.4s;
+      }
+
+      .switch-toggle + label:after {
+        width: 70px;
+        background-color: $primaryRed;
+        border-radius: $defaultBorderRadius;
+        transition: margin 0.4s;
+        margin-right: -5px;
+        content: "No";
+        font-size: $h2FontSize;
+        text-align: center;
+        font-weight: 500;
+        padding-top: 4px;
+      }
+
+      .switch-toggle:checked + label:after {
+        margin-left: 5px;
+        transition: margin 0.4s;
+        content: "Yes";
+      }
     }
 
     .right-content {

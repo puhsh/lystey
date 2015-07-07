@@ -19,7 +19,8 @@ class Agent < ActiveRecord::Base
   has_many :listings, dependent: :destroy
 
   # Validations
-  accepts_nested_attributes_for :certifications, :addresses, :guides, :theme, :social_links, :testimonials, :team, :listings, reject_if: :new_record?
+  accepts_nested_attributes_for :addresses, reject_if: :reject_addresses
+  accepts_nested_attributes_for :certifications, :guides, :theme, :social_links, :testimonials, :team, :listings, reject_if: :all_blank
   validates :first_name, presence: true
 
   # Scopes
@@ -52,6 +53,14 @@ class Agent < ActiveRecord::Base
       self.read_attribute(:email)
     else
       "#{self.first_name.try(&:downcase)}@XXXXXX.XXX"
+    end
+  end
+
+  def reject_addresses(attributed)
+    if attributed["same_as_office"]
+      false
+    else
+      attributed["line_1"].blank? && attributed["city"].blank? && attributed["state"].blank? && attributed["zipcode"].blank?
     end
   end
 end

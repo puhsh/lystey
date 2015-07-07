@@ -1,11 +1,6 @@
 .section {
   margin: $sectionMarginSize auto;
 
-  .section-heading {
-    margin-bottom: 10px;
-  }
-
-
   &.shaded {
     background-color: $baseGrayBackground;
     border: 1px solid $black25;
@@ -24,16 +19,15 @@
       max-width: 300px;
     }
   }
+}
 
-  &.text-centered {
-    text-align: center;
+.section-heading {
+  margin-bottom: $sectionHeadingMarginBottom;
+  margin-top: $sectionHeadingMarginBottom + 5;
+  &:first-child {
+    margin-top: $sectionHeadingMarginBottom / 2;
   }
 }
-
-.center {
-  text-align: center;
-}
-
 
 .bordered {
   border: 1px solid $black25;
@@ -41,9 +35,14 @@
 }
 
 .padded {
-  padding: 20px;
+  padding: $defaultPadding;
 }
 
 .hidden {
   display: none;
+}
+
+.center,
+.text-centered {
+  text-align: center;
 }

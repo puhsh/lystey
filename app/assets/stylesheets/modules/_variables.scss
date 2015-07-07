@@ -27,10 +27,13 @@ $h3FontSize: 12px;
 $baseFontSize: $h3FontSize;
 $placeholderFontSize: $h1FontSize;
 
+// Grid
+$defaultPadding: 20px;
+$sectionMarginSize: 10px;
+$sectionHeadingMarginBottom: $sectionMarginSize;
+
 // Forms
 $placeholderFontSize: $h1FontSize;
 $labelFontSize: $h3FontSize;
 $inputHeight: 40px;
-
-// Grid
-$sectionMarginSize: 10px;
+$formSectionMarginBottom: $sectionMarginSize;
