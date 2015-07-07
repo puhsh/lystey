@@ -8,7 +8,7 @@ class Team < ActiveRecord::Base
   has_many :team_openings, dependent: :destroy
 
   # Validations
-  accepts_nested_attributes_for :team_members, :team_openings, reject_if: :new_record?
+  accepts_nested_attributes_for :team_members, :team_openings, reject_if: :new_record?, allow_destroy: true
 
   # Scopes
 
