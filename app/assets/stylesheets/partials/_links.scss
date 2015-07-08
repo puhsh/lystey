@@ -15,4 +15,8 @@ a.primary-link {
     margin-left: 10px;
     vertical-align: text-top;
   }
+
+  &.full-color {
+    color: $black85;
+  }
 }

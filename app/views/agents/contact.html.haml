@@ -95,3 +95,11 @@
               - if @mailing_address.line_3
                 %p= @mailing_address.line_3
               %p= city_state_zipcode(@mailing_address)
+
+- @realtor_site_links.each do |realtor_site_link|
+  .section.bordered-bottom.tappable
+    %a.primary-link.full-color(href="#{realtor_site_link.url}")
+      .container.centered
+        .row
+          .twelve.columns
+            %h1.link-text= "#{realtor_site_link.site.text}.com Profile"
