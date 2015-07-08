@@ -10,6 +10,8 @@ class SocialLink < ActiveRecord::Base
   # Validations
 
   # Scopes
+  scope :social_media, -> { where.not(site: [:realtor, :zillow, :trulia, :personal]) }
+  scope :realtor_sites, -> { where(site: [:realtor, :zillow, :trulia]) }
 
   # Methods
 end

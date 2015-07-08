@@ -1,0 +1,52 @@
+.section
+  .container
+    .row
+      .twelve.columns.text-centered
+        %h1.section-heading Contact Us
+        %h1.faded Your information with never be shared with any third party.
+
+.section.shaded.padded
+  .container.centered
+    - if @agent.phone_number.present?
+      .row
+        .twelve.columns
+          %button.button.button-primary.u-full-width
+            %i.fa.fa-phone-square
+            = @agent.phone_number
+    - if @agent.phone_number.present?
+      .row
+        .twelve.columns
+          %button.button.button-primary.u-full-width
+            %i.fa.fa-envelope
+            = truncate(@agent.email, length: 25)
+
+    .row
+      .twelve.columns
+        %ul.unstyled.inline.flex-list.centered
+          - @social_media_links.each do |social_media_link|
+            %li
+              %a(href="#{social_media_link.url}" target="_blank")
+                %i.fa.fa-3x.icon-colored(class="#{font_awesome_icon_for_social_site(social_media_link.site.text.downcase)}")
+
+.section.bordered-bottom
+  .container.centered
+    .row
+      = form_tag agent_contact_path(@agent), method: :post, class: 'form' do
+        .row
+          .twelve.columns
+            = text_field_tag 'first_name', nil, class: 'u-full-width', placeholder: 'First Name'
+        .row
+          .twelve.columns
+            = text_field_tag 'last_name', nil, class: 'u-full-width', placeholder: 'Last Name'
+        .row
+          .twelve.columns
+            = text_field_tag 'email', nil, class: 'u-full-width', placeholder: 'Email'
+        .row
+          .twelve.columns
+            = text_field_tag 'phone', nil, class: 'u-full-width', placeholder: 'Phone (optional)'
+        .row
+          .twelve.columns
+            = text_area_tag :message, nil, rows: 20, placeholder: "Enter your message...", class: 'u-full-width'
+        .row
+          .twelve.columns
+            = submit_tag 'Send', class: 'u-full-width button button-primary'

@@ -221,7 +221,10 @@ form.form .section-heading {
   }
 
   .submit-section {
-    margin-bottom: 0;
+    @extend .padded-full;
+    .button {
+      margin: 0 !important;
+    }
   }
 
   .inline-section {

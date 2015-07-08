@@ -1,0 +1,23 @@
+ul {
+  margin-bottom: 0;
+  &.unstyled {
+    list-style-type: none;
+  }
+
+  &.inline {
+    li {
+      display: inline;
+    }
+  }
+
+  &.centered {
+    text-align: center;
+  }
+
+  &.flex-list {
+    display: flex;
+    li {
+      flex: 1;
+    }
+  }
+}

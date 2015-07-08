@@ -2,4 +2,30 @@ i.fa {
   &.icon-red {
     color: $primaryRed;
   }
+
+  &.icon-colored {
+    &.fa-facebook-square {
+      color: $facebookBlue;
+    }
+
+    &.fa-twitter-square {
+      color: $twitterBlue;
+    }
+
+    &.fa-pinterest-square {
+      color: $pinterestRed;
+    }
+
+    &.fa-instagram {
+      color: $instagramBlue
+    }
+
+    &.fa-google-plus-square {
+      color: $googlePlusRed;
+    }
+
+    &.fa-linkedin-square {
+      color: $linkedInBlue;
+    }
+  }
 }

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get '/about/edit', to: 'biographies#edit', as: 'edit_biography'
     get '/team/edit', to: 'teams#edit', as: 'edit_team'
     get '/listings/edit', to: 'agents#listings', as: 'edit_listings'
+    get '/contact', to: 'agents#contact'
 
     resources :biographies, except: [:edit]
     resources :brokers, except: [:edit]

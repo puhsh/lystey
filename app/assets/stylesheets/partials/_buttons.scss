@@ -5,6 +5,7 @@
   border-radius: $defaultBorderRadius;
   padding: 0px 30px;
   font-weight: normal;
+  margin-bottom: 20px;
 
   &.button-primary,
   &.button-primary:hover {
@@ -25,5 +26,9 @@
 
   &:hover {
     text-decoration: underline;
+  }
+
+  &.nav-button {
+    margin-bottom: 0;
   }
 }

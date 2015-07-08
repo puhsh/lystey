@@ -56,6 +56,10 @@ class Agent < ActiveRecord::Base
     end
   end
 
+  def has_contact_info?
+    self.phone_number.present? && self.email.present?
+  end
+
   def reject_addresses(attributed)
     if attributed["same_as_office"]
       false

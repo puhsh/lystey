@@ -43,8 +43,17 @@ class AgentsController < ApplicationController
     end
   end
 
-  concerning :NestedMultipleResources do
+  def contact
+    @links = @agent.social_links
+    @social_media_links = @links.social_media
+    @realtor_site_links = @links.realtor_sites
 
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  concerning :NestedMultipleResources do
     def guides
       @buyers_guide = @agent.guides.where(guide_type: :buyers).first || @agent.guides.build(guide_type: :buyers)
       @sellers_guide = @agent.guides.where(guide_type: :sellers).first || @agent.guides.build(guide_type: :sellers)
@@ -107,7 +116,6 @@ class AgentsController < ApplicationController
         format.html
       end
     end
-
   end
 
   private

@@ -35,6 +35,11 @@
 }
 
 .padded {
+  padding: $defaultPadding 0;
+  padding-bottom: 0;
+}
+
+.padded-full {
   padding: $defaultPadding;
 }
 
