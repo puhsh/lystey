@@ -74,27 +74,28 @@
             %span.label Fax:
             %span.content= @agent.fax_number
 
-        - if @mailing_address.same_as_office?
-          %li#office-address
-            %span.label Mail:
-            %span.content
-              %p= @office_address.line_1
-              - if @office_address.line_2
-                %p= @office_address.line_2
-              - if @office_address.line_3
-                %p= @office_address.line_3
-              %p= city_state_zipcode(@office_address)
+        - if @mailing_address.present?
+          - if @mailing_address.same_as_office?
+            %li#office-address
+              %span.label Mail:
+              %span.content
+                %p= @office_address.line_1
+                - if @office_address.line_2
+                  %p= @office_address.line_2
+                - if @office_address.line_3
+                  %p= @office_address.line_3
+                %p= city_state_zipcode(@office_address)
 
-        - elsif @mailing_address.any? && !@mailing_address.same_as_office?
-          %li#mailing-address
-            %span.label Mail:
-            %span.content
-              %p= @mailing_address.line_1
-              - if @mailing_address.line_2
-                %p= @mailing_address.line_2
-              - if @mailing_address.line_3
-                %p= @mailing_address.line_3
-              %p= city_state_zipcode(@mailing_address)
+          - else
+            %li#mailing-address
+              %span.label Mail:
+              %span.content
+                %p= @mailing_address.line_1
+                - if @mailing_address.line_2
+                  %p= @mailing_address.line_2
+                - if @mailing_address.line_3
+                  %p= @mailing_address.line_3
+                %p= city_state_zipcode(@mailing_address)
 
 - @realtor_site_links.each do |realtor_site_link|
   .section.bordered-bottom.tappable
