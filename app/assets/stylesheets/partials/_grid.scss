@@ -12,6 +12,10 @@
 
   &.bordered-bottom {
     border-bottom: 1px solid $black25;
+
+    &:last-child {
+      border-bottom: 0;
+    }
   }
 
   &.centered {
@@ -31,6 +35,17 @@
         margin-bottom: 10px;
       }
     }
+  }
+
+  &.footer {
+    flex: 1;
+    height: 120px;
+    margin: 0;
+  }
+
+  &.section-inverted {
+    background-color: $black;
+    color: $white;
   }
 }
 
@@ -63,4 +78,10 @@
 .center,
 .text-centered {
   text-align: center;
+}
+
+div.content {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }

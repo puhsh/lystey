@@ -1,5 +1,6 @@
 class AgentsController < ApplicationController
   before_filter :find_agent
+  before_filter :show_footer, only: [:contact]
 
   def show
     respond_to do |format|

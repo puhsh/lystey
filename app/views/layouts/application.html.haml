@@ -11,13 +11,16 @@
     %meta(name="apple-mobile-web-app-status-bar-style" content="black")
     %meta(name="apple-mobile-web-app-capable" content="yes")
   %body
-    #lystey-app
+    #lystey-app.content
 
       #menu
         = render partial: 'shared/menu'
       #panel
         = render partial: 'shared/header'
         = yield
+
+    - if @show_footer
+      = render 'shared/footer'
 
 
     :javascript
