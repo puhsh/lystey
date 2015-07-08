@@ -20,7 +20,8 @@ class Agent < ActiveRecord::Base
 
   # Validations
   accepts_nested_attributes_for :addresses, reject_if: :reject_addresses
-  accepts_nested_attributes_for :certifications, :guides, :theme, :social_links, :testimonials, :team, :listings, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :social_links, reject_if: :reject_social_links, allow_destroy: true
+  accepts_nested_attributes_for :certifications, :guides, :theme, :testimonials, :team, :listings, reject_if: :all_blank, allow_destroy: true
   validates :first_name, presence: true
 
   # Scopes
@@ -60,11 +61,16 @@ class Agent < ActiveRecord::Base
     self.phone_number.present? && self.email.present?
   end
 
-  def reject_addresses(attributed)
-    if attributed["same_as_office"]
+  def reject_addresses(attributes)
+    if attributes["same_as_office"]
       false
     else
-      attributed["line_1"].blank? && attributed["city"].blank? && attributed["state"].blank? && attributed["zipcode"].blank?
+      attributes["line_1"].blank? && attributes["city"].blank? && attributes["state"].blank? && attributes["zipcode"].blank?
     end
+  end
+
+  # Rejects any social links from a nested attributes if the URL is blank and an existing social link doesn't exist
+  def reject_social_links(attributes)
+    attributes["url"].blank? && !self.social_links.where(site: attributes["site"]).exists?
   end
 end
