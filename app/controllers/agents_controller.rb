@@ -45,6 +45,9 @@ class AgentsController < ApplicationController
 
   def contact
     @links = @agent.social_links
+    @addresses = @agent.addresses
+    @office_address = @addresses.where(address_type: :office).first
+    @mailing_address = @addresses.where(address_type: :mailing).first
     @social_media_links = @links.social_media
     @realtor_site_links = @links.realtor_sites
 

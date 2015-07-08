@@ -106,4 +106,8 @@ module ApplicationHelper
       "'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;"
     end
   end
+
+  def city_state_zipcode(address)
+    "#{address.city}, #{address.state}, #{address.zipcode}"
+  end
 end

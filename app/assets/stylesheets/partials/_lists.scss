@@ -20,4 +20,27 @@ ul {
       flex: 1;
     }
   }
+
+  &.detail-list {
+    @extend .unstyled;
+
+    li {
+      font-size: $h1FontSize;
+      line-height: 1.1;
+      margin-bottom: 40px;
+      span.label {
+        font-weight: bold;
+      }
+      span.content {
+        font-weight: $defaultFontWeight;
+        p {
+          margin-bottom: 0;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 10px;
+      }
+    }
+  }
 }

@@ -50,3 +50,48 @@
         .row
           .twelve.columns
             = submit_tag 'Send', class: 'u-full-width button button-primary'
+.section.bordered-bottom
+  .container.centered
+    .row
+      %ul.detail-list
+        - if @office_address.present?
+          %li#office-address
+            %span.label Office:
+            %span.content
+              %p= @office_address.line_1
+              - if @office_address.line_2
+                %p= @office_address.line_2
+              - if @office_address.line_3
+                %p= @office_address.line_3
+              %p= city_state_zipcode(@office_address)
+
+        - if @agent.phone_number.present?
+          %li#phone-number
+            %span.label Phone:
+            %span.content= @agent.phone_number
+        - if @agent.fax_number.present?
+          %li#fax-number
+            %span.label Fax:
+            %span.content= @agent.fax_number
+
+        - if @mailing_address.same_as_office?
+          %li#office-address
+            %span.label Mail:
+            %span.content
+              %p= @office_address.line_1
+              - if @office_address.line_2
+                %p= @office_address.line_2
+              - if @office_address.line_3
+                %p= @office_address.line_3
+              %p= city_state_zipcode(@office_address)
+
+        - elsif @mailing_address.any? && !@mailing_address.same_as_office?
+          %li#mailing-address
+            %span.label Mail:
+            %span.content
+              %p= @mailing_address.line_1
+              - if @mailing_address.line_2
+                %p= @mailing_address.line_2
+              - if @mailing_address.line_3
+                %p= @mailing_address.line_3
+              %p= city_state_zipcode(@mailing_address)
