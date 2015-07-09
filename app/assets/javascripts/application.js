@@ -6,6 +6,7 @@
 //= require bacon.jquery
 //= require spectrum/spectrum
 //= require lodash/lodash
+//= require gmaps/google
 //= require_tree ./components
 
 var App = window.App || {};

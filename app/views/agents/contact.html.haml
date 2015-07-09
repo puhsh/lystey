@@ -1,3 +1,35 @@
+- if @office_address.present?
+
+  :javascript
+    $(function() {
+      handler = Gmaps.build('Google');
+      handler.buildMap({
+        provider: {
+          disableDefaultUI: true,
+          zoomControl: false,
+          minZoom: 5
+        },
+
+        internal: {
+          id: 'js-map-section'
+        }
+      },
+      function() {
+        markers = handler.addMarkers([
+          {
+            "lat": "#{@office_address.office_latitude}",
+            "lng": "#{@office_address.office_longitude}",
+          }
+        ]);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds()
+        handler.getMap().setZoom(15);
+
+      });
+    });
+
+
+  .section.map-section.bordered-bottom#js-map-section
 .section
   .container
     .row
