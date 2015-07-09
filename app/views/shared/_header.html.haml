@@ -1,13 +1,22 @@
-%section.section#heading.bordered-bottom.nav-section
+%section.section.bordered-bottom.nav-section.flushed-section
   .container
     .row.nav-bar
-      .twelve.columns
-        %a.nav-menu-toggle.hamburger(href="#")
-          %i.fa.fa-bars.fa-3x
-        #nav-heading
-          - if @agent && @agent.theme
-            %h1.heading-text= @agent.theme.site_title.present? ? @agent.theme.site_title : @agent.full_name
-            %h2.heading-text= @agent.theme.site_subtitle.present? ? @agent.theme.site_subtitle : 'Real Estate'
-          - else
-            %h1.heading-text Firstname Lastname
-            %h2.heading-text Real Estate
+      .twelve.columns.u-cf
+        .u-pull-left
+          %a.nav-menu-toggle.hamburger(href="#")
+            %i.fa.fa-bars.fa-3x
+          #nav-heading
+            - if @agent && @agent.theme
+              %h1.heading-text= @agent.theme.site_title.present? ? @agent.theme.site_title : @agent.full_name
+              %h2.heading-text= @agent.theme.site_subtitle.present? ? @agent.theme.site_subtitle : 'Real Estate'
+            - else
+              %h1.heading-text Firstname Lastname
+              %h2.heading-text Real Estate
+        .u-pull-right.hide-for-small
+          #contact-items
+            - if @agent.phone_number.present?
+              %a.button.contact-button.icon-button.phone(href="tel:#{@agent.phone_number}")
+                %i.fa.fa-2x.fa-phone-square.fa-fw.icon-red
+            - if @agent.email.present?
+              = mail_to @agent.email, class: 'button contact-button icon-button' do
+                %i.fa.fa-2x.fa-envelope.fa-fw.icon-red

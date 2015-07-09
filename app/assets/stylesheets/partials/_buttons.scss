@@ -12,6 +12,15 @@
     background-color: $primaryRed;
   }
 
+  &.contact-button {
+    height: 44px;
+    padding: 0;
+    margin: 0;
+    &.phone {
+      font-size: 18.5px;
+    }
+  }
+
   &:disabled {
     text-decoration: none !important;
   }

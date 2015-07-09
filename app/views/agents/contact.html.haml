@@ -5,9 +5,10 @@
       handler = Gmaps.build('Google');
       handler.buildMap({
         provider: {
-          disableDefaultUI: true,
+          streetViewControl: false,
           zoomControl: false,
-          minZoom: 5,
+          minZoom: 15,
+          maxZoom: 15,
           draggable: false
         },
 
@@ -32,14 +33,14 @@
   .section.map-section.bordered-bottom#js-map-section
 
 .section
-  .container
+  .container.medium-fixed
     .row
       .twelve.columns.text-centered
         %h1.section-heading Contact Us
         %h1.faded Your information with never be shared with any third party.
 
 .section.shaded.padded
-  .container.centered
+  .container.centered.medium-fixed
     - if @agent.phone_number.present?
       .row
         .twelve.columns
@@ -58,11 +59,11 @@
         %ul.unstyled.inline.flex-list.centered
           - @social_media_links.each do |social_media_link|
             %li
-              %a(href="#{social_media_link.url}" target="_blank")
+              %a.primary-link(href="#{social_media_link.url}" target="_blank")
                 %i.fa.fa-3x.icon-colored(class="#{font_awesome_icon_for_social_site(social_media_link.site.text.downcase)}")
 
 .section.bordered-bottom
-  .container.centered
+  .container.centered.medium-fixed
     .row
       = form_tag agent_contact_path(@agent), method: :post, class: 'form' do
         .row
@@ -84,7 +85,7 @@
           .twelve.columns
             = submit_tag 'Send', class: 'u-full-width button button-primary'
 .section.bordered-bottom
-  .container.centered
+  .container.centered.medium-fixed
     .row
       %ul.detail-list
         - if @office_address.present?
@@ -133,7 +134,7 @@
 - @realtor_site_links.each do |realtor_site_link|
   .section.bordered-bottom.tappable
     %a.primary-link.full-color(href="#{realtor_site_link.url}" target="_blank")
-      .container.centered
+      .container.centered.medium-fixed
         .row
           .twelve.columns
             %h1.link-text= "#{realtor_site_link.site.text}.com Profile"
