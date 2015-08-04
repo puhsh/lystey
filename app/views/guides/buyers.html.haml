@@ -1,0 +1,60 @@
+.section.bordered-bottom
+  .container.medium-fixed
+    .row
+      .twelve.columns
+        %h1.section-heading.text-centered= @buyers_guide.guide_title
+        %p= @buyers_guide.content
+.section.bordered-bottom
+  .container.medium-fixed
+    .row
+      .twelve.columns
+        %h1.section-heading.text-centered Mortgage Calculator
+    .row
+      .twelve.columns
+        %form.form(action="http://www.mlcalc.com/" method="post" onsubmit="return mlcalcCalculate(this)")
+          %input{:name => "wl", :type => "hidden", :value => "en"}
+          %label
+            Purchase price:
+            %input.u-full-width{:name => "ma", :type => "text", :value => "250,000"}
+          %label
+            Down payment:
+            %input.u-full-width(type="text" name="dp" value="10")
+          %label
+            Mortgage term:
+            %input.u-full-width(type="text" name="mt" value="30")
+          %label
+            Interest rate:
+            %input.u-full-width(type="text" name="ir" value="5.5")
+          %label
+            Property tax:
+            %input.u-full-width(type="text" name="pt" value="3,000")
+          %label
+            Property insurance:
+            %input.u-full-width(type="text" name="pi" value="1,500")
+          %label
+            PMI:
+            %input.u-full-width(type="text" name="mi" value="0.52")
+          %label
+            First payment date (month):
+            %input.u-full-width(type="text" name="sm" value="3")
+          %label
+            First payment date (year):
+            %input.u-full-width(type="text" name="sy" value="2010")
+          %label
+            Amortization:
+            %label
+              %input(type="radio" name="as" value="year" checked="checked") Show by Yåear
+            %label
+              %input(type="radio" name="as" value="month") Show by Month
+            %label
+              %input(type="radio" name="as" value="none") Don't Show
+          %input.u-full-width.button.button-primary(type="submit" value="Calculate")
+.section
+  .container.centered.medium-fixed
+    .row
+      .twelve.columns
+        %h1.section-heading.text-centered Ready to start shopping?
+    .row
+      = render 'shared/contact_agent_form'
+
+    %a(href="http://www.mlcalc.com/" style="display: none;") Mortgage Calculator

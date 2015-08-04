@@ -1,7 +1,12 @@
 class GuidesController < ApplicationController
   before_filter :find_agent
+  before_filter :show_footer
 
-  def index
+  def buyers
+    @buyers_guide = @agent.guides.where(guide_type: :buyers).first
+    respond_to do |format|
+      format.html
+    end
   end
 
   private

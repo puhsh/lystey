@@ -65,25 +65,7 @@
 .section.bordered-bottom
   .container.centered.medium-fixed
     .row
-      = form_tag agent_contact_path(@agent), method: :post, class: 'form' do
-        .row
-          .twelve.columns
-            = text_field_tag 'first_name', nil, class: 'u-full-width', placeholder: 'First Name'
-        .row
-          .twelve.columns
-            = text_field_tag 'last_name', nil, class: 'u-full-width', placeholder: 'Last Name'
-        .row
-          .twelve.columns
-            = text_field_tag 'email', nil, class: 'u-full-width', placeholder: 'Email'
-        .row
-          .twelve.columns
-            = text_field_tag 'phone', nil, class: 'u-full-width', placeholder: 'Phone (optional)'
-        .row
-          .twelve.columns
-            = text_area_tag :message, nil, rows: 20, placeholder: "Enter your message...", class: 'u-full-width'
-        .row
-          .twelve.columns
-            = submit_tag 'Send', class: 'u-full-width button button-primary'
+      = render 'shared/contact_agent_form'
 .section.bordered-bottom
   .container.centered.medium-fixed
     .row
