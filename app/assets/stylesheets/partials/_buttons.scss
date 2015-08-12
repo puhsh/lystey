@@ -12,6 +12,11 @@
     background-color: $primaryRed;
   }
 
+  &.button-secondary,
+  &.button-secondary:hover {
+    background-color: $white;
+  }
+
   &.contact-button {
     height: 44px;
     padding: 0;

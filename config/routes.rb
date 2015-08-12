@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :guides, only: [] do
       collection do
         get :buyers
+        get :sellers
       end
     end
 

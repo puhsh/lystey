@@ -1,0 +1,23 @@
+.section.bordered-bottom
+  .container.medium-fixed
+    .row
+      .twelve.columns
+        %h1.section-heading.text-centered= @sellers_guide.guide_title
+        %p= @sellers_guide.content
+- if @testimonials.present?
+  .section.bordered-bottom
+    .container.medium-fixed
+      .row
+        .twelve.columns
+          %h1.section-heading.text-centered Testimonials
+      - @testimonials.each do |testimonial|
+        .row
+          .twelve.columns
+            %p= "\"#{testimonial.text}\""
+.section
+  .container.centered.medium-fixed
+    .row
+      .twelve.columns
+        %h1.section-heading.text-centered Get started selling?
+    .row
+      = render 'shared/contact_agent_form'
