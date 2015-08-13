@@ -1,4 +1,11 @@
-var App = window.App || {};
+var Lystey = window.Lystey || {};
+Lystey.UI = window.Lystey.UI || {};
+
+
+Lystey.UI.Forms = {
+  x: 1
+};
+
 
 (function(window, $) {
 

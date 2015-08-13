@@ -1,5 +1,6 @@
 class BrokersController < ApplicationController
   before_filter :find_agent
+  before_filter :find_theme, only: [:show]
 
   def show
   end
@@ -14,7 +15,7 @@ class BrokersController < ApplicationController
 
   def create
     @broker = @agent.build_broker(broker_params)
-    
+
     respond_to do |format|
       if @broker.save
         format.html { redirect_to agent_edit_brokers_path }
@@ -50,11 +51,6 @@ class BrokersController < ApplicationController
   end
 
   private
-
-  def find_agent
-    id = params[:agent_id] || params[:id]
-    @agent = Agent.friendly.find(id)
-  end
 
   def broker_params
     params.require(:broker).permit!

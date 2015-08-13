@@ -1,5 +1,6 @@
 class AgentsController < ApplicationController
   before_filter :find_agent
+  before_filter :find_theme, only: [:show]
   before_filter :show_footer, only: [:contact, :show]
 
   def show
@@ -123,11 +124,6 @@ class AgentsController < ApplicationController
   end
 
   private
-
-  def find_agent
-    id = params[:id] || params[:agent_id]
-    @agent = Agent.friendly.find(id)
-  end
 
   def id_param?
     params[:id] && params[:id] != @agent.friendly_id

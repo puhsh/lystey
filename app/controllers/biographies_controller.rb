@@ -1,5 +1,6 @@
 class BiographiesController < ApplicationController
   before_filter :find_agent
+  before_filter :find_theme, only: [:show]
 
   def show
   end
@@ -50,11 +51,6 @@ class BiographiesController < ApplicationController
   end
 
   private
-
-  def find_agent
-    id = params[:agent_id] || params[:id]
-    @agent = Agent.friendly.find(id)
-  end
 
   def biography_params
     params.require(:biography).permit!

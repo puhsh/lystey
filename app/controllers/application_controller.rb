@@ -5,6 +5,17 @@ class ApplicationController < ActionController::Base
 
 
   private
+  
+  def find_agent
+    id = params[:id] || params[:agent_id]
+    @agent = Agent.friendly.find(id)
+  end
+
+  def find_theme
+    if @agent
+      @theme = @agent.theme
+    end
+  end
 
   def show_footer
     @show_footer = true

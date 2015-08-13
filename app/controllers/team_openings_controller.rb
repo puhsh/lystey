@@ -1,5 +1,6 @@
 class TeamOpeningsController < ApplicationController
   before_filter :find_agent
+  before_filter :find_theme, only: [:index]
   before_filter :show_footer
 
   def index
@@ -8,11 +9,5 @@ class TeamOpeningsController < ApplicationController
     respond_to do |format|
       format.html
     end
-  end
-
-  private
-
-  def find_agent
-    @agent = Agent.friendly.find(params[:agent_id])
   end
 end

@@ -1,10 +1,10 @@
 class TeamsController < ApplicationController
   before_filter :find_agent
+  before_filter :find_theme
   before_filter :show_footer, only: [:show]
 
   def show
     @team = @agent.team
-    @theme = @agent.theme
     @team_members = @team.team_members
     respond_to do |format|
       format.html
@@ -12,7 +12,6 @@ class TeamsController < ApplicationController
   end
 
   def edit
-    @theme = @agent.theme
     @team = @agent.team || @agent.build_team
     @team_members = @team.team_members
     @team_openings = @team.team_openings
