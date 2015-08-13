@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
 
 
   private
-  
+
   def find_agent
-    id = params[:id] || params[:agent_id]
+    id = params[:agent_id] || params[:id]
     @agent = Agent.friendly.find(id)
   end
 

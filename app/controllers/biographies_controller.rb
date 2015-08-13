@@ -43,7 +43,7 @@ class BiographiesController < ApplicationController
     @biography = @agent.biography
     respond_to do |format|
       if @biography.update_attributes(biography_params)
-        format.html
+        format.html { redirect_to agent_edit_biography_path(@agent) }
       else
         format.html { redirect_to agent_edit_biography_path(@agent) }
       end
