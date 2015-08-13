@@ -12,8 +12,8 @@ class GuidesController < ApplicationController
 
   def sellers
     @sellers_guide = @agent.guides.where(guide_type: :sellers).first
-    @testimonials = @agent.testimonials.limit(3).order(created_at: :desc)
-
+    @testimonials_count = @agent.testimonials.count
+  @testimonials = @agent.testimonials.limit(3).order(created_at: :desc)
     respond_to do |format|
       format.html
     end

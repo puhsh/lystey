@@ -17,6 +17,10 @@
         .row
           .twelve.columns
             %p.text-centered.bolded= "- #{testimonial.client_name}"
+      - if @testimonials_count > 3
+        .row
+          .twelve.columns
+            = link_to 'View All', agent_testimonials_path(@agent), class: 'u-full-width button button-secondary'
 .section
   .container.centered.medium-fixed
     .row

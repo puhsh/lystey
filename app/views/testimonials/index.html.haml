@@ -1,0 +1,18 @@
+.section.bordered-bottom
+  .container.medium-fixed
+    .row
+      .twelve.columns
+        %h1.section-heading.text-centered= @theme.testimonial_page_title
+        %p= @theme.testimonial_page_main_copy
+.section.bordered-bottom
+  .container.medium-fixed
+    .row
+      .twelve.columns
+        %h1.section-heading.text-centered Testimonials
+    - @testimonials.each do |testimonial|
+      .row
+        .twelve.columns
+          %p= "\"#{testimonial.text}\""
+      .row
+        .twelve.columns
+          %p.text-centered.bolded= "- #{testimonial.client_name}"

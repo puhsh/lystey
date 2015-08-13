@@ -15,6 +15,7 @@
   &.button-secondary,
   &.button-secondary:hover {
     background-color: $white;
+    border: 1px solid $baseGrayBackground;
   }
 
   &.contact-button {
