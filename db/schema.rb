@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709130521) do
+ActiveRecord::Schema.define(version: 20150813193336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,16 +106,6 @@ ActiveRecord::Schema.define(version: 20150709130521) do
   end
 
   add_index "guides", ["agent_id"], name: "index_guides_on_agent_id", using: :btree
-
-  create_table "job_openings", force: :cascade do |t|
-    t.integer  "team_id"
-    t.string   "job_title"
-    t.text     "job_description"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  add_index "job_openings", ["team_id"], name: "index_job_openings_on_team_id", using: :btree
 
   create_table "listings", force: :cascade do |t|
     t.integer  "agent_id"
@@ -219,7 +209,6 @@ ActiveRecord::Schema.define(version: 20150709130521) do
   add_index "themes", ["agent_id"], name: "index_themes_on_agent_id", using: :btree
 
   add_foreign_key "certifications", "agents"
-  add_foreign_key "job_openings", "teams"
   add_foreign_key "team_members", "teams"
   add_foreign_key "teams", "agents"
   add_foreign_key "testimonials", "agents"
