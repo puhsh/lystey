@@ -15,8 +15,10 @@ class Theme < ActiveRecord::Base
 
   # Resets the theme for the agent
   def reset!
-    agent = self.agent
-    self.destroy
-    agent.build_theme.save
+    self.background_color = nil
+    self.font_color = nil
+    self.button_color = nil
+    self.font = :helvetica
+    self.save
   end
 end
