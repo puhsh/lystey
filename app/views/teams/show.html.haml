@@ -5,19 +5,13 @@
         %h1.section-heading.text-centered= @theme.team_page_title
         %p= @theme.team_page_description
 
-- @team_members.each_with_index do |team_member, index|
+- @team_members.each do |team_member|
   .section.bordered-bottom
     .container.medium-fixed
       .row
         .twelve.columns.text-centered
           %h1.section-heading= team_member.full_name
-          - case index
-          - when 0
-            %img(src="https://thenypost.files.wordpress.com/2013/08/dr_who-300x300.jpg?w=300&h=300&crop=1")
-          - when 1
-            %img(src="http://www.thedoctorwhosite.co.uk/wp-images/doctorwho/characters/11-doctor.jpg")
-          - else
-            %img(src="http://www.thedoctorwhosite.co.uk/wp-images/doctorwho/characters/10-doctor.jpg")
+          %img.avatar(src="https://placeholdit.imgix.net/~text?w=300&h=300")
           %p= team_member.bio
           %button.button.button-primary.u-full-width
             %i.fa.fa-phone-square

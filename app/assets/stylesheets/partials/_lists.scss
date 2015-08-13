@@ -44,4 +44,23 @@ ul {
       }
     }
   }
+
+  &.collection-list {
+    text-align: center;
+    li {
+      display: inline-block;
+      margin-right: 20px;
+      margin-bottom: 0;
+      vertical-align: text-top;
+
+      @media (max-width: 400px) {
+        min-width: 25%;
+        margin-left: 20px;
+      }
+
+      @media (min-width: 400px) and (max-width: 750px) {
+        width: 25%;
+      }
+    }
+  }
 }

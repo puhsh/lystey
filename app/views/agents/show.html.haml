@@ -2,7 +2,7 @@
   .container.medium-fixed
     .row
       .twelve.columns.text-centered
-        %img(src="https://thenypost.files.wordpress.com/2013/08/dr_who-300x300.jpg?w=300&h=300&crop=1")
+        %img.avatar(src="https://placeholdit.imgix.net/~text?w=300&h=300")
 .section.bordered-bottom
   .container.medium-fixed
     .row
@@ -17,6 +17,14 @@
     .row
       .twelve.columns.text-centered
         %h1.section-heading Designations & Certifications
+    .row
+      .twelve.columns
+        %ul.collection-list
+          - @agent.certifications.each do |certification|
+            %li.collection-item
+              %img(src="https://placeholdit.imgix.net/~text?w=100&h=100")
+              %h1= certification.certification_type.upcase
+
 .section
   .container.centered.medium-fixed
     .row
