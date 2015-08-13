@@ -50,6 +50,11 @@
 
   &.photo-section {
     border-top: 0;
+    @media (max-width: 400px) {
+      .container {
+        padding: 0;
+      }
+    }
   }
 
   &.flushed-section {
