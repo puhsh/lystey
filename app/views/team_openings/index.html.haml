@@ -1,0 +1,16 @@
+.section.bordered-bottom
+  .container.medium-fixed
+    .row
+      .twelve.columns
+        %h1.section-heading.text-centered= @team.hiring_title
+        %p= @team.hiring_details
+
+- @team_openings.each do |team_opening|
+  .section.bordered-bottom
+    .container.medium-fixed
+      .row
+        .twelve.columns
+          %h1.text-centered= team_opening.position_title
+      .row
+        .twelve.columns
+          %p.text-centered= team_opening.position_description

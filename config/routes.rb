@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :agents, only: [:show, :edit, :update] do
@@ -22,6 +22,8 @@ Rails.application.routes.draw do
         get :sellers
       end
     end
+
+    resources :team_openings, only: [:index]
 
     resources :themes, except: [:edit]
     resources :links, only: [:index]
