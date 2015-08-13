@@ -1,8 +1,9 @@
 class AgentsController < ApplicationController
   before_filter :find_agent
-  before_filter :show_footer, only: [:contact]
+  before_filter :show_footer, only: [:contact, :show]
 
   def show
+    @biography = @agent.biography
     respond_to do |format|
       if id_param?
         format.html { redirect_to agent_path(@agent.friendly_id) }

@@ -1,0 +1,26 @@
+.section.photo-section.shaded.shaded-dark
+  .container.medium-fixed
+    .row
+      .twelve.columns.text-centered
+        %img(src="https://thenypost.files.wordpress.com/2013/08/dr_who-300x300.jpg?w=300&h=300&crop=1")
+.section.bordered-bottom
+  .container.medium-fixed
+    .row
+      .twelve.columns.text-centered
+        %h1.section-heading= @biography.title
+        %p= @biography.long_bio
+    .row
+      .twelve.columns.text-centered
+        %p= @biography.short_bio
+.section.bordered-bottom
+  .container.medium-fixed
+    .row
+      .twelve.columns.text-centered
+        %h1.section-heading Designations & Certifications
+.section
+  .container.centered.medium-fixed
+    .row
+      .twelve.columns
+        %h1.section-heading.text-centered= "Ready to work with #{@agent.first_name}?"
+    .row
+      = render 'shared/contact_agent_form'
