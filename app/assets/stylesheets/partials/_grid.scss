@@ -87,6 +87,9 @@
     flex: 1;
     height: 120px;
     margin: 0;
+    p {
+      margin-bottom: 0;
+    }
   }
 
   &.section-inverted {
