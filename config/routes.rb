@@ -13,6 +13,7 @@
     get '/team/edit', to: 'teams#edit', as: 'edit_team'
     get '/listings/edit', to: 'agents#listings', as: 'edit_listings'
     get '/contact', to: 'agents#contact'
+    get '/team', to: 'teams#show'
 
     resources :biographies, except: [:edit]
     resources :brokers, except: [:edit]
@@ -25,7 +26,7 @@
 
     resources :team_openings, only: [:index]
 
-    resources :themes, except: [:edit]
+    resources :themes, except: [:edit, :show]
     resources :links, only: [:index]
     resources :teams, except: [:edit]
     resources :testimonials, only: [:index]
