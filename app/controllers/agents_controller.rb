@@ -8,7 +8,7 @@ class AgentsController < ApplicationController
     respond_to do |format|
       if id_param?
         format.html { redirect_to agent_path(@agent.friendly_id) }
-        format.json { render json: @agent }
+        format.json { render json: @agent.as_json.merge({theme: @theme}) }
       else
         format.html
       end
