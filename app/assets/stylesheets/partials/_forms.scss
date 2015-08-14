@@ -20,6 +20,7 @@
   @include input-focus;
   border: 1px solid $black25;
   height: $inputHeight;
+  background-color: $white;
   select {
     border-radius: 0;
     box-shadow: none;

@@ -2,5 +2,6 @@
   .container.section
     .row
       .twelve.columns
-        = select_tag 'admin_nav', options_for_select(admin_nav_links(@agent), request.fullpath), class: 'u-full-width nav-select js-select-navigation'
+        .select-container.u-full-width
+          = select_tag 'admin_nav', options_for_select(admin_nav_links(@agent), request.fullpath), class: 'u-full-width js-select-navigation'
         %button.button.button-primary.nav-button.js-navigation-button Go

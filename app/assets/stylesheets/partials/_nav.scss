@@ -57,8 +57,12 @@
 #admin-navigation {
   .columns {
     display: flex;
-    select {
-      order: 1
+    .select-container {
+      margin-right: 10px;
+      order: 1;
+      &:after {
+        right: 110px;
+      }
     }
     button {
       order: 2;
