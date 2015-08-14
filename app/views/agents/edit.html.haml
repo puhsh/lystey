@@ -20,7 +20,8 @@
             = f.text_field :license_number, class: 'u-full-width', placeholder: 'License Number'
         .row
           .twelve.columns
-            = f.select :license_type, Agent.license_type.options, { include_blank: '-- License Type --', default: nil }, { class: 'u-full-width select' }
+            .select-container
+              = f.select :license_type, Agent.license_type.options, { include_blank: '-- License Type --', default: nil }, { class: 'u-full-width select' }
         .row
           .twelve.columns
             = f.text_field :license_county, class: 'u-full-width', placeholder: 'License County'
@@ -28,7 +29,8 @@
         = f.fields_for :certifications do |c|
           .row
             .twelve.columns
-              = c.select :certification_type, Certification.certification_type.options, { include_blank: '-- Certification Type --', default: nil }, { class: 'u-full-width select' }
+              .select-container
+                = c.select :certification_type, Certification.certification_type.options, { include_blank: '-- Certification Type --', default: nil }, { class: 'u-full-width select' }
         = f.link_to_add "+ Add Another Certification", :certifications, class: 'add-field'
 
         .row
@@ -55,7 +57,8 @@
               = oa.text_field :line_2, class: 'u-full-width', placeholder: 'Address (Line 2)'
               = oa.text_field :line_3, class: 'u-full-width', placeholder: 'Address (Line 3)'
               = oa.text_field :city, class: 'u-full-width', placeholder: 'City'
-              = oa.select :state, us_states, { include_blank: '-- Select State --' }, { class: 'u-full-width select' }
+              .select-container
+                = oa.select :state, us_states, { include_blank: '-- Select State --' }, { class: 'u-full-width select' }
               = oa.text_field :zipcode, class: 'u-full-width', placeholder: 'Zip'
 
   .section.shaded.submit-section

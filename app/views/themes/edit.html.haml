@@ -56,7 +56,8 @@
       .row
         .twelve.columns.inline-section
           = f.label :font, 'Font', class: 'text-label'
-          = f.select :font, Theme.font.options, {}, class: 'u-full-width font-select select js-font-changer', data: { target: 'admin-font' }
+          .select-container
+            = f.select :font, Theme.font.options, {}, class: 'u-full-width font-select select js-font-changer', data: { target: 'admin-font' }
 
   .section.text-centered
     .container

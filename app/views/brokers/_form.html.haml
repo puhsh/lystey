@@ -20,7 +20,8 @@
             = f.text_field :city, class: 'u-full-width', placeholder: 'City'
         .row
           .twelve.columns
-            = f.select :state, us_states, { include_blank: '-- Broker State --', default: nil }, { class: 'u-full-width select' }
+            .select-container
+              = f.select :state, us_states, { include_blank: '-- Broker State --', default: nil }, { class: 'u-full-width select' }
         .row
           .twelve.columns
             = f.text_field :zipcode, class: 'u-full-width', placeholder: 'Zip Code'
