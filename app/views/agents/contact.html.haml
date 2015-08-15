@@ -120,3 +120,11 @@
         .row
           .twelve.columns
             %h1.link-text= "#{realtor_site_link.site.text}.com Profile"
+
+- @personal_links.each do |personal_site_link|
+  .section.bordered-bottom.tappable
+    %a.primary-link.full-color(href="#{personal_site_link.url}" target="_blank")
+      .container.centered.medium-fixed
+        .row
+          .twelve.columns
+            %h1.link-text= personal_site_link.description

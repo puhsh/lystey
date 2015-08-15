@@ -52,6 +52,7 @@ class AgentsController < ApplicationController
     @mailing_address = @addresses.where(address_type: :mailing).first
     @social_media_links = @agent.social_links.social_media
     @realtor_site_links = @agent.social_links.realtor_sites
+    @personal_links = @agent.social_links.personal
 
     respond_to do |format|
       format.html
