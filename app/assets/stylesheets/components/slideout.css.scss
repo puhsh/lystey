@@ -11,6 +11,11 @@
   display: none;
 }
 
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+}
+
 .slideout-open,
 .slideout-open body,
 .slideout-open .slideout-panel {

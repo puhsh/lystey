@@ -1,13 +1,26 @@
+@import "partials/links";
+
+@import "partials/grid";
+@import "partials/header";
+@import "partials/type";
+@import "partials/nav";
+@import "partials/icons";
+@import "partials/forms";
+@import "partials/buttons";
+@import "partials/lists";
+@import "partials/images";
+
+
 html {
-  box-sizing: border-box;
+  // box-sizing: border-box;
 }
 
 body {
   width: 100%;
   height: 100%;
-  font-family: $baseFontFamily !important;
+  overflow: hidden;
 }
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+//
+// *, *:before, *:after {
+//   box-sizing: inherit;
+// }
