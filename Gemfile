@@ -69,4 +69,5 @@ gem 'enumerize'
 gem 'friendly_id', '~> 5.1.0'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'librato-rails'
 gem "nested_form"
